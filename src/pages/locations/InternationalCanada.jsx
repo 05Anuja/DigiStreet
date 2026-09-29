@@ -10,11 +10,11 @@ export default function InternationalCanada({ city = "Canada" }) {
       badge="Canadian Operations Hub"
       title={
         isToronto
-          ? "Toronto Digital Marketing Agency | Silgate"
-          : "Canada Digital Marketing & SEO Agency | Silgate"
+          ? "Toronto Digital Marketing Agency | DigiStreet"
+          : "Canada Digital Marketing & SEO Agency | DigiStreet"
       }
       subtitle="Bilingual English-French Optimization, B2B Demand Gen, Performance Advertising & Web Engineering across the GTA & Nationally"
-      description="Silgate Media is Canada's preferred growth partner for tech innovators in the Waterloo-Toronto tech corridor, retail brands, and industrial manufacturers seeking scalable North American dominance."
+      description="DigiStreet Media is Canada's preferred growth partner for tech innovators in the Waterloo-Toronto tech corridor, retail brands, and industrial manufacturers seeking scalable North American dominance."
       breadcrumbs={[
         { label: "International", link: "/services" },
         { label: isToronto ? "Toronto, ON" : "Canada" },

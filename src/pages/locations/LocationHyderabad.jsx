@@ -6,9 +6,9 @@ export default function LocationHyderabad() {
     <LocationPageTemplate
       cityName="Hyderabad"
       badge="HITEC City Tech & Pharma Capital"
-      title="Top Digital Marketing & SEO Agency in Hyderabad | Silgate"
+      title="Top Digital Marketing & SEO Agency in Hyderabad | DigiStreet"
       subtitle="Enterprise B2B Lead Generation, Life Sciences & Pharma Marketing, Real Estate Dominance & Web Development in Cyberabad"
-      description="Silgate Media drives market leadership for Hyderabad's global technology powerhouses, pharmaceutical manufacturers, healthcare institutions, and premier real estate developers in HITEC City, Gachibowli, and Financial District."
+      description="DigiStreet Media drives market leadership for Hyderabad's global technology powerhouses, pharmaceutical manufacturers, healthcare institutions, and premier real estate developers in HITEC City, Gachibowli, and Financial District."
       breadcrumbs={[
         { label: "Locations", link: "/services" },
         { label: "Hyderabad" },
@@ -42,11 +42,11 @@ export default function LocationHyderabad() {
       ]}
       faqs={[
         {
-          q: "What distinguishes Silgate's work in Hyderabad?",
+          q: "What distinguishes DigiStreet's work in Hyderabad?",
           a: "We combine deep technical rigor in SEO and performance media with world-class creative video production, uniquely suited for Hyderabad's tech and healthcare ecosystem.",
         },
         {
-          q: "Can Silgate support international lead generation for Hyderabad exporters?",
+          q: "Can DigiStreet support international lead generation for Hyderabad exporters?",
           a: "Absolutely. We manage multi-region campaigns across North America, Europe, and the Middle East for Hyderabad exporters and IT services companies.",
         },
       ]}

@@ -6,9 +6,9 @@ export default function LocationDubai() {
     <LocationPageTemplate
       cityName="Dubai, UAE"
       badge="Middle East Commercial Hub"
-      title="Digital Marketing & Performance Agency in Dubai | Silgate Media"
+      title="Digital Marketing & Performance Agency in Dubai | DigiStreet Media"
       subtitle="Bespoke Luxury Branding, High-Net-Worth Lead Generation, Influencer Management & Multilingual Paid Media across UAE & GCC"
-      description="Silgate Media helps premium real estate developers, hospitality groups, luxury lifestyle brands, and fintech innovators across Dubai, Abu Dhabi, and the GCC dominate digital channels and acquire high-value clients."
+      description="DigiStreet Media helps premium real estate developers, hospitality groups, luxury lifestyle brands, and fintech innovators across Dubai, Abu Dhabi, and the GCC dominate digital channels and acquire high-value clients."
       breadcrumbs={[
         { label: "International", link: "/services" },
         { label: "Dubai & UAE" },

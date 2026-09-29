@@ -6,9 +6,9 @@ export default function LocationBangalore() {
     <LocationPageTemplate
       cityName="Bangalore (Bengaluru)"
       badge="Silicon Valley of India"
-      title="Performance Marketing & SEO Agency in Bangalore | Silgate"
+      title="Performance Marketing & SEO Agency in Bangalore | DigiStreet"
       subtitle="Data-Obsessed Growth Marketing, SaaS Scale-Up Engines, Generative Engine Optimization (GEO) & Full-Stack Tech in Koramangala & Indiranagar"
-      description="Silgate Media is Bangalore's strategic growth partner for venture-backed SaaS startups, deep-tech innovators, D2C brands, and multinational tech enterprises looking to scale profitably."
+      description="DigiStreet Media is Bangalore's strategic growth partner for venture-backed SaaS startups, deep-tech innovators, D2C brands, and multinational tech enterprises looking to scale profitably."
       breadcrumbs={[
         { label: "Locations", link: "/services" },
         { label: "Bangalore" },

@@ -8,7 +8,7 @@ export default function LocationNoida() {
       badge="Global Headquarters"
       title="Digital Marketing Agency in Noida | SEO & Creative Company"
       subtitle="Full-Service Marcom, High-Performance Paid Ads, Brand Design & Website Engineering"
-      description="Headquartered in Express Trade Tower 2, Sector 132, Noida, Silgate Media is Noida's premier full-service digital marketing agency. We partner with tech innovators, manufacturing leaders, and real estate developers across Greater Noida and Noida Expressway."
+      description="Headquartered in Express Trade Tower 2, Sector 132, Noida, DigiStreet Media is Noida's premier full-service digital marketing agency. We partner with tech innovators, manufacturing leaders, and real estate developers across Greater Noida and Noida Expressway."
       breadcrumbs={[
         { label: "Locations", link: "/services" },
         { label: "Noida (HQ)" },
@@ -21,7 +21,7 @@ export default function LocationNoida() {
         { value: "Top Rated", label: "Agency in UP & NCR" },
       ]}
       localInsightsTitle="The Digital Heart of Noida Expressway"
-      localInsightsText="Noida has emerged as North India's premier tech, real estate, and manufacturing corridor. Silgate's 14-year headquarters on the Noida Expressway anchors our deep relationships with enterprise builders, industrial parks, and high-growth IT corridors."
+      localInsightsText="Noida has emerged as North India's premier tech, real estate, and manufacturing corridor. DigiStreet's 14-year headquarters on the Noida Expressway anchors our deep relationships with enterprise builders, industrial parks, and high-growth IT corridors."
       services={[
         {
           title: "SEO Services in Noida",

@@ -522,11 +522,7 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <div className="flex items-center gap-3">
             <Link to="/" className="inline-block">
-              <img
-                src={logoImg}
-                alt="Silgate"
-                className="h-6 w-auto brightness-0 invert opacity-70"
-              />
+              <img src={logoImg} alt="Silgate" className="h-6 w-auto" />
             </Link>
             <span>
               &copy; {new Date().getFullYear()} Silgate Media Pvt. Ltd. All

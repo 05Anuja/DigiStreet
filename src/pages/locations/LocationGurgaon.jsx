@@ -6,9 +6,9 @@ export default function LocationGurgaon() {
     <LocationPageTemplate
       cityName="Gurgaon (Gurugram)"
       badge="Millennium City Tech Hub"
-      title="Digital Marketing & Social Media Agency in Gurgaon | Silgate"
+      title="Digital Marketing & Social Media Agency in Gurgaon | DigiStreet"
       subtitle="Data-Led Performance Marketing, Social Media Creative, Brand Storytelling & B2B Growth Engines in Cyber City"
-      description="Silgate Media is Gurgaon's trusted digital powerhouse, serving Fortune 500 corporations, high-growth unicorn startups, and premier real estate developers across DLF CyberCity, Golf Course Road, and Udyog Vihar."
+      description="DigiStreet Media is Gurgaon's trusted digital powerhouse, serving Fortune 500 corporations, high-growth unicorn startups, and premier real estate developers across DLF CyberCity, Golf Course Road, and Udyog Vihar."
       breadcrumbs={[
         { label: "Locations", link: "/services" },
         { label: "Gurgaon" },
@@ -42,8 +42,8 @@ export default function LocationGurgaon() {
       ]}
       faqs={[
         {
-          q: "Why choose Silgate for digital marketing in Gurgaon?",
-          a: "With 14+ years of cross-industry expertise and deep proximity to Gurgaon's corporate corridor, Silgate provides agile strategy, direct senior director involvement, and verified ROI without bureaucratic agency overhead.",
+          q: "Why choose DigiStreet for digital marketing in Gurgaon?",
+          a: "With 14+ years of cross-industry expertise and deep proximity to Gurgaon's corporate corridor, DigiStreet provides agile strategy, direct senior director involvement, and verified ROI without bureaucratic agency overhead.",
         },
         {
           q: "How do you handle B2B lead generation for SaaS and enterprise firms in Gurgaon?",

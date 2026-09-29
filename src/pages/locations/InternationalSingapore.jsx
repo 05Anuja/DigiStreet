@@ -6,9 +6,9 @@ export default function InternationalSingapore() {
     <LocationPageTemplate
       cityName="Singapore"
       badge="Southeast Asia Regional HQ"
-      title="Digital Marketing Agency in Singapore | Silgate Media"
+      title="Digital Marketing Agency in Singapore | DigiStreet Media"
       subtitle="ASEAN Digital Expansion, FinTech Lead Gen, Technical SEO & Performance Marketing in Marina Bay & Raffles Place"
-      description="Silgate Media serves Singapore's premier financial institutions, technology startups, regional corporate headquarters, and luxury hospitality brands looking to scale across Southeast Asia."
+      description="DigiStreet Media serves Singapore's premier financial institutions, technology startups, regional corporate headquarters, and luxury hospitality brands looking to scale across Southeast Asia."
       breadcrumbs={[
         { label: "International", link: "/services" },
         { label: "Singapore" },

@@ -6,10 +6,10 @@ export default function InternationalUSA({ city = "United States" }) {
   const isNY = city.toLowerCase().includes("york");
 
   const title = isSF
-    ? "San Francisco Digital Marketing Agency | Silgate"
+    ? "San Francisco Digital Marketing Agency | DigiStreet"
     : isNY
-      ? "SEO Services & Digital Agency in New York | Silgate"
-      : "USA Digital Marketing Agency | Global Growth Partner | Silgate";
+      ? "SEO Services & Digital Agency in New York | DigiStreet"
+      : "USA Digital Marketing Agency | Global Growth Partner | DigiStreet";
 
   const subtitle = isSF
     ? "Full-Stack Tech Marketing, Venture-Backed Scale, Generative AI Search & Performance Ads in Silicon Valley"
@@ -23,7 +23,7 @@ export default function InternationalUSA({ city = "United States" }) {
       badge="North America Hub"
       title={title}
       subtitle={subtitle}
-      description="Silgate Media delivers elite digital marketing, technical SEO, generative search optimization (GEO), and high-converting creative services to American brands, enterprise leaders, and Silicon Valley disruptors."
+      description="DigiStreet Media delivers elite digital marketing, technical SEO, generative search optimization (GEO), and high-converting creative services to American brands, enterprise leaders, and Silicon Valley disruptors."
       breadcrumbs={[
         { label: "International", link: "/services" },
         { label: city },
@@ -36,7 +36,7 @@ export default function InternationalUSA({ city = "United States" }) {
         { value: "Top 20", label: "Silicon India Awarded" },
       ]}
       localInsightsTitle="Helping US Brands Scale Faster With Agile Global Delivery"
-      localInsightsText="American businesses face sky-high domestic agency fees and fragmented deliverables. Silgate bridges high-level strategic direction with a world-class global execution engine, delivering 3x higher velocity at a fraction of standard US agency retainers."
+      localInsightsText="American businesses face sky-high domestic agency fees and fragmented deliverables. DigiStreet bridges high-level strategic direction with a world-class global execution engine, delivering 3x higher velocity at a fraction of standard US agency retainers."
       services={[
         {
           title: "Enterprise Technical SEO & Programmatic Content",
@@ -57,7 +57,7 @@ export default function InternationalUSA({ city = "United States" }) {
       ]}
       faqs={[
         {
-          q: "How does Silgate handle time zone collaboration with US clients?",
+          q: "How does DigiStreet handle time zone collaboration with US clients?",
           a: "We maintain dedicated US-aligned account managers and daily overlap hours across Pacific (PST) and Eastern (EST) time zones, ensuring rapid responses and seamless sprint execution.",
         },
         {

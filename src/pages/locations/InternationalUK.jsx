@@ -10,11 +10,11 @@ export default function InternationalUK({ city = "United Kingdom" }) {
       badge="Europe & British Isles Hub"
       title={
         isLondon
-          ? "Digital Marketing Agency in London | Silgate Media"
-          : "UK Digital Marketing & SEO Agency | Silgate"
+          ? "Digital Marketing Agency in London | DigiStreet Media"
+          : "UK Digital Marketing & SEO Agency | DigiStreet"
       }
       subtitle="B2B Demand Generation, Creative Brand Communication, Technical SEO & Performance Marketing in the City of London & Across Britain"
-      description="Silgate Media partners with ambitious British brands, London FinTech innovators, luxury lifestyle retailers, and B2B enterprises to engineer predictable organic growth and measurable advertising ROI."
+      description="DigiStreet Media partners with ambitious British brands, London FinTech innovators, luxury lifestyle retailers, and B2B enterprises to engineer predictable organic growth and measurable advertising ROI."
       breadcrumbs={[
         { label: "International", link: "/services" },
         { label: isLondon ? "London, UK" : "United Kingdom" },
@@ -52,7 +52,7 @@ export default function InternationalUK({ city = "United Kingdom" }) {
           a: "Yes, all data gathering, tracking pixels, forms, and analytical pipelines strictly adhere to UK GDPR and ICO privacy standards.",
         },
         {
-          q: "How do we coordinate with the Silgate team from the UK?",
+          q: "How do we coordinate with the DigiStreet team from the UK?",
           a: "Our UK operations feature dedicated GMT/BST account managers and scheduled weekly video reviews, providing proactive communication and agile campaign updates.",
         },
       ]}

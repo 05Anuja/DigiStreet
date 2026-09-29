@@ -10,11 +10,11 @@ export default function InternationalGulf({ country = "Saudi Arabia" }) {
       badge="Gulf Cooperation Council (GCC) Hub"
       title={
         isBahrain
-          ? "Digital Marketing Agency in Bahrain | Silgate"
-          : "Digital Marketing Agency in Saudi Arabia (KSA) | Silgate"
+          ? "Digital Marketing Agency in Bahrain | DigiStreet"
+          : "Digital Marketing Agency in Saudi Arabia (KSA) | DigiStreet"
       }
       subtitle="Vision 2030 Aligned Digital Transformation, Arabic SEO, High-Value Lead Generation & Luxury Creative Campaigns across the Kingdom & GCC"
-      description={`Silgate Media is the trusted growth partner for enterprise brands, government initiatives, retail groups, and industrial leaders across ${isBahrain ? "Bahrain" : "Riyadh, Jeddah, and the Kingdom of Saudi Arabia"}.`}
+      description={`DigiStreet Media is the trusted growth partner for enterprise brands, government initiatives, retail groups, and industrial leaders across ${isBahrain ? "Bahrain" : "Riyadh, Jeddah, and the Kingdom of Saudi Arabia"}.`}
       breadcrumbs={[
         { label: "International", link: "/services" },
         { label: isBahrain ? "Bahrain" : "Saudi Arabia" },

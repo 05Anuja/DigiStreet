@@ -127,12 +127,12 @@ export default function Navbar() {
 
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center gap-1 xl:gap-2">
-            <Link
+            {/* <Link
               to="/"
               className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.pathname === "/" ? "text-black font-semibold" : "text-zinc-700 hover:text-black hover:bg-zinc-50"}`}
             >
               Home
-            </Link>
+            </Link> */}
 
             {/* Influencer Dropdown */}
             <div
@@ -785,19 +785,19 @@ export default function Navbar() {
               )}
             </div>
 
-            <Link
+            {/* <Link
               to="/career"
               className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.pathname === "/career" ? "text-black font-semibold" : "text-zinc-700 hover:text-black hover:bg-zinc-50"}`}
             >
               Careers
-            </Link>
+            </Link> */}
 
-            <Link
+            {/* <Link
               to="/blog"
               className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.pathname.startsWith("/blog") ? "text-black font-semibold" : "text-zinc-700 hover:text-black hover:bg-zinc-50"}`}
             >
               Blog
-            </Link>
+            </Link> */}
           </div>
 
           {/* Right Header CTA */}
@@ -866,13 +866,13 @@ export default function Navbar() {
 
             <div className="p-5 flex-1 divide-y divide-zinc-100 space-y-4">
               <div className="pt-2">
-                <Link
+                {/* <Link
                   to="/"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block py-2 text-base font-semibold text-zinc-900"
                 >
                   Home
-                </Link>
+                </Link> */}
               </div>
 
               {/* Influencer Accordion */}
@@ -1304,7 +1304,7 @@ export default function Navbar() {
                 </Link>
               </div>
 
-              <div className="pt-3">
+              {/* <div className="pt-3">
                 <Link
                   to="/career"
                   onClick={() => setMobileMenuOpen(false)}
@@ -1312,9 +1312,9 @@ export default function Navbar() {
                 >
                   Life at Silgate / Careers
                 </Link>
-              </div>
+              </div> */}
 
-              <div className="pt-3">
+              {/* <div className="pt-3">
                 <Link
                   to="/blog"
                   onClick={() => setMobileMenuOpen(false)}
@@ -1322,7 +1322,7 @@ export default function Navbar() {
                 >
                   Blogs & Insights
                 </Link>
-              </div>
+              </div> */}
 
               <div className="pt-3">
                 <Link

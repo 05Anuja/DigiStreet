@@ -6,9 +6,9 @@ export default function InternationalAustralia() {
     <LocationPageTemplate
       cityName="Australia"
       badge="Asia-Pacific & ANZ Hub"
-      title="Digital Marketing Agency in Australia | Sydney & Melbourne | Silgate"
+      title="Digital Marketing Agency in Australia | Sydney & Melbourne | DigiStreet"
       subtitle="Enterprise Search Engine Optimisation (SEO), High-ROAS Performance Marketing & Creative Video Production Down Under"
-      description="Silgate Media partners with premier Australian enterprises, fast-growing eCommerce disruptors, and B2B pioneers across Sydney, Melbourne, Brisbane, and Perth to capture market leadership and unlock scalable growth."
+      description="DigiStreet Media partners with premier Australian enterprises, fast-growing eCommerce disruptors, and B2B pioneers across Sydney, Melbourne, Brisbane, and Perth to capture market leadership and unlock scalable growth."
       breadcrumbs={[
         { label: "International", link: "/services" },
         { label: "Australia" },
@@ -21,7 +21,7 @@ export default function InternationalAustralia() {
         { value: "Top 20", label: "Silicon India Awarded" },
       ]}
       localInsightsTitle="Conquering the Australian Digital Landscape"
-      localInsightsText="Australian consumers and enterprise buyers value genuine transparency, high product quality, and straightforward value propositions. Silgate delivers data-led digital marketing that cuts through noise and delivers profitable client acquisition across Australia and New Zealand."
+      localInsightsText="Australian consumers and enterprise buyers value genuine transparency, high product quality, and straightforward value propositions. DigiStreet delivers data-led digital marketing that cuts through noise and delivers profitable client acquisition across Australia and New Zealand."
       services={[
         {
           title: "Technical SEO for Australian Search Engines",
@@ -46,7 +46,7 @@ export default function InternationalAustralia() {
           a: "We maintain dedicated APAC-aligned operational hours, ensuring live communication, daily reporting updates, and fast iteration cycles.",
         },
         {
-          q: "What industries does Silgate support in Australia?",
+          q: "What industries does DigiStreet support in Australia?",
           a: "We actively support E-Commerce, Retail, SaaS & Technology, Mining & Resources, Real Estate, and Financial Services across Sydney, Melbourne, and Brisbane.",
         },
       ]}

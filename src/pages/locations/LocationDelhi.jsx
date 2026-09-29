@@ -8,7 +8,7 @@ export default function LocationDelhi() {
       badge="Delhi NCR Corporate Hub"
       title="Digital Marketing Agency in Delhi | Best SEO Company"
       subtitle="Full-Stack Marcom, Technical SEO, High-ROAS Media Buying & Web Development in National Capital Region"
-      description="Silgate Media is Delhi's premier award-winning digital marketing and creative agency. We partner with established industrial giants, luxury retail brands, and high-growth startups across Delhi NCR to drive market leadership."
+      description="DigiStreet Media is Delhi's premier award-winning digital marketing and creative agency. We partner with established industrial giants, luxury retail brands, and high-growth startups across Delhi NCR to drive market leadership."
       breadcrumbs={[
         { label: "Locations", link: "/services" },
         { label: "Delhi NCR" },
@@ -42,7 +42,7 @@ export default function LocationDelhi() {
       ]}
       faqs={[
         {
-          q: "Where is Silgate located in Delhi NCR?",
+          q: "Where is DigiStreet located in Delhi NCR?",
           a: "We have offices in Dwarka, New Delhi 110045 and our corporate creative headquarters at Express Trade Tower 2, Sector 132, Noida.",
         },
         {

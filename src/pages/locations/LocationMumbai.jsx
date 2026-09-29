@@ -6,9 +6,9 @@ export default function LocationMumbai() {
     <LocationPageTemplate
       cityName="Mumbai"
       badge="India's Financial & Media Capital"
-      title="Top SEO & Digital Marketing Agency in Mumbai | Silgate"
+      title="Top SEO & Digital Marketing Agency in Mumbai | DigiStreet"
       subtitle="Full-Funnel Performance Marketing, BFSI Lead Generation, Luxury Brand Building & Creative Communication in BKC & South Mumbai"
-      description="Silgate Media empowers Mumbai's leading financial institutions, entertainment brands, FMCG conglomerates, and luxury retail labels with high-octane digital strategies, creative communication, and enterprise SEO."
+      description="DigiStreet Media empowers Mumbai's leading financial institutions, entertainment brands, FMCG conglomerates, and luxury retail labels with high-octane digital strategies, creative communication, and enterprise SEO."
       breadcrumbs={[
         { label: "Locations", link: "/services" },
         { label: "Mumbai" },
@@ -42,7 +42,7 @@ export default function LocationMumbai() {
       ]}
       faqs={[
         {
-          q: "How does Silgate serve clients in Mumbai?",
+          q: "How does DigiStreet serve clients in Mumbai?",
           a: "We work directly with Mumbai-based CMOs and founders through regular in-person strategy consultations in BKC, Lower Parel, and Andheri, backed by our centralized creative and technical execution teams.",
         },
         {

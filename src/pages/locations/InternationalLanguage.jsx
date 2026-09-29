@@ -6,11 +6,11 @@ export default function InternationalLanguage({ lang = "es" }) {
     es: {
       cityName: "España y Latinoamérica",
       badge: "Mercados Hispanohablantes",
-      title: "Agencia de Marketing Digital y SEO Internacional | Silgate",
+      title: "Agencia de Marketing Digital y SEO Internacional | DigiStreet",
       subtitle:
         "Estrategias de Crecimiento Global, Posicionamiento SEO en Español, Publicidad de Alto Rendimiento y Desarrollo Web",
       description:
-        "Silgate Media ayuda a empresas en España, México y Latinoamérica a expandir su presencia digital en mercados internacionales con soluciones completas de marketing digital.",
+        "DigiStreet Media ayuda a empresas en España, México y Latinoamérica a expandir su presencia digital en mercados internacionales con soluciones completas de marketing digital.",
       breadcrumbs: [
         { label: "Internacional", link: "/services" },
         { label: "Mercado Hispano (ES)" },
@@ -60,11 +60,11 @@ export default function InternationalLanguage({ lang = "es" }) {
       cityName: "Deutschland & DACH Region",
       badge: "DACH Region Hub",
       title:
-        "Internationale Digital- und SEO-Agentur für den deutschen Markt | Silgate",
+        "Internationale Digital- und SEO-Agentur für den deutschen Markt | DigiStreet",
       subtitle:
         "Datengetriebenes Performance-Marketing, Technisches SEO, Content-Marketing & Webentwicklung für Deutschland, Österreich und die Schweiz",
       description:
-        "Silgate Media unterstützt Unternehmen in der DACH-Region mit erstklassigen digitalen Strategien, technischem SEO und hoher Conversion-Optimierung.",
+        "DigiStreet Media unterstützt Unternehmen in der DACH-Region mit erstklassigen digitalen Strategien, technischem SEO und hoher Conversion-Optimierung.",
       breadcrumbs: [
         { label: "International", link: "/services" },
         { label: "DACH Markt (DE)" },
@@ -78,7 +78,7 @@ export default function InternationalLanguage({ lang = "es" }) {
       ],
       localInsightsTitle: "Erfolgreich im anspruchsvollen DACH-Wirtschaftsraum",
       localInsightsText:
-        "Deutsche und europäische Unternehmen legen höchsten Wert auf Datenschutz, technische Präzision und nachhaltigen ROI. Silgate liefert DSGVO-konforme, transparente Performance-Lösungen.",
+        "Deutsche und europäische Unternehmen legen höchsten Wert auf Datenschutz, technische Präzision und nachhaltigen ROI. DigiStreet liefert DSGVO-konforme, transparente Performance-Lösungen.",
       services: [
         {
           title: "Technisches SEO & Suchmaschinenoptimierung",
@@ -111,11 +111,11 @@ export default function InternationalLanguage({ lang = "es" }) {
     ja: {
       cityName: "日本 (Japan)",
       badge: "Japan & APAC Expansion Hub",
-      title: "日本市場向けデジタルマーケティング & SEOエージェンシー | Silgate",
+      title: "日本市場向けデジタルマーケティング & SEOエージェンシー | DigiStreet",
       subtitle:
         "グローバル基準の技術的SEO、成果報酬型広告、ブランドコミュニケーションおよびウェブ開発",
       description:
-        "Silgate Mediaは、日本市場での認知拡大および海外展開を目指す企業に向けて、包括的なデジタルマーケティングソリューションを提供しています。",
+        "DigiStreet Mediaは、日本市場での認知拡大および海外展開を目指す企業に向けて、包括的なデジタルマーケティングソリューションを提供しています。",
       breadcrumbs: [
         { label: "International", link: "/services" },
         { label: "Japan Market (JA)" },
@@ -129,7 +129,7 @@ export default function InternationalLanguage({ lang = "es" }) {
       ],
       localInsightsTitle: "日本市場における信頼性とデジタル成長の構築",
       localInsightsText:
-        "日本のビジネス文化では、高い信頼性と精緻な品質が最優先されます。Silgateは、グローバルな技術力と日本市場の商習慣への深い配慮を融合させた成長戦略を提供します。",
+        "日本のビジネス文化では、高い信頼性と精緻な品質が最優先されます。DigiStreetは、グローバルな技術力と日本市場の商習慣への深い配慮を融合させた成長戦略を提供します。",
       services: [
         {
           title: "日本語対応の技術的SEO",
