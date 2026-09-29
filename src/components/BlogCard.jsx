@@ -1,15 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowUpRight, Calendar, Clock } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, Calendar, Clock } from "lucide-react";
 
 export default function BlogCard({
   title,
   slug,
   excerpt,
   image,
-  date = 'September 2026',
-  readTime = '5 min read',
-  category = 'Insights',
+  date = "September 2026",
+  readTime = "5 min read",
+  category = "Insights",
 }) {
   return (
     <article className="group flex flex-col justify-between bg-white border border-zinc-200/80 rounded-3xl overflow-hidden hover:shadow-xl hover:border-black/30 transition-all duration-300">
@@ -17,17 +17,17 @@ export default function BlogCard({
         {/* Featured Image */}
         <div className="relative aspect-[16/9] w-full overflow-hidden bg-zinc-100">
           {image ? (
-            <img 
-              src={image} 
-              alt={title} 
+            <img
+              src={image}
+              alt={title}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               onError={(e) => {
-                e.target.style.display = 'none';
+                e.target.style.display = "none";
               }}
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-zinc-800 to-black flex items-center justify-center p-6 text-white text-center font-bold">
-              DigiStreet Insights
+              Silgate Insights
             </div>
           )}
           <span className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-black text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
@@ -62,8 +62,8 @@ export default function BlogCard({
       </div>
 
       <div className="px-6 pb-6 pt-0">
-        <Link 
-          to={slug ? `/blog/${slug}` : '/blog'} 
+        <Link
+          to={slug ? `/blog/${slug}` : "/blog"}
           className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-black hover:text-amber-600 group-hover:translate-x-1 transition-all"
         >
           <span>Read Full Article</span>

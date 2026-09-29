@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Button from '../components/Button';
-import { CheckCircle2, Phone, Calendar } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Button from "../components/Button";
+import { CheckCircle2, Phone, Calendar } from "lucide-react";
 
 export default function ThankYou() {
   return (
@@ -21,18 +21,27 @@ export default function ThankYou() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-zinc-900">
-            Thank You for Connecting with DigiStreet!
+            Thank You for Connecting with Silgate!
           </h1>
 
           <p className="text-zinc-600 text-base leading-relaxed max-w-lg mx-auto">
-            Our strategic account director has received your details and is reviewing your requirement. We typically respond within 2-4 business hours.
+            Our strategic account director has received your details and is
+            reviewing your requirement. We typically respond within 2-4 business
+            hours.
           </p>
 
           <div className="p-6 bg-zinc-50 border border-zinc-200/80 rounded-2xl max-w-md mx-auto text-left space-y-3 text-sm">
-            <div className="font-semibold text-zinc-900">Need immediate assistance?</div>
+            <div className="font-semibold text-zinc-900">
+              Need immediate assistance?
+            </div>
             <div className="flex items-center gap-2 text-zinc-600">
               <Phone className="w-4 h-4 text-[#FFDF01]" />
-              <a href="tel:+918108810916" className="font-medium text-black hover:underline">+91 81088 10916</a>
+              <a
+                href="tel:+918108810916"
+                className="font-medium text-black hover:underline"
+              >
+                +91 81088 10916
+              </a>
             </div>
             <div className="flex items-center gap-2 text-zinc-600">
               <Calendar className="w-4 h-4 text-[#FFDF01]" />

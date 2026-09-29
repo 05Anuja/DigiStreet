@@ -1,15 +1,22 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Hero from '../components/Hero';
-import CTA from '../components/CTA';
-import Button from '../components/Button';
-import { Star, Users, Play, Heart, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Hero from "../components/Hero";
+import CTA from "../components/CTA";
+import Button from "../components/Button";
+import {
+  Star,
+  Users,
+  Play,
+  Heart,
+  ArrowUpRight,
+  CheckCircle2,
+} from "lucide-react";
 
-import artboard20 from '../assets/images/artboard-20.webp';
-import artboard22 from '../assets/images/artboard-22.webp';
-import blogPackaging from '../assets/images/brand-packaging-beauty-brands-us-retail-1024x576.webp';
-import sircaNews from '../assets/images/Sirca-news.jpg';
+import artboard20 from "../assets/images/artboard-20.webp";
+import artboard22 from "../assets/images/artboard-22.webp";
+import blogPackaging from "../assets/images/brand-packaging-beauty-brands-us-retail-1024x576.webp";
+import sircaNews from "../assets/images/Sirca-news.jpg";
 
 export default function InfluencerPortfolio() {
   const campaigns = [
@@ -18,29 +25,29 @@ export default function InfluencerPortfolio() {
       category: "Home & Interior Influencers",
       stats: "12M+ Impressions · 420K Engagements",
       desc: "Activated 80+ top architects, interior stylists, and master paint contractors creating authentic transformation reels demonstrating Italian luxury coatings.",
-      image: artboard20
+      image: artboard20,
     },
     {
       title: "Vega Beauty Viral Unboxing & Hairstyling Blitz",
       category: "D2C Beauty & Fashion",
       stats: "24M+ Video Views · 3.8x ROAS",
       desc: "Curated 150+ macro and micro beauty creators demonstrating heat styling tools across Instagram and YouTube with custom swipe-up discount tags.",
-      image: blogPackaging
+      image: blogPackaging,
     },
     {
       title: "Electric Mobility Test-Drive Creator Sprint",
       category: "Automotive & Tech Creators",
       stats: "8.5M+ Views · 14,000+ Test Drive Bookings",
       desc: "Partnered with auto journalists and lifestyle vloggers taking new EV models on real-world long-distance road trips across major national expressways.",
-      image: artboard22
+      image: artboard22,
     },
     {
       title: "Gourmet Foods D2C Creator Recipe Challenge",
       category: "Food & Beverage",
       stats: "6.2M+ Reach · 28,000+ First-Time Orders",
       desc: "Top food bloggers and home chefs incorporating organic ingredients into quick 30-second recipe videos with direct Shopify buy links.",
-      image: sircaNews
-    }
+      image: sircaNews,
+    },
   ];
 
   return (
@@ -48,15 +55,18 @@ export default function InfluencerPortfolio() {
       <Navbar />
 
       <main className="flex-1">
-        <Hero 
+        <Hero
           badge="Creator Activations"
           title="Influencer Marketing Portfolio"
           subtitle="Real Voices. Credible Endorsements. Measurable Conversions."
-          description="Explore creator campaigns engineered by DigiStreet Media. We marry rigorous audience vetting with captivating storytelling to turn creator engagement into profitable customer acquisition."
+          description="Explore creator campaigns engineered by Silgate Media. We marry rigorous audience vetting with captivating storytelling to turn creator engagement into profitable customer acquisition."
           breadcrumbs={[
-            { label: 'Services', link: '/services' },
-            { label: 'Influencer Marketing Agency', link: '/services/influencer-marketing-agency' },
-            { label: 'Influencer Portfolio' }
+            { label: "Services", link: "/services" },
+            {
+              label: "Influencer Marketing Agency",
+              link: "/services/influencer-marketing-agency",
+            },
+            { label: "Influencer Portfolio" },
           ]}
           primaryCtaText="Launch Creator Campaign"
           primaryCtaLink="/contact"
@@ -66,7 +76,7 @@ export default function InfluencerPortfolio() {
             { value: "2,500+", label: "Vetted Creators in Network" },
             { value: "150M+", label: "Video Views Generated" },
             { value: "4.2x", label: "Average Campaign ROAS" },
-            { value: "100%", label: "Brand-Safety Audited" }
+            { value: "100%", label: "Brand-Safety Audited" },
           ]}
         />
 
@@ -74,11 +84,14 @@ export default function InfluencerPortfolio() {
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {campaigns.map((c, idx) => (
-                <div key={idx} className="group rounded-3xl overflow-hidden border border-zinc-200 bg-[#FAF9F6] shadow-sm hover:shadow-xl transition-all duration-300">
+                <div
+                  key={idx}
+                  className="group rounded-3xl overflow-hidden border border-zinc-200 bg-[#FAF9F6] shadow-sm hover:shadow-xl transition-all duration-300"
+                >
                   <div className="aspect-[16/9] overflow-hidden bg-zinc-900 relative">
-                    <img 
-                      src={c.image} 
-                      alt={c.title} 
+                    <img
+                      src={c.image}
+                      alt={c.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute top-4 left-4 bg-white/95 text-black text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
@@ -102,7 +115,7 @@ export default function InfluencerPortfolio() {
           </div>
         </section>
 
-        <CTA 
+        <CTA
           title="Ready to harness creator influence for your brand?"
           description="We'll curate an exclusive roster of vetted creators tailored to your demographic and growth target."
         />

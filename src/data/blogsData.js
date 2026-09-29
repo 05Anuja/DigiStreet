@@ -13,10 +13,10 @@ export const BLOG_POSTS = [
   {
     slug: 'brand-packaging-design-beauty-brands-us-retail-market',
     title: 'Brand packaging design for beauty brands entering the US retail market',
-    excerpt: 'Digistreet explains how brand packaging design for beauty brands entering the US retail market wins shelf attention and passes compliance checks.',
+    excerpt: 'Silgate explains how brand packaging design for beauty brands entering the US retail market wins shelf attention and passes compliance checks.',
     image: imgPackaging,
     date: 'September 24, 2026',
-    author: 'DigiStreet Media Editorial',
+    author: 'Silgate Media Editorial',
     readTime: '6 min read',
     category: 'Branding & Packaging',
     sections: [
@@ -41,7 +41,7 @@ export const BLOG_POSTS = [
   {
     slug: 'corporate-films-real-estate-developers-dubai',
     title: 'Corporate films for real estate developers in Dubai',
-    excerpt: 'Digistreet explains how corporate films for real estate developers in Dubai build the trust that turns international buyers into booked sales.',
+    excerpt: 'Silgate explains how corporate films for real estate developers in Dubai build the trust that turns international buyers into booked sales.',
     image: imgDubai,
     date: 'September 20, 2026',
     author: 'Video Production Pod',
@@ -61,7 +61,7 @@ export const BLOG_POSTS = [
   {
     slug: 'search-advertising-professional-services-new-york',
     title: 'Search advertising for professional services firms in New York',
-    excerpt: 'Digistreet explains how search advertising for professional services firms in New York turns costly clicks into qualified client consultations.',
+    excerpt: 'Silgate explains how search advertising for professional services firms in New York turns costly clicks into qualified client consultations.',
     image: imgSearch,
     date: 'September 16, 2026',
     author: 'PPC & Search Team',
@@ -81,7 +81,7 @@ export const BLOG_POSTS = [
   {
     slug: 'lead-based-campaigns-interior-design-melbourne',
     title: 'Lead-based campaigns for interior design studios in Melbourne',
-    excerpt: 'Digistreet explains how lead-based campaigns for interior design studios in Melbourne bring qualified project enquiries instead of browsing traffic.',
+    excerpt: 'Silgate explains how lead-based campaigns for interior design studios in Melbourne bring qualified project enquiries instead of browsing traffic.',
     image: imgMelbourne,
     date: 'September 12, 2026',
     author: 'Performance Marketing Team',
@@ -97,7 +97,7 @@ export const BLOG_POSTS = [
   {
     slug: 'web-app-development-fintech-startups-bangalore',
     title: 'Web app development for fintech startups in Bangalore',
-    excerpt: 'Digistreet explains how web app development for fintech startups in Bangalore balances speed to market with RBI compliance, security, and scale.',
+    excerpt: 'Silgate explains how web app development for fintech startups in Bangalore balances speed to market with RBI compliance, security, and scale.',
     image: imgFintech,
     date: 'September 08, 2026',
     author: 'Web & Engineering Pod',
@@ -113,7 +113,7 @@ export const BLOG_POSTS = [
   {
     slug: 'managed-it-services-for-small-and-medium-businesses-in-the-uk',
     title: 'Managed IT services for small and medium businesses in the UK',
-    excerpt: 'Digistreet explains how managed IT services for small and medium businesses in the UK reduce downtime, strengthen security, and control costs.',
+    excerpt: 'Silgate explains how managed IT services for small and medium businesses in the UK reduce downtime, strengthen security, and control costs.',
     image: imgUkIt,
     date: 'September 04, 2026',
     author: 'IT Services Team',
@@ -129,7 +129,7 @@ export const BLOG_POSTS = [
   {
     slug: 'brand-strategy-indian-d2c-startups-international-markets',
     title: 'Brand strategy for Indian D2C startups entering international markets',
-    excerpt: 'Digistreet explains how brand strategy for Indian D2C startups entering international markets turns home-market success into global growth.',
+    excerpt: 'Silgate explains how brand strategy for Indian D2C startups entering international markets turns home-market success into global growth.',
     image: imgD2c,
     date: 'August 30, 2026',
     author: 'Brand Strategy Team',
