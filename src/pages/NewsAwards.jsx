@@ -98,13 +98,13 @@ export default function NewsAwards() {
         />
 
         {/* Major Awards Section */}
-        <section className="py-20 bg-white border-b border-zinc-200/80">
+        <section className="py-20 bg-white border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-3xl mb-12">
-              <div className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider mb-3">
                 Honors & Accolades
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
                 Industry Recognition
               </h2>
             </div>
@@ -113,27 +113,27 @@ export default function NewsAwards() {
               {awards.map((award, i) => (
                 <div
                   key={i}
-                  className="p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200/90 shadow-sm flex flex-col justify-between space-y-4"
+                  className="p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200/90 shadow-sm flex flex-col justify-between space-y-4"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-4 mb-3">
-                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-zinc-200/80 text-zinc-800">
+                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-zinc-200/80 text-slate-800">
                         {award.issuer} · {award.year}
                       </span>
-                      <Trophy className="w-5 h-5 text-[#FFDF01]" />
+                      <Trophy className="w-5 h-5 text-[#F36C3D]" />
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 mb-2">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">
                       {award.title}
                     </h3>
 
-                    <p className="text-sm text-zinc-600 leading-relaxed">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       {award.desc}
                     </p>
                   </div>
 
                   {award.badge && (
-                    <div className="pt-4 border-t border-zinc-200 flex items-center">
+                    <div className="pt-4 border-t border-slate-200 flex items-center">
                       <img
                         src={award.badge}
                         alt={award.title}
@@ -148,13 +148,13 @@ export default function NewsAwards() {
         </section>
 
         {/* Press & Media Features */}
-        <section className="py-20 bg-[#FAF9F6] border-b border-zinc-200/80">
+        <section className="py-20 bg-[#F8FAFC] border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-3xl mb-12">
-              <div className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider mb-3">
                 In The Headlines
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
                 Featured Across National Press
               </h2>
             </div>
@@ -163,7 +163,7 @@ export default function NewsAwards() {
               {press.map((item, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl bg-white border border-zinc-200 shadow-sm flex flex-col justify-between"
+                  className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between"
                 >
                   <div>
                     <div className="h-8 mb-4 flex items-center">
@@ -174,17 +174,17 @@ export default function NewsAwards() {
                           className="max-h-full max-w-[140px] object-contain"
                         />
                       ) : (
-                        <span className="font-bold text-sm text-zinc-800">
+                        <span className="font-bold text-sm text-slate-800">
                           {item.outlet}
                         </span>
                       )}
                     </div>
-                    <p className="text-xs sm:text-sm font-medium text-zinc-800 leading-snug">
+                    <p className="text-xs sm:text-sm font-medium text-slate-800 leading-snug">
                       "{item.headline}"
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-zinc-100 text-xs font-semibold text-zinc-500">
+                  <div className="pt-4 mt-4 border-t border-zinc-100 text-xs font-semibold text-slate-500">
                     Press Coverage
                   </div>
                 </div>

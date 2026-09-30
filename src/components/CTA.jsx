@@ -6,7 +6,7 @@ import Button from './Button';
 export default function CTA({
   badge = 'Accelerate Your Growth',
   title = "Ready to build something unforgettable?",
-  description = "Partner with India's award-winning digital marketing and creative agency. Get tailored performance strategies, creative excellence, and measurable business growth.",
+  description = "Partner with Silgate Solutions. Get tailored performance strategies, enterprise web architecture, creative excellence, and measurable business growth.",
   primaryText = "Discuss Your Brief",
   primaryLink = "/contact",
   secondaryText = "Call +91 81088 10916",
@@ -14,15 +14,15 @@ export default function CTA({
   dark = true,
 }) {
   return (
-    <section className={`py-16 sm:py-24 relative overflow-hidden ${dark ? 'bg-[#0d0d0d] text-white' : 'bg-[#F7F6F2] text-zinc-900'}`}>
-      {/* Decorative gradient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#FFDF01]/10 blur-[120px] rounded-full pointer-events-none"></div>
+    <section className={`py-16 sm:py-24 relative overflow-hidden ${dark ? 'bg-[#091E3A] text-white border-t border-[#132C4E]' : 'bg-[#F8FAFC] text-slate-900 border-t border-slate-200'}`}>
+      {/* Decorative swoosh-inspired gradient glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[320px] bg-gradient-to-r from-[#00529B]/25 via-[#F36C3D]/20 to-[#F6C84A]/15 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-8 text-center relative z-10">
         
         {badge && (
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-6 border border-white/10">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-white/10 backdrop-blur-sm text-[#F6C84A] text-xs font-semibold uppercase tracking-wider mb-6 border border-white/15">
+            <Sparkles className="w-3.5 h-3.5 text-[#F6C84A]" />
             <span>{badge}</span>
           </div>
         )}
@@ -31,16 +31,16 @@ export default function CTA({
           {title}
         </h2>
 
-        <p className={`text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed ${dark ? 'text-zinc-400' : 'text-zinc-600'}`}>
+        <p className={`text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed ${dark ? 'text-slate-300' : 'text-slate-600'}`}>
           {description}
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button to={primaryLink} variant="yellow" size="lg">
+          <Button to={primaryLink} variant="orange" size="lg">
             {primaryText}
           </Button>
           {secondaryHref && (
-            <Button href={secondaryHref} variant={dark ? 'darkOutline' : 'outline'} size="lg" icon="right">
+            <Button href={secondaryHref} variant={dark ? 'darkOutline' : 'secondary'} size="lg" icon="right">
               {secondaryText}
             </Button>
           )}

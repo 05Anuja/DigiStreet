@@ -146,15 +146,15 @@ export default function Careers() {
         <section className="py-20 bg-white border-b border-zinc-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-3xl mb-12">
-              <div className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#00529B]/10 text-[#00529B] border border-[#00529B]/20 text-xs font-semibold uppercase tracking-wider mb-3">
                 Our Culture
               </div>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 mb-4">
-                Life as a Digian
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mb-4">
+                Life at Silgate
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 We sweat the craft, ship work we’re proud of, and make sure
-                every Digian has the room to grow, lead, and have fun doing it.
+                every team member has the room to grow, lead, and have fun doing it.
               </p>
             </div>
 
@@ -189,7 +189,7 @@ export default function Careers() {
             {/* Perks grid */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12 pt-8 border-t border-zinc-100">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#FFDF01]/20 text-black flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#00529B]/10 text-[#00529B] flex items-center justify-center flex-shrink-0">
                   <Zap className="w-5 h-5" />
                 </div>
                 <div>
@@ -203,7 +203,7 @@ export default function Careers() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#FFDF01]/20 text-black flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#00529B]/10 text-[#00529B] flex items-center justify-center flex-shrink-0">
                   <TrendingUp className="w-5 h-5" />
                 </div>
                 <div>
@@ -217,7 +217,7 @@ export default function Careers() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#FFDF01]/20 text-black flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#00529B]/10 text-[#00529B] flex items-center justify-center flex-shrink-0">
                   <Coffee className="w-5 h-5" />
                 </div>
                 <div>
@@ -231,7 +231,7 @@ export default function Careers() {
               </div>
 
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#FFDF01]/20 text-black flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#00529B]/10 text-[#00529B] flex items-center justify-center flex-shrink-0">
                   <Heart className="w-5 h-5" />
                 </div>
                 <div>
@@ -254,10 +254,10 @@ export default function Careers() {
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-2xl mb-12">
-              <div className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#00529B]/10 text-[#00529B] border border-[#00529B]/20 text-xs font-semibold uppercase tracking-wider mb-3">
                 Current Openings
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
                 Join our team in Noida, India
               </h2>
             </div>
@@ -266,36 +266,36 @@ export default function Careers() {
               {jobs.map((job, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl p-6 sm:p-8 border border-zinc-200/90 hover:border-black transition-all shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-6"
+                  className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 hover:border-[#00529B] transition-all shadow-sm hover:shadow-md flex flex-col lg:flex-row lg:items-center justify-between gap-6"
                 >
                   <div className="space-y-3 max-w-3xl">
                     <div className="flex items-center gap-3 flex-wrap">
-                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-700">
+                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-[#00529B]">
                         {job.exp}
                       </span>
-                      <span className="text-xs font-medium text-zinc-500 flex items-center gap-1">
+                      <span className="text-xs font-medium text-slate-500 flex items-center gap-1">
                         <MapPin className="w-3.5 h-3.5" />
                         <span>{job.location}</span>
                       </span>
-                      <span className="text-xs font-medium text-zinc-500 flex items-center gap-1">
+                      <span className="text-xs font-medium text-slate-500 flex items-center gap-1">
                         <Clock className="w-3.5 h-3.5" />
                         <span>{job.type}</span>
                       </span>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold text-zinc-900">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                       {job.title}
                     </h3>
 
-                    <p className="text-sm text-zinc-600 leading-relaxed">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       {job.description}
                     </p>
 
                     <div className="pt-2">
-                      <div className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">
+                      <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
                         Key Focus:
                       </div>
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-zinc-600">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-slate-600">
                         {job.responsibilities.map((r, i) => (
                           <li key={i} className="flex items-center gap-2">
                             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
@@ -310,10 +310,10 @@ export default function Careers() {
                     <a
                       href="#apply-form"
                       onClick={() => setSelectedJob(job.title)}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white text-xs font-semibold hover:bg-zinc-800 transition-colors"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#00529B] text-white text-xs font-semibold hover:bg-[#F36C3D] transition-colors shadow-sm"
                     >
                       <span>Apply For This Role</span>
-                      <ArrowUpRight className="w-4 h-4 text-[#FFDF01]" />
+                      <ArrowUpRight className="w-4 h-4 text-[#F6C84A]" />
                     </a>
                   </div>
                 </div>

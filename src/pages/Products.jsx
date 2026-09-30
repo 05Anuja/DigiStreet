@@ -64,22 +64,22 @@ export default function Products() {
               {products.map((p, i) => (
                 <div
                   key={i}
-                  className="p-8 sm:p-10 rounded-3xl bg-[#FAF9F6] border border-zinc-200/90 hover:border-black transition-all flex flex-col justify-between"
+                  className="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200/90 hover:border-[#00529B] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div className="space-y-4">
                     <span className="badge-new">{p.badge}</span>
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-zinc-900">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 group-hover:text-[#00529B] transition-colors">
                       {p.name}
                     </h3>
-                    <p className="text-sm text-zinc-600 leading-relaxed">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       {p.desc}
                     </p>
 
-                    <div className="pt-4 border-t border-zinc-200">
-                      <div className="text-xs font-bold uppercase tracking-wider text-zinc-400 mb-3">
+                    <div className="pt-4 border-t border-slate-100">
+                      <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
                         Key Capabilities
                       </div>
-                      <ul className="space-y-2 text-xs sm:text-sm text-zinc-700">
+                      <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
                         {p.features.map((f, fi) => (
                           <li key={fi} className="flex items-center gap-2">
                             <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
@@ -90,7 +90,7 @@ export default function Products() {
                     </div>
                   </div>
 
-                  <div className="pt-8 mt-8 border-t border-zinc-200 flex items-center justify-between">
+                  <div className="pt-8 mt-8 border-t border-slate-100 flex items-center justify-between">
                     <Button to={p.link} variant="primary" size="sm">
                       Explore {p.name.split(" ")[0]}
                     </Button>

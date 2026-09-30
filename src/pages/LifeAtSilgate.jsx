@@ -58,15 +58,15 @@ export default function LifeAtSilgate() {
         />
 
         {/* Culture Narrative Section */}
-        <section className="py-20 bg-white border-b border-zinc-200/80">
+        <section className="py-20 bg-white border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-6 space-y-6">
                 <span className="badge-new">What It Means to Be a Digian</span>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight leading-tight">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
                   Where Curiosity Meets Craft and Camaraderie
                 </h2>
-                <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                   Silgate isn’t just an agency; it’s an incubator for restless
                   dreamers and analytical minds. We foster an environment where
                   juniors challenge seniors, wild ideas get tested on live
@@ -75,28 +75,28 @@ export default function LifeAtSilgate() {
                 </p>
                 <div className="space-y-3 pt-2">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#FFDF01]/20 flex items-center justify-center font-bold text-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#EBF3FB] flex items-center justify-center font-bold text-[#00529B] text-sm flex-shrink-0">
                       ✓
                     </div>
                     <div>
-                      <h4 className="font-bold text-zinc-900 text-sm">
+                      <h4 className="font-bold text-slate-900 text-sm">
                         Freedom to Experiment
                       </h4>
-                      <p className="text-xs text-zinc-500">
+                      <p className="text-xs text-slate-500">
                         Every team member has dedicated R&D time to test new
                         generative AI tools, viral formats, and automation.
                       </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-[#FFDF01]/20 flex items-center justify-center font-bold text-black text-sm flex-shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-[#EBF3FB] flex items-center justify-center font-bold text-[#00529B] text-sm flex-shrink-0">
                       ✓
                     </div>
                     <div>
-                      <h4 className="font-bold text-zinc-900 text-sm">
+                      <h4 className="font-bold text-slate-900 text-sm">
                         Zero Hierarchical Friction
                       </h4>
-                      <p className="text-xs text-zinc-500">
+                      <p className="text-xs text-slate-500">
                         Our founders and directors sit right on the floor with
                         everyone. The best idea always wins, regardless of
                         title.
@@ -107,7 +107,7 @@ export default function LifeAtSilgate() {
               </div>
 
               <div className="lg:col-span-6">
-                <div className="rounded-3xl overflow-hidden border border-zinc-200 shadow-xl bg-zinc-900">
+                <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-zinc-900">
                   <img
                     src={gallery16}
                     alt="Silgate Celebration"
@@ -120,13 +120,13 @@ export default function LifeAtSilgate() {
         </section>
 
         {/* Gallery Section */}
-        <section className="py-20 bg-[#FAF9F6] border-b border-zinc-200/80">
+        <section className="py-20 bg-[#F8FAFC] border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="text-center max-w-2xl mx-auto mb-14">
-              <div className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider mb-3">
                 Memories in Frames
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
                 Moments That Define Silgate
               </h2>
             </div>
@@ -135,7 +135,7 @@ export default function LifeAtSilgate() {
               {galleryPhotos.map((photo, i) => (
                 <div
                   key={i}
-                  className="group bg-white rounded-3xl overflow-hidden border border-zinc-200 shadow-sm hover:shadow-xl transition-all"
+                  className="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all"
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-zinc-100">
                     <img
@@ -147,7 +147,7 @@ export default function LifeAtSilgate() {
                       }}
                     />
                   </div>
-                  <div className="p-4 text-xs font-medium text-zinc-700 text-center">
+                  <div className="p-4 text-xs font-medium text-slate-700 text-center">
                     {photo.caption}
                   </div>
                 </div>

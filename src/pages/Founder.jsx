@@ -17,7 +17,7 @@ export default function Founder() {
         <Hero
           badge="Leadership Profile"
           title="Meet Our Founder: Kavish Arora"
-          subtitle="Co-Founder & COO, Silgate Media Pvt. Ltd."
+          subtitle="Co-Founder & COO, Silgate Solutions"
           description="A seasoned digital marketing strategist, operational architect, and brand visionary driving high-growth narratives and enterprise digital transformation for over 14 years."
           breadcrumbs={[
             { label: "About Us", link: "/about" },
@@ -40,10 +40,10 @@ export default function Founder() {
                     className="w-full h-auto object-cover"
                   />
                   <div className="p-6 bg-white border-t border-zinc-100">
-                    <h3 className="text-xl font-bold text-zinc-900">
+                    <h3 className="text-xl font-bold text-slate-900">
                       Kavish Arora
                     </h3>
-                    <div className="text-xs font-semibold text-[#c7a900] uppercase tracking-wider mb-4">
+                    <div className="text-xs font-semibold text-[#00529B] uppercase tracking-wider mb-4">
                       Co-Founder & Chief Operating Officer
                     </div>
 
@@ -52,13 +52,13 @@ export default function Founder() {
                         href="https://in.linkedin.com/company/Silgate-media-pvt-ltd"
                         target="_blank"
                         rel="noreferrer"
-                        className="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-700 hover:bg-black hover:text-white transition-colors"
+                        className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-[#00529B] hover:text-white transition-colors"
                       >
                         <Linkedin className="w-4 h-4" />
                       </a>
                       <a
                         href="mailto:manoj@silgatehiring.com"
-                        className="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-700 hover:bg-black hover:text-white transition-colors"
+                        className="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-[#00529B] hover:text-white transition-colors"
                       >
                         <Mail className="w-4 h-4" />
                       </a>
@@ -70,22 +70,22 @@ export default function Founder() {
               <div className="lg:col-span-7 space-y-8">
                 <div className="space-y-4">
                   <span className="badge-new">Strategic Leadership</span>
-                  <h2 className="text-3xl font-extrabold text-zinc-900 tracking-tight leading-tight">
+                  <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
                     "Great marketing doesn't just sell a product once; it
                     cements an enduring relationship that compounds over time."
                   </h2>
-                  <p className="text-base text-zinc-600 leading-relaxed">
+                  <p className="text-base text-slate-600 leading-relaxed">
                     With an entrepreneurial background spanning over a decade in
                     media, digital engineering, and marketing communications,
-                    Kavish co-founded Silgate Media to break the conventional
+                    Kavish co-founded Silgate Solutions to break the conventional
                     agency mold. Under his leadership, Silgate has grown from a
                     boutique Delhi NCR setup into an internationally recognized
                     full-stack agency managing campaigns across four continents.
                   </p>
                 </div>
 
-                <div className="p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200/80 space-y-4">
-                  <h3 className="text-xl font-bold text-zinc-900">
+                <div className="p-8 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-4">
+                  <h3 className="text-xl font-bold text-slate-900">
                     Core Areas of Focus
                   </h3>
                   <ul className="space-y-3 text-sm text-zinc-700">

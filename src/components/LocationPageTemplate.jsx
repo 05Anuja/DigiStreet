@@ -60,48 +60,48 @@ export default function LocationPageTemplate({
 
         {/* Localized Insights Section */}
         {localInsightsText && (
-          <section className="py-20 bg-white border-b border-zinc-200/80">
+          <section className="py-20 bg-white border-b border-slate-200/80">
             <div className="max-w-7xl mx-auto px-4 sm:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div className="lg:col-span-7 space-y-6">
                   <span className="badge-new">Local Market Mastery</span>
-                  <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight leading-tight">
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
                     {localInsightsTitle ||
-                      `Why ${cityName} Businesses Partner with Silgate Media`}
+                      `Why ${cityName} Businesses Partner with Silgate Solutions`}
                   </h2>
-                  <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                     {localInsightsText}
                   </p>
                 </div>
 
                 <div
                   id="contact-box"
-                  className="lg:col-span-5 p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200 space-y-4"
+                  className="lg:col-span-5 p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200 space-y-4 shadow-sm"
                 >
-                  <div className="flex items-center gap-2 text-zinc-900 font-bold text-lg">
-                    <MapPin className="w-5 h-5 text-[#FFDF01]" />
+                  <div className="flex items-center gap-2 text-slate-900 font-bold text-lg">
+                    <MapPin className="w-5 h-5 text-[#F36C3D]" />
                     <span>{cityName} Regional Hub</span>
                   </div>
                   {officeAddress && (
-                    <p className="text-xs text-zinc-600 leading-relaxed">
+                    <p className="text-xs text-slate-600 leading-relaxed">
                       {officeAddress}
                     </p>
                   )}
-                  <div className="space-y-1 text-xs pt-2 border-t border-zinc-200">
-                    <div className="flex items-center gap-2 text-zinc-700">
-                      <Phone className="w-4 h-4 text-[#FFDF01]" />
+                  <div className="space-y-1 text-xs pt-2 border-t border-slate-200">
+                    <div className="flex items-center gap-2 text-slate-700">
+                      <Phone className="w-4 h-4 text-[#00529B]" />
                       <a
                         href={`tel:${phone.replace(/\s+/g, "")}`}
-                        className="font-semibold hover:underline"
+                        className="font-semibold hover:text-[#00529B] hover:underline"
                       >
                         {phone}
                       </a>
                     </div>
-                    <div className="flex items-center gap-2 text-zinc-700">
-                      <Mail className="w-4 h-4 text-[#FFDF01]" />
+                    <div className="flex items-center gap-2 text-slate-700">
+                      <Mail className="w-4 h-4 text-[#00529B]" />
                       <a
                         href={`mailto:${email}`}
-                        className="font-semibold hover:underline"
+                        className="font-semibold hover:text-[#00529B] hover:underline"
                       >
                         {email}
                       </a>
@@ -127,14 +127,14 @@ export default function LocationPageTemplate({
         {services.length > 0 && (
           <section
             id="services"
-            className="py-20 bg-[#FAF9F6] border-b border-zinc-200/80"
+            className="py-20 bg-[#F8FAFC] border-b border-slate-200/80"
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-8">
               <div className="max-w-3xl mb-12">
                 <span className="badge-new mb-2">
                   Capabilities in {cityName}
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
                   Comprehensive Digital Solutions Tailored for {cityName} Brands
                 </h2>
               </div>
@@ -143,15 +143,15 @@ export default function LocationPageTemplate({
                 {services.map((s, i) => (
                   <div
                     key={i}
-                    className="p-8 rounded-3xl bg-white border border-zinc-200/90 shadow-sm space-y-3 hover:border-black/30 hover:shadow-xl transition-all"
+                    className="p-8 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-3 hover:border-[#00529B]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-black text-[#FFDF01] flex items-center justify-center font-bold">
+                    <div className="w-10 h-10 rounded-lg bg-[#00529B] text-white flex items-center justify-center font-bold">
                       0{i + 1}
                     </div>
-                    <h3 className="text-xl font-bold text-zinc-900">
+                    <h3 className="text-xl font-bold text-slate-900">
                       {s.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                       {s.desc}
                     </p>
                   </div>

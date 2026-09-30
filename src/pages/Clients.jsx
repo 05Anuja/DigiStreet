@@ -62,7 +62,7 @@ export default function Clients() {
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {clientList.map((client, idx) => (
-                <div key={idx} className="p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200/80 hover:border-black/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+                <div key={idx} className="p-8 rounded-2xl bg-white border border-slate-200/90 hover:border-[#00529B] hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
                   <div>
                     <div className="h-16 w-36 mb-6 flex items-center">
                       <img 
@@ -74,23 +74,23 @@ export default function Clients() {
                           e.target.nextSibling.style.display = 'block';
                         }}
                       />
-                      <span className="hidden font-bold text-lg text-black">{client.name}</span>
+                      <span className="hidden font-bold text-lg text-slate-900">{client.name}</span>
                     </div>
 
-                    <span className="inline-block px-2.5 py-0.5 rounded-full bg-white text-zinc-700 text-xs font-semibold mb-3 border border-zinc-200">
+                    <span className="inline-block px-2.5 py-0.5 rounded-full bg-slate-50 text-[#00529B] text-xs font-semibold mb-3 border border-[#00529B]/20">
                       {client.category}
                     </span>
 
-                    <h3 className="text-xl font-bold text-zinc-900 mb-2">
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#00529B] transition-colors mb-2">
                       {client.name}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                       {client.desc}
                     </p>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-zinc-200 flex items-center justify-between text-xs font-semibold text-black">
+                  <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-700">
                     <span>Verified Partnership</span>
                     <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                   </div>

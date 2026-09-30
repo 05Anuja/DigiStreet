@@ -54,27 +54,27 @@ export default function BlogDetails() {
             </nav>
 
             <div className="space-y-4 mb-8">
-              <span className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider">
+              <span className="inline-block px-3 py-1 rounded-full bg-[#00529B]/10 text-[#00529B] border border-[#00529B]/20 text-xs font-semibold uppercase tracking-wider">
                 {post.category}
               </span>
 
-              <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 leading-tight">
+              <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
                 {post.title}
               </h1>
 
-              <div className="flex flex-wrap items-center gap-4 text-xs text-zinc-500 pt-2 border-y border-zinc-100 py-3">
-                <span className="flex items-center gap-1.5 font-medium text-zinc-800">
-                  <User className="w-3.5 h-3.5 text-zinc-400" />
-                  <span>{post.author || "Silgate Media"}</span>
+              <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500 pt-2 border-y border-slate-100 py-3">
+                <span className="flex items-center gap-1.5 font-medium text-slate-800">
+                  <User className="w-3.5 h-3.5 text-slate-400" />
+                  <span>{post.author || "Silgate Solutions"}</span>
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-zinc-400" />
+                  <Calendar className="w-3.5 h-3.5 text-[#F36C3D]" />
                   <span>{post.date}</span>
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1.5">
-                  <Clock className="w-3.5 h-3.5 text-zinc-400" />
+                  <Clock className="w-3.5 h-3.5 text-slate-400" />
                   <span>{post.readTime}</span>
                 </span>
               </div>
@@ -91,7 +91,7 @@ export default function BlogDetails() {
 
             {/* Article Body */}
             <div className="prose prose-zinc max-w-none text-zinc-700 leading-relaxed text-base space-y-8">
-              <div className="p-6 rounded-2xl bg-[#FAF9F6] border-l-4 border-black text-base text-zinc-800 font-medium italic">
+              <div className="p-6 rounded-2xl bg-slate-50 border-l-4 border-[#00529B] text-base text-slate-800 font-medium italic">
                 "{post.excerpt}"
               </div>
 
@@ -141,13 +141,13 @@ export default function BlogDetails() {
             <div className="mt-12 pt-8 border-t border-zinc-200 flex items-center justify-between">
               <Link
                 to="/blog"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-700 hover:text-black"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-[#00529B] transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>Back to All Insights</span>
               </Link>
-              <div className="flex items-center gap-2 text-xs text-zinc-400">
-                <span>Published by Silgate Media Pvt Ltd</span>
+              <div className="flex items-center gap-2 text-xs text-slate-400">
+                <span>Published by Silgate Solutions</span>
               </div>
             </div>
           </div>

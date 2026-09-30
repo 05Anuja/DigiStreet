@@ -24,20 +24,20 @@ export default function AuditForm({ title = "Get a Free SEO and Digital Audit fo
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-white border-b border-zinc-200/80" id="audit-form">
+    <section className="py-16 sm:py-24 bg-white border-b border-slate-200/80" id="audit-form">
       <div className="max-w-5xl mx-auto px-4 sm:px-8">
         
-        <div className="bg-[#FAF9F6] border border-zinc-200/90 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-xl">
+        <div className="bg-[#F8FAFC] border border-slate-200/90 rounded-2xl p-8 sm:p-12 lg:p-16 shadow-lg">
           
           <div className="max-w-2xl mx-auto text-center mb-10">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider mb-4">
+              <Sparkles className="w-3.5 h-3.5 text-[#F36C3D]" />
               <span>Complimentary Audit</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 mb-3">
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-3">
               {title}
             </h2>
-            <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
               {subtitle}
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function AuditForm({ title = "Get a Free SEO and Digital Audit fo
                     placeholder="e.g. Rahul Sharma"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-black text-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#00529B] focus:border-[#00529B] text-sm text-slate-800"
                   />
                 </div>
 
@@ -80,7 +80,7 @@ export default function AuditForm({ title = "Get a Free SEO and Digital Audit fo
                     placeholder="e.g. rahul@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-black text-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#00529B] focus:border-[#00529B] text-sm text-slate-800"
                   />
                 </div>
 
@@ -94,7 +94,7 @@ export default function AuditForm({ title = "Get a Free SEO and Digital Audit fo
                     placeholder="e.g. +91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-black text-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#00529B] focus:border-[#00529B] text-sm text-slate-800"
                   />
                 </div>
 
@@ -108,7 +108,7 @@ export default function AuditForm({ title = "Get a Free SEO and Digital Audit fo
                     placeholder="e.g. https://yourbrand.com"
                     value={formData.website}
                     onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-black text-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#00529B] focus:border-[#00529B] text-sm text-slate-800"
                   />
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function AuditForm({ title = "Get a Free SEO and Digital Audit fo
                 <select 
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-black text-sm"
+                  className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#00529B] focus:border-[#00529B] text-sm text-slate-800"
                 >
                   <option value="SEO & Organic Growth">SEO & Organic Growth (Rankings & Traffic)</option>
                   <option value="Performance Marketing">Performance Marketing & PPC (ROI & ROAS)</option>
@@ -141,7 +141,7 @@ export default function AuditForm({ title = "Get a Free SEO and Digital Audit fo
                   placeholder="Share current challenges, target geography, timeline, or key objectives..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white focus:outline-none focus:ring-2 focus:ring-black text-sm"
+                  className="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#00529B] focus:border-[#00529B] text-sm text-slate-800"
                 ></textarea>
               </div>
 

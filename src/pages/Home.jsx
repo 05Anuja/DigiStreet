@@ -236,7 +236,7 @@ export default function Home() {
 
   const homeFaqs = [
     {
-      q: "What makes DigiStreet Media different from other digital marketing agencies?",
+      q: "What makes Silgate Solutions different from other digital marketing agencies?",
       a: "DigiStreet combines creative storytelling with ruthless performance engineering. While most agencies specialize in either creative design or technical marketing, we house full-stack brand strategy, high-end video production, technical SEO, and data-driven performance marketing under one roof.",
     },
     {
@@ -248,7 +248,7 @@ export default function Home() {
       a: "For Performance Marketing and Paid Ads, measurable traffic and qualified lead generation begin within the first 7 to 14 days. For organic Search Engine Optimization (SEO), noticeable rank improvements and organic traffic compounding typically materialize within 60 to 90 days.",
     },
     {
-      q: "Does DigiStreet work with international clients outside India?",
+      q: "Does Silgate Solutions work with international clients outside India?",
       a: "Yes. DigiStreet proudly manages cross-border digital campaigns and web development for clients across the United States (San Francisco, New York, Florida), the United Kingdom, Canada, Australia, Singapore, and the Middle East (Dubai, Bahrain, Saudi Arabia).",
     },
     {
@@ -266,9 +266,9 @@ export default function Home() {
           <video src={homePageVideo} autoPlay muted loop></video>
         </section>
         {/* ================= 1. HERO SECTION (Matches Live DigiStreet) ================= */}
-        <section className="relative pt-8 pb-16 sm:pt-14 sm:pb-24 overflow-hidden bg-gradient-to-b from-[#F7F6F2] via-white to-white border-b border-zinc-200/80">
-          {/* Subtle brand glow behind headline */}
-          <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#FFDF01]/15 rounded-full blur-3xl pointer-events-none"></div>
+        <section className="relative pt-10 pb-16 sm:pt-16 sm:pb-24 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-white to-white border-b border-slate-200/80">
+          {/* Subtle brand swoosh glow */}
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-[#00529B]/15 via-[#F36C3D]/12 to-[#F6C84A]/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -276,14 +276,14 @@ export default function Home() {
               <div className="lg:col-span-7 space-y-6">
                 {/* Ranking & 10 Beyond Badges */}
                 <div className="flex flex-wrap items-center gap-3">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider shadow-sm">
-                    <Award className="w-3.5 h-3.5 text-[#FFDF01]" />
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider shadow-sm">
+                    <Award className="w-3.5 h-3.5 text-[#F36C3D]" />
                     <span>
-                      Ranked as Top 20 Digital Marketing Agency of India
+                      Premier Enterprise Digital & Technology Solutions
                     </span>
                   </div>
 
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#FFF1EC] border border-[#FED7AA] text-[#F36C3D] text-xs font-bold">
                     <img
                       src={badge10Beyond}
                       alt="10 Years and Beyond"
@@ -292,35 +292,36 @@ export default function Home() {
                         e.target.style.display = "none";
                       }}
                     />
-                    <span>10+ Years & Beyond</span>
+                    <span>10+ Years of Innovation</span>
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-zinc-500">
-                    The Marcom Company
+                  <div className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#F36C3D]">
+                    ENTERPRISE DIGITAL & MARCOM SOLUTIONS
                   </div>
-                  <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-zinc-900 leading-[1.08]">
+                  <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.08]">
                     Award-Winning{" "}
-                    <span className="underline decoration-[#FFDF01] decoration-4 underline-offset-4">
-                      Digital Marketing
-                    </span>{" "}
-                    Agency in India
+                    {/* <span className="relative inline-block text-[#00529B]"> */}
+                    Digital Solutions
+                    {/* <span className="absolute bottom-1 left-0 w-full h-1.5 bg-gradient-to-r from-[#F6C84A] via-[#F36C3D] to-[#F36C3D] rounded-full"></span>
+                    </span>{" "} */}
+                    & Marketing in India
                   </h1>
                 </div>
 
-                <h2 className="text-lg sm:text-2xl font-semibold text-zinc-800 tracking-tight leading-snug">
-                  We are a Digital Marketing Agency with a Creative Strong-arm.
+                <h2 className="text-lg sm:text-2xl font-semibold text-slate-800 tracking-tight leading-snug">
+                  Transforming Global Brands with Strategic Innovation &
+                  Technology.
                 </h2>
 
-                <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-2xl">
-                  When the creativity and productivity of other agencies end, it
-                  is from where we start. We are DigiStreet, a digital marketing
-                  agency with a creative edge based in India. Our bucket is ever
-                  filled with unique marketing ideas that help brands reach
-                  unprecedented heights. Adopting a 360-degree approach, we
-                  provide creative designs, communication, content, web design,
-                  SEO, social media, and performance advertising.
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl">
+                  When the creativity and productivity of ordinary agencies end,
+                  that is from where we start. We are Silgate Solutions, an
+                  enterprise digital technology and creative solutions company
+                  based in India. Our foundation is built on strategic thinking,
+                  high-recall communication, and scalable digital architectures
+                  that help brands reach unprecedented heights.
                 </p>
 
                 {/* Primary Action Buttons */}
@@ -338,43 +339,43 @@ export default function Home() {
                   </Button>
                   <a
                     href="#audit-form"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-3 text-zinc-700 hover:text-black hover:underline"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-3 text-slate-700 hover:text-black hover:underline"
                   >
                     <span>Get Free Audit ↓</span>
                   </a>
                 </div>
 
                 {/* Key Metrics Strip (14+ Yrs, 250+ Brands, 5+ Yrs Retention, 40+ Team) */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-zinc-200">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-slate-200">
                   <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-black">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#00529B]">
                       14+
                     </div>
-                    <div className="text-xs text-zinc-500 font-medium">
+                    <div className="text-xs text-slate-500 font-medium">
                       Years Experience
                     </div>
                   </div>
                   <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-black">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#00529B]">
                       250+
                     </div>
-                    <div className="text-xs text-zinc-500 font-medium">
+                    <div className="text-xs text-slate-500 font-medium">
                       Global Brands
                     </div>
                   </div>
                   <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-black">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#00529B]">
                       5+ Yrs
                     </div>
-                    <div className="text-xs text-zinc-500 font-medium">
+                    <div className="text-xs text-slate-500 font-medium">
                       Avg. Client Retention
                     </div>
                   </div>
                   <div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-black">
+                    <div className="text-2xl sm:text-3xl font-extrabold text-[#00529B]">
                       40+
                     </div>
-                    <div className="text-xs text-zinc-500 font-medium">
+                    <div className="text-xs text-slate-500 font-medium">
                       In-House Specialists
                     </div>
                   </div>
@@ -384,7 +385,7 @@ export default function Home() {
               {/* Right Column: Hero Visual Graphic */}
               <div className="lg:col-span-5 relative">
                 <div className="relative mx-auto max-w-md lg:max-w-none">
-                  <div className="relative rounded-3xl overflow-hidden border border-zinc-200 shadow-2xl bg-zinc-900 aspect-[4/5] group">
+                  <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-2xl bg-zinc-900 aspect-[4/5] group">
                     <img
                       src={heroPoster}
                       alt="DigiStreet Media Creative Work"
@@ -408,15 +409,15 @@ export default function Home() {
                   </div>
 
                   {/* Floating Google / Silicon India Rating Card */}
-                  <div className="absolute -bottom-5 -left-5 bg-white border border-zinc-200/90 rounded-2xl p-4 shadow-xl flex items-center gap-3 hidden sm:flex">
-                    <div className="w-10 h-10 rounded-full bg-[#FFDF01] flex items-center justify-center font-bold text-black text-sm">
+                  <div className="absolute -bottom-5 -left-5 bg-white border border-slate-200/90 rounded-2xl p-4 shadow-xl flex items-center gap-3 hidden sm:flex">
+                    <div className="w-10 h-10 rounded-full bg-[#00529B] flex items-center justify-center font-bold text-white text-sm">
                       ★ 4.9
                     </div>
                     <div>
-                      <div className="text-xs font-bold text-zinc-900">
-                        Top-Rated Marcom Agency
+                      <div className="text-xs font-bold text-slate-900">
+                        Top-Rated Digital Solutions
                       </div>
-                      <div className="text-[11px] text-zinc-500">
+                      <div className="text-[11px] text-slate-500">
                         Google & SiliconIndia Certified
                       </div>
                     </div>
@@ -431,18 +432,18 @@ export default function Home() {
         <ClientMarquee title="Not just clients, they are more like partners" />
 
         {/* ================= 3. AGENCY PHILOSOPHY & INTRO ================= */}
-        <section className="py-16 sm:py-24 bg-white border-b border-zinc-200/80">
+        <section className="py-16 sm:py-24 bg-white border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-5 space-y-4">
-                <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-xs font-semibold uppercase tracking-wider">
+                <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-slate-700 text-xs font-semibold uppercase tracking-wider">
                   Agency Philosophy
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-zinc-900 leading-tight">
+                <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 leading-tight">
                   Some just talk. <br />
-                  <span className="text-[#c7a900]">Some deliver results.</span>
+                  <span className="text-[#00529B]">Some deliver results.</span>
                 </h2>
-                <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                   We don't believe in vanity metrics or empty jargon. We believe
                   in high-recall storytelling, rock-solid technical SEO
                   architectures, and media buying funnels that demonstrably grow
@@ -451,7 +452,7 @@ export default function Home() {
                 <div className="pt-2">
                   <Link
                     to="/about"
-                    className="inline-flex items-center gap-2 text-sm font-bold text-black hover:text-amber-600 group"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-black hover:text-[#F36C3D] group"
                   >
                     <span>Read About Our DNA & Philosophy</span>
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -460,53 +461,53 @@ export default function Home() {
               </div>
 
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="p-6 rounded-2xl bg-[#FAF9F6] border border-zinc-200/80 space-y-2.5 hover:border-black/30 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-black text-[#FFDF01] flex items-center justify-center">
+                <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 hover:border-[#00529B]/40 hover:shadow-lg space-y-2.5 hover:border-black/30 transition-all">
+                  <div className="w-10 h-10 rounded-lg bg-[#EBF3FB] text-[#00529B] flex items-center justify-center">
                     <Target className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold text-zinc-900">
+                  <h3 className="text-base font-bold text-slate-900">
                     Strategic Precision
                   </h3>
-                  <p className="text-xs text-zinc-600 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     Data-informed market positioning and granular customer
                     persona mapping before touching ad dollars.
                   </p>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-[#FAF9F6] border border-zinc-200/80 space-y-2.5 hover:border-black/30 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-black text-[#FFDF01] flex items-center justify-center">
+                <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 hover:border-[#00529B]/40 hover:shadow-lg space-y-2.5 hover:border-black/30 transition-all">
+                  <div className="w-10 h-10 rounded-lg bg-[#EBF3FB] text-[#00529B] flex items-center justify-center">
                     <Sparkles className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold text-zinc-900">
+                  <h3 className="text-base font-bold text-slate-900">
                     Creative Edge
                   </h3>
-                  <p className="text-xs text-zinc-600 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     National TVCs, bespoke packaging, and thumb-stopping
                     vertical content that commands instant attention.
                   </p>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-[#FAF9F6] border border-zinc-200/80 space-y-2.5 hover:border-black/30 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-black text-[#FFDF01] flex items-center justify-center">
+                <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 hover:border-[#00529B]/40 hover:shadow-lg space-y-2.5 hover:border-black/30 transition-all">
+                  <div className="w-10 h-10 rounded-lg bg-[#EBF3FB] text-[#00529B] flex items-center justify-center">
                     <Cpu className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold text-zinc-900">
+                  <h3 className="text-base font-bold text-slate-900">
                     Technical Power
                   </h3>
-                  <p className="text-xs text-zinc-600 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     Semantic search engineering, schema graphs, Core Web Vitals
                     optimization, and custom software tools.
                   </p>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-[#FAF9F6] border border-zinc-200/80 space-y-2.5 hover:border-black/30 transition-all">
-                  <div className="w-10 h-10 rounded-xl bg-black text-[#FFDF01] flex items-center justify-center">
+                <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 hover:border-[#00529B]/40 hover:shadow-lg space-y-2.5 hover:border-black/30 transition-all">
+                  <div className="w-10 h-10 rounded-lg bg-[#EBF3FB] text-[#00529B] flex items-center justify-center">
                     <TrendingUp className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold text-zinc-900">
+                  <h3 className="text-base font-bold text-slate-900">
                     Compounding Equity
                   </h3>
-                  <p className="text-xs text-zinc-600 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     Organic search rankings and brand affinity that continue
                     generating returns long after campaigns end.
                   </p>
@@ -517,16 +518,16 @@ export default function Home() {
         </section>
 
         {/* ================= 4. CORE SERVICES GRID ================= */}
-        <section className="py-20 bg-[#FAF9F6] border-b border-zinc-200/80">
+        <section className="py-20 bg-[#F8FAFC] border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-3xl mb-14">
-              <div className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider mb-3">
                 Full-Funnel Capabilities
               </div>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 mb-4">
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mb-4">
                 Full-Service Digital Solutions for Brands That Want to Win
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 From brand strategy and creative design to precision performance
                 marketing and generative AI search, our integrated teams deliver
                 measurable outcomes.
@@ -645,21 +646,21 @@ export default function Home() {
         {/* ================= 5. CLIENT WORK SHOWCASE (#hw26 / #work) ================= */}
         <section
           id="work"
-          className="py-20 bg-white border-b border-zinc-200/80"
+          className="py-20 bg-white border-b border-slate-200/80"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
               <div>
-                <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-xs font-semibold uppercase tracking-wider mb-3">
+                <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-slate-700 text-xs font-semibold uppercase tracking-wider mb-3">
                   Proven Impact
                 </div>
-                <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900">
+                <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
                   Digital Marketing Agency Work Showcase
                 </h2>
               </div>
               <Link
                 to="/clients"
-                className="text-sm font-semibold text-black hover:text-amber-600 flex items-center gap-1 group flex-shrink-0"
+                className="text-sm font-semibold text-black hover:text-[#F36C3D] flex items-center gap-1 group flex-shrink-0"
               >
                 <span>View Full Client Portfolio</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -680,8 +681,8 @@ export default function Home() {
                   onClick={() => setActiveWorkFilter(pill.id)}
                   className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
                     activeWorkFilter === pill.id
-                      ? "bg-black text-[#FFDF01] shadow-sm"
-                      : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-black"
+                      ? "bg-[#EBF3FB] text-[#00529B] border border-blue-200 shadow-sm"
+                      : "bg-slate-100 text-slate-700 hover:bg-[#EBF3FB] hover:text-[#00529B]"
                   }`}
                 >
                   {pill.label}
@@ -695,7 +696,7 @@ export default function Home() {
                 <div
                   key={item.id}
                   onClick={() => setSelectedCaseStudy(item)}
-                  className="group rounded-3xl overflow-hidden border border-zinc-200 bg-white hover:shadow-2xl transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                  className="group rounded-3xl overflow-hidden border border-slate-200 bg-white hover:shadow-2xl transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 >
                   <div>
                     <div className="aspect-[4/3] overflow-hidden bg-zinc-100 relative">
@@ -707,7 +708,7 @@ export default function Home() {
                       <span className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-black text-xs font-bold px-3 py-1 rounded-full shadow-sm">
                         {item.catLabel}
                       </span>
-                      <span className="absolute bottom-4 right-4 bg-black/85 text-[#FFDF01] text-[11px] font-bold px-3 py-1 rounded-full">
+                      <span className="absolute bottom-4 right-4 bg-[#091E3A]/90 text-[#F6C84A] border border-white/10 text-[11px] font-bold px-3 py-1 rounded-full">
                         {item.metric}
                       </span>
                     </div>
@@ -716,16 +717,16 @@ export default function Home() {
                       <div className="text-xs font-semibold uppercase tracking-wider text-amber-600 mb-1">
                         {item.client}
                       </div>
-                      <h3 className="text-xl font-bold text-zinc-900 mb-2 group-hover:text-black transition-colors">
+                      <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-black transition-colors">
                         {item.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed line-clamp-2">
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-2">
                         {item.summary}
                       </p>
                     </div>
                   </div>
 
-                  <div className="px-6 pb-6 pt-2 border-t border-zinc-100 flex items-center justify-between text-xs font-semibold text-zinc-500 group-hover:text-black">
+                  <div className="px-6 pb-6 pt-2 border-t border-zinc-100 flex items-center justify-between text-xs font-semibold text-slate-500 group-hover:text-black">
                     <span>Inspect Case Study</span>
                     <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </div>
@@ -738,7 +739,7 @@ export default function Home() {
         {/* Modal Lightbox for Project Inspection */}
         {selectedCaseStudy && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-            <div className="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-zinc-200 max-h-[90vh] flex flex-col relative">
+            <div className="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-slate-200 max-h-[90vh] flex flex-col relative">
               <button
                 onClick={() => setSelectedCaseStudy(null)}
                 className="absolute top-4 right-4 z-10 w-9 h-9 bg-black/70 hover:bg-black text-white rounded-full flex items-center justify-center transition-colors"
@@ -753,7 +754,7 @@ export default function Home() {
                   alt={selectedCaseStudy.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute bottom-3 left-4 bg-black/85 text-[#FFDF01] px-3.5 py-1 rounded-full text-xs font-bold">
+                <div className="absolute bottom-3 left-4 bg-[#091E3A]/90 text-[#F6C84A] border border-white/10 px-3.5 py-1 rounded-full text-xs font-bold">
                   {selectedCaseStudy.metric}
                 </div>
               </div>
@@ -763,12 +764,12 @@ export default function Home() {
                   <div className="text-xs font-bold uppercase tracking-wider text-amber-600">
                     {selectedCaseStudy.client} · {selectedCaseStudy.catLabel}
                   </div>
-                  <h3 className="text-2xl font-black text-zinc-900 mt-1">
+                  <h3 className="text-2xl font-black text-slate-900 mt-1">
                     {selectedCaseStudy.title}
                   </h3>
                 </div>
 
-                <p className="text-sm text-zinc-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {selectedCaseStudy.summary}
                 </p>
 
@@ -780,7 +781,7 @@ export default function Home() {
                     {selectedCaseStudy.deliverables.map((deliv, i) => (
                       <span
                         key={i}
-                        className="px-3 py-1 bg-zinc-100 text-zinc-800 text-xs font-medium rounded-full"
+                        className="px-3 py-1 bg-zinc-100 text-slate-800 text-xs font-medium rounded-full"
                       >
                         ✓ {deliv}
                       </span>
@@ -813,17 +814,17 @@ export default function Home() {
         )}
 
         {/* ================= 6. SOFTWARE & PRODUCT PLATFORMS (#rp26) ================= */}
-        <section className="py-20 bg-[#FAF9F6] border-b border-zinc-200/80">
+        <section className="py-20 bg-[#F8FAFC] border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-              <div className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider">
                 Proprietary Tech Suite
               </div>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900">
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
                 Web & mobile app development. <br />
                 Digital marketing for global brands.
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 We engineer proprietary software tools that give our client
                 brands deep ranking telemetry, brand safety monitoring, and
                 automated visibility insights.
@@ -832,7 +833,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* Product 1: RankStreet */}
-              <div className="bg-white border border-zinc-200/90 rounded-3xl p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all space-y-6">
+              <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all space-y-6">
                 <div className="flex items-center justify-between">
                   <span className="badge-new">Search Intelligence</span>
                   <div className="text-xs font-bold text-emerald-600 flex items-center gap-1">
@@ -850,10 +851,10 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-black text-zinc-900 mb-2">
+                  <h3 className="text-2xl font-black text-slate-900 mb-2">
                     RankStreet
                   </h3>
-                  <p className="text-sm text-zinc-600 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     Our flagship enterprise search intelligence platform
                     tracking millions of keywords across Google, Bing, and
                     Search Generative Experience AI overviews down to
@@ -861,7 +862,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <ul className="space-y-2 text-xs sm:text-sm text-zinc-700">
+                <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                     <span>
@@ -894,8 +895,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Product 2: DigiStreet Monitor */}
-              <div className="bg-white border border-zinc-200/90 rounded-3xl p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all space-y-6">
+              {/* Product 2: Silgate Monitor */}
+              <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-10 shadow-lg hover:shadow-xl transition-all space-y-6">
                 <div className="flex items-center justify-between">
                   <span className="badge-new">Reputation Intelligence</span>
                   <div className="text-xs font-bold text-amber-600 flex items-center gap-1">
@@ -904,16 +905,16 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-zinc-100 bg-zinc-900 flex flex-col justify-center p-8 text-white relative">
-                  <div className="absolute top-0 right-0 w-48 h-48 bg-[#FFDF01]/10 rounded-full blur-2xl"></div>
+                <div className="aspect-[16/9] rounded-2xl overflow-hidden border border-[#1E3E6B] bg-gradient-to-br from-[#091E3A] to-[#07172C] flex flex-col justify-center p-8 text-white relative">
+                  <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-[#F36C3D]/20 via-[#F6C84A]/10 to-transparent rounded-full blur-2xl"></div>
                   <div className="relative z-10 space-y-3">
-                    <div className="text-xs font-bold uppercase tracking-wider text-[#FFDF01]">
+                    <div className="text-xs font-bold uppercase tracking-wider text-[#F6C84A]">
                       Real-Time Sentiment Engine
                     </div>
                     <div className="text-2xl font-black">
                       24/7 Brand Defense
                     </div>
-                    <p className="text-xs text-zinc-300 max-w-sm">
+                    <p className="text-xs text-slate-300 max-w-sm">
                       Continuous web & social listening alerting enterprise
                       executives before negative reviews escalate.
                     </p>
@@ -921,17 +922,17 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-black text-zinc-900 mb-2">
-                    DigiStreet Monitor
+                  <h3 className="text-2xl font-black text-slate-900 mb-2">
+                    Silgate Monitor
                   </h3>
-                  <p className="text-sm text-zinc-600 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     Enterprise reputation intelligence providing real-time
                     telemetry across review sites, forums, news portals, and
                     social channels to protect your hard-won brand prestige.
                   </p>
                 </div>
 
-                <ul className="space-y-2 text-xs sm:text-sm text-zinc-700">
+                <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                     <span>
@@ -966,9 +967,9 @@ export default function Home() {
         </section>
 
         {/* ================= 7. THE CREATIVE WALL (#cw26) ================= */}
-        <section className="py-20 bg-black text-white overflow-hidden border-b border-zinc-800">
+        <section className="py-20 bg-[#07172C] text-white overflow-hidden border-b border-[#132C4E]">
           <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-10 text-center">
-            <div className="inline-block px-3 py-1 rounded-full bg-white/10 text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-3">
+            <div className="inline-block px-3 py-1 rounded-full bg-white/10 text-[#F6C84A] text-xs font-semibold uppercase tracking-wider mb-3">
               Visual Excellence
             </div>
             <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-3">
@@ -994,7 +995,7 @@ export default function Home() {
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-5 text-left">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#FFDF01] mb-1">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#F6C84A] mb-1">
                       {item.cat}
                     </span>
                     <h3 className="text-lg font-bold text-white tracking-tight">
@@ -1008,29 +1009,29 @@ export default function Home() {
         </section>
 
         {/* ================= 8. VERIFIED SEO CASE STUDIES TABLE ================= */}
-        <section className="py-20 bg-white border-b border-zinc-200/80">
+        <section className="py-20 bg-white border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-3xl mb-12">
-              <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-slate-700 text-xs font-semibold uppercase tracking-wider mb-3">
                 Measurable Impact
               </div>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 mb-3">
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mb-3">
                 SEO Case Studies & Results
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 Take a look at verified ranking and lead growth milestones
                 achieved across diverse client categories.
               </p>
             </div>
 
-            <div className="bg-[#FAF9F6] rounded-3xl border border-zinc-200/80 overflow-hidden shadow-sm">
+            <div className="bg-[#F8FAFC] rounded-3xl border border-slate-200/80 overflow-hidden shadow-sm">
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse text-sm">
                   <thead>
-                    <tr className="bg-zinc-100/70 border-b border-zinc-200 text-zinc-700 font-bold text-xs uppercase tracking-wider">
+                    <tr className="bg-zinc-100/70 border-b border-slate-200 text-slate-700 font-bold text-xs uppercase tracking-wider">
                       <th className="p-4 sm:p-5">Account Category</th>
                       <th className="p-4 sm:p-5">Primary Target Keyword</th>
-                      <th className="p-4 sm:p-5">Before DigiStreet</th>
+                      <th className="p-4 sm:p-5">Before Silgate</th>
                       <th className="p-4 sm:p-5">Current Position</th>
                       <th className="p-4 sm:p-5">Qualified Traffic Lift</th>
                       <th className="p-4 sm:p-5">Verified Lead Delta</th>
@@ -1038,10 +1039,10 @@ export default function Home() {
                   </thead>
                   <tbody className="divide-y divide-zinc-200/80">
                     <tr className="hover:bg-white transition-colors">
-                      <td className="p-4 sm:p-5 font-semibold text-zinc-900">
+                      <td className="p-4 sm:p-5 font-semibold text-slate-900">
                         National Automotive Brand
                       </td>
-                      <td className="p-4 sm:p-5 text-zinc-600">
+                      <td className="p-4 sm:p-5 text-slate-600">
                         Electric Vehicle Dealerships India
                       </td>
                       <td className="p-4 sm:p-5 text-rose-600 font-medium">
@@ -1050,7 +1051,7 @@ export default function Home() {
                       <td className="p-4 sm:p-5 text-emerald-600 font-bold">
                         #1 Google Organic
                       </td>
-                      <td className="p-4 sm:p-5 font-bold text-zinc-900">
+                      <td className="p-4 sm:p-5 font-bold text-slate-900">
                         +640%
                       </td>
                       <td className="p-4 sm:p-5 text-emerald-700 font-semibold">
@@ -1058,10 +1059,10 @@ export default function Home() {
                       </td>
                     </tr>
                     <tr className="hover:bg-white transition-colors">
-                      <td className="p-4 sm:p-5 font-semibold text-zinc-900">
+                      <td className="p-4 sm:p-5 font-semibold text-slate-900">
                         High-Ticket D2C Skincare
                       </td>
-                      <td className="p-4 sm:p-5 text-zinc-600">
+                      <td className="p-4 sm:p-5 text-slate-600">
                         Organic Retinol Serum India
                       </td>
                       <td className="p-4 sm:p-5 text-rose-600 font-medium">
@@ -1070,7 +1071,7 @@ export default function Home() {
                       <td className="p-4 sm:p-5 text-emerald-600 font-bold">
                         #2 (Above Fold)
                       </td>
-                      <td className="p-4 sm:p-5 font-bold text-zinc-900">
+                      <td className="p-4 sm:p-5 font-bold text-slate-900">
                         +490%
                       </td>
                       <td className="p-4 sm:p-5 text-emerald-700 font-semibold">
@@ -1078,10 +1079,10 @@ export default function Home() {
                       </td>
                     </tr>
                     <tr className="hover:bg-white transition-colors">
-                      <td className="p-4 sm:p-5 font-semibold text-zinc-900">
+                      <td className="p-4 sm:p-5 font-semibold text-slate-900">
                         Global IT Support & Managed Services
                       </td>
-                      <td className="p-4 sm:p-5 text-zinc-600">
+                      <td className="p-4 sm:p-5 text-slate-600">
                         Managed IT Services Provider UK
                       </td>
                       <td className="p-4 sm:p-5 text-rose-600 font-medium">
@@ -1090,7 +1091,7 @@ export default function Home() {
                       <td className="p-4 sm:p-5 text-emerald-600 font-bold">
                         #3 Google UK
                       </td>
-                      <td className="p-4 sm:p-5 font-bold text-zinc-900">
+                      <td className="p-4 sm:p-5 font-bold text-slate-900">
                         +310%
                       </td>
                       <td className="p-4 sm:p-5 text-emerald-700 font-semibold">
@@ -1098,10 +1099,10 @@ export default function Home() {
                       </td>
                     </tr>
                     <tr className="hover:bg-white transition-colors">
-                      <td className="p-4 sm:p-5 font-semibold text-zinc-900">
+                      <td className="p-4 sm:p-5 font-semibold text-slate-900">
                         Luxury Interior Surface Brands
                       </td>
-                      <td className="p-4 sm:p-5 text-zinc-600">
+                      <td className="p-4 sm:p-5 text-slate-600">
                         Italian PU Wood Coating India
                       </td>
                       <td className="p-4 sm:p-5 text-rose-600 font-medium">
@@ -1110,7 +1111,7 @@ export default function Home() {
                       <td className="p-4 sm:p-5 text-emerald-600 font-bold">
                         #1 Google Organic
                       </td>
-                      <td className="p-4 sm:p-5 font-bold text-zinc-900">
+                      <td className="p-4 sm:p-5 font-bold text-slate-900">
                         +520%
                       </td>
                       <td className="p-4 sm:p-5 text-emerald-700 font-semibold">
@@ -1125,46 +1126,46 @@ export default function Home() {
         </section>
 
         {/* ================= 9. CLIENT TESTIMONIALS ("Our clients say") ================= */}
-        <section className="py-20 bg-[#FAF9F6] border-b border-zinc-200/80">
+        <section className="py-20 bg-[#F8FAFC] border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-              <div className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider">
                 Trusted Endorsements
               </div>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900">
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
                 Our clients say
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-base">
-                Hear directly from business leaders who partnered with
-                DigiStreet to transform their category presence.
+              <p className="text-slate-600 text-sm sm:text-base">
+                Hear directly from business leaders who partnered with Silgate
+                Solutions to transform their category presence.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm flex flex-col justify-between space-y-6 hover:shadow-lg transition-all">
+              <div className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm flex flex-col justify-between space-y-6 hover:shadow-lg transition-all">
                 <div className="space-y-4">
                   <div className="flex text-amber-400 gap-1 text-sm">★★★★★</div>
-                  <p className="text-zinc-700 text-sm leading-relaxed italic">
-                    "DigiStreet has been our branding and digital powerhouse for
+                  <p className="text-slate-700 text-sm leading-relaxed italic">
+                    "Silgate has been our branding and digital powerhouse for
                     years. From high-impact TV commercials to architect
                     engagement programs, they understand how to present luxury
                     products with elegance."
                   </p>
                 </div>
                 <div className="pt-4 border-t border-zinc-100">
-                  <div className="font-bold text-zinc-900 text-sm">
+                  <div className="font-bold text-slate-900 text-sm">
                     Sanjay Agarwal
                   </div>
-                  <div className="text-xs text-zinc-500">
+                  <div className="text-xs text-slate-500">
                     Managing Director · Sirca Paints India
                   </div>
                 </div>
               </div>
 
-              <div className="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm flex flex-col justify-between space-y-6 hover:shadow-lg transition-all">
+              <div className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm flex flex-col justify-between space-y-6 hover:shadow-lg transition-all">
                 <div className="space-y-4">
                   <div className="flex text-amber-400 gap-1 text-sm">★★★★★</div>
-                  <p className="text-zinc-700 text-sm leading-relaxed italic">
+                  <p className="text-slate-700 text-sm leading-relaxed italic">
                     "Their understanding of search engine optimization and B2B
                     communication is unmatched. They don't just generate
                     arbitrary website clicks; they deliver qualified leads that
@@ -1172,30 +1173,30 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="pt-4 border-t border-zinc-100">
-                  <div className="font-bold text-zinc-900 text-sm">
+                  <div className="font-bold text-slate-900 text-sm">
                     Amit Anand
                   </div>
-                  <div className="text-xs text-zinc-500">
+                  <div className="text-xs text-slate-500">
                     Vice President · JBM Group
                   </div>
                 </div>
               </div>
 
-              <div className="p-8 rounded-3xl bg-white border border-zinc-200/80 shadow-sm flex flex-col justify-between space-y-6 hover:shadow-lg transition-all">
+              <div className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm flex flex-col justify-between space-y-6 hover:shadow-lg transition-all">
                 <div className="space-y-4">
                   <div className="flex text-amber-400 gap-1 text-sm">★★★★★</div>
-                  <p className="text-zinc-700 text-sm leading-relaxed italic">
+                  <p className="text-slate-700 text-sm leading-relaxed italic">
                     "The Omaxe Chowk digital launch was executed with meticulous
-                    attention to detail. DigiStreet created an interactive
-                    portal that conveyed the grandeur of Old Delhi's biggest
-                    commercial destination."
+                    attention to detail. Silgate created an interactive portal
+                    that conveyed the grandeur of Old Delhi's biggest commercial
+                    destination."
                   </p>
                 </div>
                 <div className="pt-4 border-t border-zinc-100">
-                  <div className="font-bold text-zinc-900 text-sm">
+                  <div className="font-bold text-slate-900 text-sm">
                     Mohit Goel
                   </div>
-                  <div className="text-xs text-zinc-500">
+                  <div className="text-xs text-slate-500">
                     Managing Director · Omaxe Ltd.
                   </div>
                 </div>
@@ -1205,21 +1206,21 @@ export default function Home() {
         </section>
 
         {/* ================= 10. THOUGHT LEADERSHIP & BLOGS ================= */}
-        <section className="py-20 bg-white border-b border-zinc-200/80">
+        <section className="py-20 bg-white border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
               <div>
-                <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-700 text-xs font-semibold uppercase tracking-wider mb-3">
+                <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-slate-700 text-xs font-semibold uppercase tracking-wider mb-3">
                   Strategic Perspectives
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-zinc-900">
+                <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">
                   An amazing thought can build a brilliant world. <br />
-                  <span className="text-[#c7a900]">Here are some of ours.</span>
+                  <span className="text-[#00529B]">Here are some of ours.</span>
                 </h2>
               </div>
               <Link
                 to="/blog"
-                className="text-sm font-semibold text-black hover:text-amber-600 flex items-center gap-1 group flex-shrink-0"
+                className="text-sm font-semibold text-black hover:text-[#F36C3D] flex items-center gap-1 group flex-shrink-0"
               >
                 <span>Read All Insights</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -1229,7 +1230,7 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Link
                 to="/blog"
-                className="group block rounded-3xl overflow-hidden border border-zinc-200/90 bg-white hover:shadow-xl transition-all"
+                className="group block rounded-3xl overflow-hidden border border-slate-200/90 bg-white hover:shadow-xl transition-all"
               >
                 <div className="aspect-[16/9] overflow-hidden bg-zinc-100">
                   <img
@@ -1242,11 +1243,11 @@ export default function Home() {
                   <span className="text-[11px] font-bold text-amber-600 uppercase tracking-wider">
                     Brand Strategy
                   </span>
-                  <h3 className="text-lg font-bold text-zinc-900 mt-2 mb-2 group-hover:text-black">
+                  <h3 className="text-lg font-bold text-slate-900 mt-2 mb-2 group-hover:text-black">
                     Why Product Packaging is the Silent Salesperson on Retail
                     Shelves
                   </h3>
-                  <p className="text-xs text-zinc-500 line-clamp-2">
+                  <p className="text-xs text-slate-500 line-clamp-2">
                     How tactile finishes, typography hierarchy, and color
                     psychology influence immediate purchasing decisions.
                   </p>
@@ -1255,7 +1256,7 @@ export default function Home() {
 
               <Link
                 to="/blog"
-                className="group block rounded-3xl overflow-hidden border border-zinc-200/90 bg-white hover:shadow-xl transition-all"
+                className="group block rounded-3xl overflow-hidden border border-slate-200/90 bg-white hover:shadow-xl transition-all"
               >
                 <div className="aspect-[16/9] overflow-hidden bg-zinc-100">
                   <img
@@ -1268,10 +1269,10 @@ export default function Home() {
                   <span className="text-[11px] font-bold text-amber-600 uppercase tracking-wider">
                     Commercial Video
                   </span>
-                  <h3 className="text-lg font-bold text-zinc-900 mt-2 mb-2 group-hover:text-black">
+                  <h3 className="text-lg font-bold text-slate-900 mt-2 mb-2 group-hover:text-black">
                     How TV Commercials & Digital Ads Multiply Each Other's ROI
                   </h3>
-                  <p className="text-xs text-zinc-500 line-clamp-2">
+                  <p className="text-xs text-slate-500 line-clamp-2">
                     Integrating broadcast media authority with hyper-targeted
                     digital retargeting funnels.
                   </p>
@@ -1280,7 +1281,7 @@ export default function Home() {
 
               <Link
                 to="/blog"
-                className="group block rounded-3xl overflow-hidden border border-zinc-200/90 bg-white hover:shadow-xl transition-all"
+                className="group block rounded-3xl overflow-hidden border border-slate-200/90 bg-white hover:shadow-xl transition-all"
               >
                 <div className="aspect-[16/9] overflow-hidden bg-zinc-100">
                   <img
@@ -1293,10 +1294,10 @@ export default function Home() {
                   <span className="text-[11px] font-bold text-amber-600 uppercase tracking-wider">
                     AI Search & GEO
                   </span>
-                  <h3 className="text-lg font-bold text-zinc-900 mt-2 mb-2 group-hover:text-black">
+                  <h3 className="text-lg font-bold text-slate-900 mt-2 mb-2 group-hover:text-black">
                     The Rise of Answer Engine Optimization (AEO) and AI Search
                   </h3>
-                  <p className="text-xs text-zinc-500 line-clamp-2">
+                  <p className="text-xs text-slate-500 line-clamp-2">
                     Adapting SEO architectures for Google SGE, Perplexity, and
                     ChatGPT citation models.
                   </p>

@@ -13,21 +13,23 @@ export default function Button({
   className = '',
   type = 'button',
 }) {
-  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-full transition-all duration-200 tracking-tight group focus:outline-none';
+  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 tracking-tight group focus:outline-none';
 
   const sizeStyles = {
-    sm: 'text-xs px-4 py-2 gap-1.5',
-    md: 'text-sm px-6 py-2.5 gap-2',
-    lg: 'text-base px-8 py-3.5 gap-2.5 font-semibold',
+    sm: 'text-xs px-3.5 py-1.5 gap-1.5 font-medium',
+    md: 'text-sm px-5 py-2.5 gap-2 font-medium',
+    lg: 'text-base px-6 py-3 gap-2.5 font-semibold',
   };
 
   const variantStyles = {
-    primary: 'bg-black text-white hover:bg-zinc-800 border border-black shadow-sm',
-    yellow: 'bg-[#FFDF01] text-black hover:bg-[#ebd000] font-semibold border border-[#FFDF01] shadow-sm',
-    outline: 'bg-transparent text-black border border-black/80 hover:bg-black hover:text-white',
-    darkOutline: 'bg-transparent text-white border border-white/60 hover:bg-white hover:text-black',
-    white: 'bg-white text-black hover:bg-zinc-100 border border-zinc-200 shadow-sm',
-    ghost: 'bg-transparent text-zinc-800 hover:text-black hover:bg-black/5',
+    primary: 'bg-[#00529B] text-white hover:bg-[#F36C3D] border border-transparent shadow-sm hover:shadow-md hover:shadow-orange-500/20',
+    secondary: 'bg-white text-[#00529B] border border-[#00529B]/30 hover:border-[#F36C3D] hover:text-[#F36C3D] hover:bg-[#FFF1EC]/40 shadow-sm',
+    orange: 'bg-[#F36C3D] text-white hover:bg-[#D95627] font-semibold border border-transparent shadow-sm hover:shadow-md hover:shadow-orange-500/20',
+    yellow: 'bg-[#F36C3D] text-white hover:bg-[#D95627] font-semibold border border-transparent shadow-sm hover:shadow-md hover:shadow-orange-500/20',
+    outline: 'bg-transparent text-[#00529B] border border-[#00529B] hover:bg-[#F36C3D] hover:text-white hover:border-[#F36C3D]',
+    darkOutline: 'bg-transparent text-white border border-white/50 hover:bg-white hover:text-[#00529B] hover:border-white shadow-sm',
+    white: 'bg-white text-[#00529B] hover:bg-slate-50 border border-slate-200 shadow-sm hover:text-[#F36C3D]',
+    ghost: 'bg-transparent text-slate-700 hover:text-[#00529B] hover:bg-[#EBF3FB]/60',
   };
 
   const IconComponent = () => {

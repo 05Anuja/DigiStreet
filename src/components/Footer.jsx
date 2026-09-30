@@ -12,35 +12,35 @@ import logoImg from "../assets/images/logo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0d0d0d] text-zinc-300 pt-16 pb-8 border-t border-zinc-800">
+    <footer className="bg-[#07172C] text-slate-300 pt-16 pb-8 border-t border-[#132C4E]">
       {/* Pre-Footer Call to Action Banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-16">
-        <div className="bg-gradient-to-r from-zinc-900 to-zinc-950 border border-zinc-800 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xl">
+        <div className="bg-gradient-to-r from-[#091E3A] to-[#0D2A50] border border-[#1E3E6B] rounded-2xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xl">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFDF01]/10 text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#00529B]/40 text-[#F6C84A] border border-[#00529B]/60 text-xs font-semibold uppercase tracking-wider mb-3">
               Let's Collaborate
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
               Let's make something great together.
             </h3>
-            <p className="text-zinc-400 mt-2 text-sm sm:text-base max-w-xl">
-              Walk the digital talk with Silgate Media. Tailored strategies,
+            <p className="text-slate-300 mt-2 text-sm sm:text-base max-w-xl">
+              Walk the digital talk with Silgate Solutions. Tailored strategies,
               relentless creativity, and proven ROI for brands that want to win.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FFDF01] text-black font-semibold text-sm hover:bg-[#ebd000] transition-colors shadow-md"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#F36C3D] text-white font-semibold text-sm hover:bg-[#D95627] transition-all shadow-md"
             >
               <span>Discuss Your Brief</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
             <a
               href="tel:+918108810916"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-zinc-800 hover:bg-zinc-700 text-white font-medium text-sm transition-colors border border-zinc-700"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#091E3A] hover:bg-[#0E2C55] text-white font-medium text-sm transition-all border border-[#1E3E6B]"
             >
-              <Phone className="w-4 h-4 text-[#FFDF01]" />
+              <Phone className="w-4 h-4 text-[#F36C3D]" />
               <span>+91 81088 10916</span>
             </a>
           </div>
@@ -49,17 +49,17 @@ export default function Footer() {
 
       {/* Main Footer Links Columns */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 pb-12 border-b border-zinc-800 text-sm">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 pb-12 border-b border-[#132C4E] text-sm">
           {/* Column 1: Search & SEO */}
           <div>
-            <h4 className="text-white font-semibold text-xs tracking-wider uppercase mb-4 text-[#FFDF01]">
+            <h4 className="text-[#F6C84A] font-bold text-xs tracking-wider uppercase mb-4">
               Search & SEO
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-zinc-400">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
               <li>
                 <Link
                   to="/services/seo-services"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   SEO Services
                 </Link>
@@ -67,7 +67,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/aeo-services-company-in-india"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   AEO Services
                 </Link>
@@ -75,7 +75,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/generative-engine-optimization-india"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   GEO Services
                 </Link>
@@ -83,7 +83,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/performance-marketing-agency"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Performance Marketing
                 </Link>
@@ -91,7 +91,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/b2b-seo-company-in-india"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   B2B SEO
                 </Link>
@@ -99,7 +99,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/local-seo-company-in-india"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Local SEO & GMB
                 </Link>
@@ -107,7 +107,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/search-engine-marketing"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   SEM & Paid Search
                 </Link>
@@ -117,14 +117,14 @@ export default function Footer() {
 
           {/* Column 2: Digital Marketing */}
           <div>
-            <h4 className="text-white font-semibold text-xs tracking-wider uppercase mb-4 text-[#FFDF01]">
+            <h4 className="text-[#F6C84A] font-bold text-xs tracking-wider uppercase mb-4">
               Digital Marketing
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-zinc-400">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
               <li>
                 <Link
                   to="/services/social-media-marketing"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Social Media Marketing
                 </Link>
@@ -132,7 +132,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/influencer-marketing-agency"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Influencer Marketing
                 </Link>
@@ -140,7 +140,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/brand-video-production-agency"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Brand Video Production
                 </Link>
@@ -148,7 +148,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/ai-video-production-agency"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   AI Generated Videos
                 </Link>
@@ -156,7 +156,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/ugc-video-agency"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   UGC Video Agency
                 </Link>
@@ -164,7 +164,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/online-reputation-management"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Reputation Management
                 </Link>
@@ -172,7 +172,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/content-marketing"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Content Marketing
                 </Link>
@@ -180,7 +180,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/ad-management"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Ad Management
                 </Link>
@@ -190,14 +190,14 @@ export default function Footer() {
 
           {/* Column 3: Creative & Web */}
           <div>
-            <h4 className="text-white font-semibold text-xs tracking-wider uppercase mb-4 text-[#FFDF01]">
+            <h4 className="text-[#F6C84A] font-bold text-xs tracking-wider uppercase mb-4">
               Creative & Web
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-zinc-400">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
               <li>
                 <Link
                   to="/services/website-development-india"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Website Development
                 </Link>
@@ -205,7 +205,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/website-development-india/corporate-website-design"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Corporate Web Design
                 </Link>
@@ -213,7 +213,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/web-application-development"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Web App Development
                 </Link>
@@ -221,7 +221,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/creative-communication"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Creative Communication
                 </Link>
@@ -229,7 +229,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/creative-communication/brand-strategy"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Brand Strategy
                 </Link>
@@ -237,7 +237,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/creative-communication/logo-identity-design"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Logo & Identity Design
                 </Link>
@@ -245,7 +245,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/services/creative-communication/product-packaging"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Product Packaging
                 </Link>
@@ -253,7 +253,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/rankstreet"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   RankStreet SEO Suite
                 </Link>
@@ -263,14 +263,14 @@ export default function Footer() {
 
           {/* Column 4: Industries */}
           <div>
-            <h4 className="text-white font-semibold text-xs tracking-wider uppercase mb-4 text-[#FFDF01]">
+            <h4 className="text-[#F6C84A] font-bold text-xs tracking-wider uppercase mb-4">
               Industries
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-zinc-400">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
               <li>
                 <Link
                   to="/automotive-digital-marketing-agency"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Automotive
                 </Link>
@@ -278,7 +278,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/beauty-skin-care-digital-marketing-agency"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Beauty & Skin Care
                 </Link>
@@ -286,7 +286,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/digital-marketing-agency-for-business-to-business"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   B2B Companies
                 </Link>
@@ -294,7 +294,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/digital-marketing-agency-for-education-industry"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Education
                 </Link>
@@ -302,7 +302,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/digital-marketing-agency-for-food-beverage"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Food & Beverage
                 </Link>
@@ -310,7 +310,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/digital-marketing-services-for-healthcare"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Healthcare
                 </Link>
@@ -318,7 +318,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/digital-marketing-agency-for-real-estate"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Real Estate
                 </Link>
@@ -326,7 +326,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/digital-marketing-for-ecommerce-2"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   E-Commerce
                 </Link>
@@ -336,14 +336,14 @@ export default function Footer() {
 
           {/* Column 5: Locations */}
           <div>
-            <h4 className="text-white font-semibold text-xs tracking-wider uppercase mb-4 text-[#FFDF01]">
+            <h4 className="text-[#F6C84A] font-bold text-xs tracking-wider uppercase mb-4">
               Locations
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-zinc-400">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
               <li>
                 <Link
                   to="/seo-company-in-delhi"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Delhi NCR Agency
                 </Link>
@@ -351,7 +351,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/social-media-marketing-agency-in-noida"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Noida Marketing
                 </Link>
@@ -359,7 +359,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/social-media-marketing-agency-in-gurgaon"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Gurgaon Marketing
                 </Link>
@@ -367,7 +367,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/seo-company-in-mumbai"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Mumbai Agency
                 </Link>
@@ -375,7 +375,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/performance-marketing-agency-in-bangalore"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Bangalore Agency
                 </Link>
@@ -383,7 +383,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/dubai-digital-marketing-agency"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Dubai, UAE
                 </Link>
@@ -391,7 +391,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/san-francisco-digital-marketing-agency"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   San Francisco, USA
                 </Link>
@@ -399,7 +399,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/uk-digital-marketing-agency"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   London, UK
                 </Link>
@@ -409,14 +409,14 @@ export default function Footer() {
 
           {/* Column 6: Company & Resources */}
           <div>
-            <h4 className="text-white font-semibold text-xs tracking-wider uppercase mb-4 text-[#FFDF01]">
+            <h4 className="text-[#F6C84A] font-bold text-xs tracking-wider uppercase mb-4">
               Company
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-zinc-400">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
               <li>
                 <Link
                   to="/about"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   About Silgate
                 </Link>
@@ -424,7 +424,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/about/life-at-Silgate"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Life at Silgate
                 </Link>
@@ -432,7 +432,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/about/credo-at-Silgate"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Our Credo
                 </Link>
@@ -440,7 +440,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/career"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Careers (Hiring!)
                 </Link>
@@ -448,7 +448,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/clients"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Clients & Partners
                 </Link>
@@ -456,25 +456,25 @@ export default function Footer() {
               <li>
                 <Link
                   to="/news-awards"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   News & Awards
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="hover:text-white transition-colors">
+                <Link to="/blog" className="hover:text-[#F36C3D] transition-colors">
                   Blog & Insights
                 </Link>
               </li>
               <li>
-                <Link to="/faq" className="hover:text-white transition-colors">
+                <Link to="/faq" className="hover:text-[#F36C3D] transition-colors">
                   FAQs
                 </Link>
               </li>
               <li>
                 <Link
                   to="/sitemap"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-[#F36C3D] transition-colors"
                 >
                   Sitemap
                 </Link>
@@ -484,58 +484,58 @@ export default function Footer() {
         </div>
 
         {/* Office Locations & Contact Grid */}
-        {/* <div className="py-10 border-b border-zinc-800 grid grid-cols-1 md:grid-cols-4 gap-6 text-xs text-zinc-400">
+        {/* <div className="py-10 border-b border-[#132C4E] grid grid-cols-1 md:grid-cols-4 gap-6 text-xs text-slate-300">
           <div>
             <div className="text-white font-semibold mb-1 flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-[#FFDF01]" />
+              <MapPin className="w-3.5 h-3.5 text-[#F36C3D]" />
               <span>Noida Office (HQ)</span>
             </div>
             <p>Express Trade Tower 2, B-36, Sector 132, Noida, Uttar Pradesh 201301</p>
           </div>
           <div>
             <div className="text-white font-semibold mb-1 flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-[#FFDF01]" />
+              <MapPin className="w-3.5 h-3.5 text-[#F36C3D]" />
               <span>Delhi Office</span>
             </div>
             <p>Dwarka, New Delhi 110045, India</p>
           </div>
           <div>
             <div className="text-white font-semibold mb-1 flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-[#FFDF01]" />
+              <MapPin className="w-3.5 h-3.5 text-[#F36C3D]" />
               <span>USA Presence</span>
             </div>
             <p>Rochester, NY, USA · Tel: +1-585-309-7815</p>
           </div>
           <div>
             <div className="text-white font-semibold mb-1 flex items-center gap-1.5">
-              <Mail className="w-3.5 h-3.5 text-[#FFDF01]" />
+              <Mail className="w-3.5 h-3.5 text-[#F36C3D]" />
               <span>Direct Inquiries</span>
             </div>
             <p className="space-y-0.5">
-              <a href="mailto:manoj@silgatehiring.com" className="hover:text-[#FFDF01] block">manoj@silgatehiring.com</a>
-              <a href="tel:+918108810916" className="hover:text-[#FFDF01] block">+91 81088 10916</a>
+              <a href="mailto:manoj@silgatehiring.com" className="hover:text-[#F36C3D] block">manoj@silgatehiring.com</a>
+              <a href="tel:+918108810916" className="hover:text-[#F36C3D] block">+91 81088 10916</a>
             </p>
           </div>
         </div> */}
 
         {/* Bottom Copyright & Social */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex items-center gap-3">
-            <Link to="/" className="inline-block">
-              <img src={logoImg} alt="Silgate" className="h-6 w-auto" />
+            <Link to="/" className="inline-flex items-center bg-white px-3 py-1.5 rounded-lg shadow-sm hover:opacity-95 transition-opacity">
+              <img src={logoImg} alt="Silgate Solutions" className="h-6 w-auto object-contain" />
             </Link>
             <span>
-              &copy; {new Date().getFullYear()} Silgate Media Pvt. Ltd. All
+              &copy; {new Date().getFullYear()} Silgate Solutions Pvt. Ltd. All
               rights reserved.
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-zinc-400">
+          <div className="flex items-center gap-4 text-slate-400">
             <a
               href="https://youtube.com/@SilgateMedia"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white"
+              className="hover:text-[#F36C3D] transition-colors"
               aria-label="YouTube"
             >
               <Youtube className="w-4 h-4" />
@@ -544,7 +544,7 @@ export default function Footer() {
               href="https://in.linkedin.com/company/Silgate-media-pvt-ltd"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white"
+              className="hover:text-[#F36C3D] transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-4 h-4" />
@@ -553,7 +553,7 @@ export default function Footer() {
               href="https://www.instagram.com/Silgate.media/"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white"
+              className="hover:text-[#F36C3D] transition-colors"
               aria-label="Instagram"
             >
               <Instagram className="w-4 h-4" />
@@ -562,7 +562,7 @@ export default function Footer() {
               href="https://x.com/Silgate"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white"
+              className="hover:text-[#F36C3D] transition-colors"
               aria-label="X (Twitter)"
             >
               <Twitter className="w-4 h-4" />
@@ -571,7 +571,7 @@ export default function Footer() {
               href="https://www.facebook.com/Silgatemedia"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white"
+              className="hover:text-[#F36C3D] transition-colors"
               aria-label="Facebook"
             >
               <Facebook className="w-4 h-4" />

@@ -86,26 +86,26 @@ export default function InfluencerPortfolio() {
               {campaigns.map((c, idx) => (
                 <div
                   key={idx}
-                  className="group rounded-3xl overflow-hidden border border-zinc-200 bg-[#FAF9F6] shadow-sm hover:shadow-xl transition-all duration-300"
+                  className="group rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-xl hover:border-[#00529B] transition-all duration-300"
                 >
-                  <div className="aspect-[16/9] overflow-hidden bg-zinc-900 relative">
+                  <div className="aspect-[16/9] overflow-hidden bg-slate-900 relative">
                     <img
                       src={c.image}
                       alt={c.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute top-4 left-4 bg-white/95 text-black text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                    <div className="absolute top-4 left-4 bg-white/95 text-[#00529B] text-xs font-semibold px-3 py-1 rounded-full shadow-sm border border-[#00529B]/10">
                       {c.category}
                     </div>
                   </div>
                   <div className="p-8 space-y-3">
-                    <div className="text-xs font-bold text-[#c7a900] uppercase tracking-wider">
+                    <div className="text-xs font-bold text-[#F36C3D] uppercase tracking-wider">
                       {c.stats}
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 leading-snug">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#00529B] transition-colors leading-snug">
                       {c.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                       {c.desc}
                     </p>
                   </div>

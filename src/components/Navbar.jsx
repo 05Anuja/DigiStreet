@@ -45,38 +45,44 @@ export default function Navbar() {
   return (
     <header className="w-full z-50 sticky top-0 transition-all duration-200">
       {/* Top Utility Bar */}
-      <div className="bg-[#0d0d0d] text-zinc-300 text-xs py-2 px-4 sm:px-8 border-b border-zinc-800 hidden md:block">
+      {/* <div className="bg-[#091E3A] text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-[#132C4E] hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
             <a
               href="tel:+918108810916"
-              className="flex items-center gap-1.5 hover:text-[#FFDF01] transition-colors"
+              className="flex items-center gap-1.5 hover:text-[#F36C3D] transition-colors"
             >
-              <Phone className="w-3.5 h-3.5 text-[#FFDF01]" />
+              <Phone className="w-3.5 h-3.5 text-[#F36C3D]" />
               <span className="font-medium">+91 81088 10916</span>
             </a>
-            <span className="text-zinc-600">|</span>
-            <span className="text-zinc-400">
-              Award-Winning Digital Marketing & SEO Agency in India
+            <span className="text-slate-600">|</span>
+            <span className="text-slate-300">
+              Enterprise Digital Marketing, SEO & Technology Solutions
             </span>
           </div>
 
           <div className="flex items-center gap-6">
-            <Link to="/contact" className="hover:text-white transition-colors">
+            <Link
+              to="/contact"
+              className="hover:text-[#F36C3D] transition-colors"
+            >
               Contact
             </Link>
-            <Link to="/career" className="hover:text-white transition-colors">
+            <Link
+              to="/career"
+              className="hover:text-[#F36C3D] transition-colors"
+            >
               Career
             </Link>
-            <Link to="/blog" className="hover:text-white transition-colors">
+            <Link to="/blog" className="hover:text-[#F36C3D] transition-colors">
               Blog
             </Link>
-            <div className="flex items-center gap-3 pl-3 border-l border-zinc-800 text-zinc-400">
+            <div className="flex items-center gap-3 pl-3 border-l border-[#1E3E6B] text-slate-400">
               <a
                 href="https://youtube.com/@SilgateMedia"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-[#FFDF01]"
+                className="hover:text-[#F36C3D] transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="w-3.5 h-3.5" />
@@ -85,7 +91,7 @@ export default function Navbar() {
                 href="https://in.linkedin.com/company/Silgate-media-pvt-ltd"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-[#FFDF01]"
+                className="hover:text-[#F36C3D] transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-3.5 h-3.5" />
@@ -94,7 +100,7 @@ export default function Navbar() {
                 href="https://www.instagram.com/Silgate.media/"
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-[#FFDF01]"
+                className="hover:text-[#F36C3D] transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-3.5 h-3.5" />
@@ -102,47 +108,47 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Navigation Bar */}
       <nav
-        className={`w-full bg-white transition-all duration-300 ${scrolled ? "shadow-md py-3" : "py-4"} border-b border-zinc-200/80`}
+        className={`w-full bg-white/95 backdrop-blur-md transition-all duration-300 ${scrolled ? "shadow-md py-2.5" : "py-3.5"} border-b border-slate-200/90`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
             <img
               src={logoImg}
-              alt="Silgate Media"
-              className="h-9 sm:h-11 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+              alt="Silgate Solutions"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
               onError={(e) => {
                 e.target.style.display = "none";
                 e.target.nextSibling.style.display = "block";
               }}
             />
-            <span className="hidden font-bold text-xl sm:text-2xl tracking-tighter text-black">
-              Digi<span className="text-[#e6c800]">Street</span>
+            <span className="hidden font-bold text-xl sm:text-2xl tracking-tight text-[#00529B]">
+              Silgate <span className="text-[#F36C3D]">Solutions</span>
             </span>
           </Link>
 
           {/* Desktop Nav Links */}
           <div className="hidden lg:flex items-center gap-1 xl:gap-2">
-            {/* <Link
+            <Link
               to="/"
-              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.pathname === "/" ? "text-black font-semibold" : "text-zinc-700 hover:text-black hover:bg-zinc-50"}`}
+              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.pathname === "/" ? "text-black font-semibold" : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"}`}
             >
               Home
-            </Link> */}
+            </Link>
 
             {/* Influencer Dropdown */}
-            <div
+            {/* <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("influencer")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
                 type="button"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-zinc-700 hover:text-black rounded-md hover:bg-zinc-50 transition-colors"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
               >
                 <span>Influencer</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60" />
@@ -151,19 +157,19 @@ export default function Navbar() {
                 <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-zinc-100 py-2 animate-in fade-in slide-in-from-top-1 duration-150">
                   <Link
                     to="/services/influencer-marketing-agency"
-                    className="block px-4 py-2.5 text-sm text-zinc-800 hover:bg-zinc-50 hover:text-black font-medium"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
                   >
                     Influencer Marketing Agency
                   </Link>
                   <Link
                     to="/influencer-marketing-portfolio"
-                    className="block px-4 py-2.5 text-sm text-zinc-800 hover:bg-zinc-50 hover:text-black font-medium"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
                   >
                     Influencer Portfolio
                   </Link>
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* About Us Dropdown */}
             <div
@@ -173,57 +179,57 @@ export default function Navbar() {
             >
               <Link
                 to="/about"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-zinc-700 hover:text-black rounded-md hover:bg-zinc-50 transition-colors"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
               >
                 <span>About Us</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                {/* <ChevronDown className="w-3.5 h-3.5 opacity-60" /> */}
               </Link>
-              {activeDropdown === "about" && (
+              {/* {activeDropdown === "about" && (
                 <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-zinc-100 py-2 animate-in fade-in slide-in-from-top-1 duration-150">
                   <Link
                     to="/about"
-                    className="block px-4 py-2.5 text-sm text-zinc-800 hover:bg-zinc-50 hover:text-black font-medium"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
                   >
                     About Silgate
                   </Link>
                   <Link
                     to="/about/life-at-Silgate"
-                    className="block px-4 py-2.5 text-sm text-zinc-800 hover:bg-zinc-50 hover:text-black font-medium"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
                   >
                     Life at Silgate
                   </Link>
                   <Link
                     to="/about/credo-at-Silgate"
-                    className="block px-4 py-2.5 text-sm text-zinc-800 hover:bg-zinc-50 hover:text-black font-medium"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
                   >
                     Credo at Silgate
                   </Link>
                   <Link
                     to="/other-companies"
-                    className="block px-4 py-2.5 text-sm text-zinc-800 hover:bg-zinc-50 hover:text-black font-medium"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
                   >
                     Other Companies
                   </Link>
                   <Link
                     to="/products"
-                    className="block px-4 py-2.5 text-sm text-zinc-800 hover:bg-zinc-50 hover:text-black font-medium"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
                   >
                     Products
                   </Link>
                   <Link
                     to="/news-awards"
-                    className="block px-4 py-2.5 text-sm text-zinc-800 hover:bg-zinc-50 hover:text-black font-medium"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
                   >
                     News & Awards
                   </Link>
                   <Link
                     to="/kavish-arora"
-                    className="block px-4 py-2.5 text-sm text-zinc-800 hover:bg-zinc-50 hover:text-black font-medium"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
                   >
                     Meet Our Founder
                   </Link>
                 </div>
-              )}
+              )} */}
             </div>
 
             {/* Services Mega Menu */}
@@ -234,7 +240,7 @@ export default function Navbar() {
             >
               <Link
                 to="/services"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-zinc-700 hover:text-black rounded-md hover:bg-zinc-50 transition-colors"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
               >
                 <span>Services</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60" />
@@ -244,14 +250,14 @@ export default function Navbar() {
                   <div className="grid grid-cols-4 gap-6 text-sm">
                     {/* Col 1 */}
                     <div>
-                      <div className="font-semibold text-xs text-zinc-400 tracking-wider uppercase mb-3">
+                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-3">
                         Creative & Brand
                       </div>
                       <ul className="space-y-2">
                         <li>
                           <Link
                             to="/services/ai-video-production-agency"
-                            className="text-zinc-800 hover:text-black font-medium flex items-center justify-between group"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors flex items-center justify-between group"
                           >
                             <span>AI Generated Videos</span>
                             <span className="badge-new">New</span>
@@ -260,7 +266,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/creative-communication"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             Creative & Communication
                           </Link>
@@ -268,7 +274,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/creative-communication/brand-strategy"
-                            className="text-zinc-600 hover:text-black text-xs block pl-2"
+                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
                           >
                             Brand Strategy
                           </Link>
@@ -276,7 +282,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/creative-communication/logo-identity-design"
-                            className="text-zinc-600 hover:text-black text-xs block pl-2"
+                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
                           >
                             Logo & Identity Design
                           </Link>
@@ -284,7 +290,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/creative-communication/product-packaging"
-                            className="text-zinc-600 hover:text-black text-xs block pl-2"
+                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
                           >
                             Product Packaging
                           </Link>
@@ -292,7 +298,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/brand-video-production-agency"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             Brand Video Production
                           </Link>
@@ -300,7 +306,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/ugc-video-agency"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             UGC Video Agency
                           </Link>
@@ -310,14 +316,14 @@ export default function Navbar() {
 
                     {/* Col 2 */}
                     <div>
-                      <div className="font-semibold text-xs text-zinc-400 tracking-wider uppercase mb-3">
+                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-3">
                         Content & Reputation
                       </div>
                       <ul className="space-y-2">
                         <li>
                           <Link
                             to="/services/content-marketing"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             Content Marketing
                           </Link>
@@ -325,7 +331,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/content-marketing/seo-copywriting"
-                            className="text-zinc-600 hover:text-black text-xs block pl-2"
+                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
                           >
                             SEO Copywriting
                           </Link>
@@ -333,7 +339,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/content-marketing/video-tvc-scripts"
-                            className="text-zinc-600 hover:text-black text-xs block pl-2"
+                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
                           >
                             Video & TVC Scripts
                           </Link>
@@ -341,7 +347,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/online-reputation-management"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             Online Reputation Mgmt
                           </Link>
@@ -349,7 +355,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/online-reputation-management/brand-reputation-management"
-                            className="text-zinc-600 hover:text-black text-xs block pl-2"
+                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
                           >
                             Brand Reputation
                           </Link>
@@ -357,7 +363,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/online-reputation-management/corporate-reputation-management"
-                            className="text-zinc-600 hover:text-black text-xs block pl-2"
+                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
                           >
                             Corporate Reputation
                           </Link>
@@ -365,7 +371,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/ad-management"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             Ad Management
                           </Link>
@@ -375,14 +381,14 @@ export default function Navbar() {
 
                     {/* Col 3 */}
                     <div>
-                      <div className="font-semibold text-xs text-zinc-400 tracking-wider uppercase mb-3">
+                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-3">
                         Search & Performance
                       </div>
                       <ul className="space-y-2">
                         <li>
                           <Link
                             to="/services/seo-services"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             SEO Services
                           </Link>
@@ -390,7 +396,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/aeo-services-company-in-india"
-                            className="text-zinc-800 hover:text-black font-medium flex items-center justify-between"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors flex items-center justify-between"
                           >
                             <span>AEO Services</span>
                             <span className="badge-new">New</span>
@@ -399,7 +405,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/generative-engine-optimization-india"
-                            className="text-zinc-800 hover:text-black font-medium flex items-center justify-between"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors flex items-center justify-between"
                           >
                             <span>GEO Services</span>
                             <span className="badge-new">New</span>
@@ -408,7 +414,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/performance-marketing-agency"
-                            className="text-zinc-800 hover:text-black font-medium flex items-center justify-between"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors flex items-center justify-between"
                           >
                             <span>Performance Mktg</span>
                             <span className="badge-demanded">Hot</span>
@@ -417,7 +423,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/b2b-seo-company-in-india"
-                            className="text-zinc-600 hover:text-black text-xs block pl-2"
+                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
                           >
                             B2B SEO Company
                           </Link>
@@ -425,7 +431,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/local-seo-company-in-india"
-                            className="text-zinc-600 hover:text-black text-xs block pl-2"
+                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
                           >
                             Local SEO & GMB
                           </Link>
@@ -433,7 +439,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/search-engine-marketing"
-                            className="text-zinc-600 hover:text-black text-xs block pl-2"
+                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
                           >
                             Search Engine Mktg
                           </Link>
@@ -443,14 +449,14 @@ export default function Navbar() {
 
                     {/* Col 4 */}
                     <div>
-                      <div className="font-semibold text-xs text-zinc-400 tracking-wider uppercase mb-3">
+                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-3">
                         Social & Tech
                       </div>
                       <ul className="space-y-2">
                         <li>
                           <Link
                             to="/services/social-media-marketing"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             Social Media Marketing
                           </Link>
@@ -458,7 +464,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/influencer-marketing-agency"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             Influencer Marketing
                           </Link>
@@ -466,7 +472,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/website-development-india"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             Website Development
                           </Link>
@@ -474,7 +480,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/website-development-india/corporate-website-design"
-                            className="text-zinc-600 hover:text-black text-xs block pl-2"
+                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
                           >
                             Corporate Web Design
                           </Link>
@@ -482,7 +488,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/services/web-application-development"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             Web App Development
                           </Link>
@@ -490,7 +496,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/rankstreet"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             RankStreet
                           </Link>
@@ -498,7 +504,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/managed-it-services-usa"
-                            className="text-zinc-800 hover:text-black font-medium"
+                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
                           >
                             Managed IT Services
                           </Link>
@@ -525,6 +531,37 @@ export default function Navbar() {
               )}
             </div>
 
+            {/* Products Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("product")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link
+                to="/about"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
+              >
+                <span>Products</span>
+                <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+              </Link>
+              {activeDropdown === "product" && (
+                <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-zinc-100 py-2 animate-in fade-in slide-in-from-top-1 duration-150">
+                  <Link
+                    to="/about"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
+                  >
+                    Product List
+                  </Link>
+                  <Link
+                    to="/about/life-at-Silgate"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
+                  >
+                    Pricing
+                  </Link>
+                </div>
+              )}
+            </div>
+
             {/* Clients Link */}
             <Link
               to="/clients"
@@ -541,86 +578,86 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-zinc-700 hover:text-black rounded-md hover:bg-zinc-50 transition-colors"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
               >
                 <span>Industry</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60" />
               </button>
               {activeDropdown === "industry" && (
                 <div className="absolute top-full -left-20 xl:left-0 w-[680px] bg-white rounded-2xl shadow-2xl border border-zinc-100 p-6 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <div className="font-semibold text-xs text-zinc-400 tracking-wider uppercase mb-3">
+                  <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-3">
                     Industries We Excel In
                   </div>
                   <div className="grid grid-cols-3 gap-3 text-sm">
                     <Link
                       to="/automotive-digital-marketing-agency"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       🚗 Automotive
                     </Link>
                     <Link
                       to="/beauty-skin-care-digital-marketing-agency"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       ✨ Beauty & Skin Care
                     </Link>
                     <Link
                       to="/digital-marketing-agency-for-business-to-business"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       🏢 B2B Marketing
                     </Link>
                     <Link
                       to="/digital-marketing-agency-for-education-industry"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       🎓 Education
                     </Link>
                     <Link
                       to="/digital-marketing-agency-for-food-beverage"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       🍔 Food & Beverage
                     </Link>
                     <Link
                       to="/digital-marketing-services-for-healthcare"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       🩺 Healthcare
                     </Link>
                     <Link
                       to="/digital-marketing-agency-for-real-estate"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       🏠 Real Estate
                     </Link>
                     <Link
                       to="/digital-marketing-for-financial-services"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       💳 Financial Services
                     </Link>
                     <Link
                       to="/digital-marketing-for-travel-tourism"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       ✈️ Travel & Tourism
                     </Link>
                     <Link
                       to="/digital-marketing-services-for-ev"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       ⚡ Electric Vehicles (EV)
                     </Link>
                     <Link
                       to="/digital-marketing-services-for-home-decor"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       🛋️ Home Decor
                     </Link>
                     <Link
                       to="/digital-marketing-for-ecommerce-2"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-zinc-800 hover:text-black font-medium block"
+                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
                     >
                       🛍️ E-Commerce
                     </Link>
@@ -630,14 +667,14 @@ export default function Navbar() {
             </div>
 
             {/* International Mega Menu */}
-            <div
+            {/* <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("international")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
                 type="button"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-zinc-700 hover:text-black rounded-md hover:bg-zinc-50 transition-colors"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
               >
                 <span>International</span>
                 <ChevronDown className="w-3.5 h-3.5 opacity-60" />
@@ -646,14 +683,14 @@ export default function Navbar() {
                 <div className="absolute top-full right-0 w-[720px] bg-white rounded-2xl shadow-2xl border border-zinc-100 p-6 animate-in fade-in slide-in-from-top-1 duration-150">
                   <div className="grid grid-cols-3 gap-6 text-sm">
                     <div>
-                      <div className="font-semibold text-xs text-zinc-400 tracking-wider uppercase mb-2">
+                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-2">
                         North America
                       </div>
                       <ul className="space-y-1.5">
                         <li>
                           <Link
                             to="/san-francisco-digital-marketing-agency"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇺🇸 San Francisco
                           </Link>
@@ -661,7 +698,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/seo-services-in-newyork"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇺🇸 New York · SEO
                           </Link>
@@ -669,7 +706,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/canada-digital-marketing-agency"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇨🇦 Canada Agency
                           </Link>
@@ -677,7 +714,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/toronto-digital-marketing-agency"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇨🇦 Toronto
                           </Link>
@@ -686,14 +723,14 @@ export default function Navbar() {
                     </div>
 
                     <div>
-                      <div className="font-semibold text-xs text-zinc-400 tracking-wider uppercase mb-2">
+                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-2">
                         Europe & Gulf
                       </div>
                       <ul className="space-y-1.5">
                         <li>
                           <Link
                             to="/uk-digital-marketing-agency"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇬🇧 United Kingdom
                           </Link>
@@ -701,7 +738,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/london-digital-marketing-agency"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇬🇧 London Agency
                           </Link>
@@ -709,7 +746,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/dubai-digital-marketing-agency"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇦🇪 Dubai Agency
                           </Link>
@@ -717,7 +754,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/saudi-arabia-digital-marketing-agency"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇸🇦 Saudi Arabia
                           </Link>
@@ -725,7 +762,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/bahrain-digital-marketing-agency"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇧🇭 Bahrain
                           </Link>
@@ -734,14 +771,14 @@ export default function Navbar() {
                     </div>
 
                     <div>
-                      <div className="font-semibold text-xs text-zinc-400 tracking-wider uppercase mb-2">
+                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-2">
                         Global & Multilingual
                       </div>
                       <ul className="space-y-1.5">
                         <li>
                           <Link
                             to="/digital-marketing-agency-in-australia"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇦🇺 Australia
                           </Link>
@@ -749,7 +786,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/singapore-digital-marketing-agency"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇸🇬 Singapore
                           </Link>
@@ -757,7 +794,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/es"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇪🇸 Spanish Market Entry
                           </Link>
@@ -765,7 +802,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/de"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇩🇪 German Market Entry
                           </Link>
@@ -773,7 +810,7 @@ export default function Navbar() {
                         <li>
                           <Link
                             to="/ja"
-                            className="text-zinc-700 hover:text-black block py-1"
+                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
                           >
                             🇯🇵 Japan Market Entry
                           </Link>
@@ -783,14 +820,44 @@ export default function Navbar() {
                   </div>
                 </div>
               )}
+            </div> */}
+
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("resources")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link
+                to="/about"
+                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
+              >
+                <span>Resources</span>
+                <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+              </Link>
+              {activeDropdown === "resources" && (
+                <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-zinc-100 py-2 animate-in fade-in slide-in-from-top-1 duration-150">
+                  <Link
+                    to="/about"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
+                  >
+                    Blog
+                  </Link>
+                  <Link
+                    to="/about/life-at-Silgate"
+                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
+                  >
+                    Case Studies
+                  </Link>
+                </div>
+              )}
             </div>
 
-            {/* <Link
+            <Link
               to="/career"
               className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.pathname === "/career" ? "text-black font-semibold" : "text-zinc-700 hover:text-black hover:bg-zinc-50"}`}
             >
               Careers
-            </Link> */}
+            </Link>
 
             {/* <Link
               to="/blog"
@@ -804,7 +871,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold px-5 py-2.5 rounded-full bg-black text-white hover:bg-zinc-800 transition-all tracking-tight group shadow-sm"
+              className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold px-5 py-2.5 rounded-lg bg-[#00529B] text-white hover:bg-[#F36C3D] hover:shadow-md hover:shadow-orange-500/20 transition-all tracking-tight group shadow-sm"
             >
               <span>Get in Touch</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -815,14 +882,14 @@ export default function Navbar() {
           <div className="flex items-center gap-2 lg:hidden">
             <Link
               to="/contact"
-              className="text-xs font-semibold px-3 py-1.5 rounded-full bg-black text-white hover:bg-zinc-800 transition-colors"
+              className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-[#00529B] text-white hover:bg-[#F36C3D] transition-colors"
             >
               Contact
             </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-zinc-700 hover:text-black focus:outline-none"
+              className="p-2 text-slate-700 hover:text-[#00529B] focus:outline-none"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? (
@@ -840,24 +907,28 @@ export default function Navbar() {
         <div className="fixed inset-0 z-50 lg:hidden">
           {/* Backdrop */}
           <div
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+            className="fixed inset-0 bg-[#07172C]/70 backdrop-blur-sm transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
           />
 
           {/* Offcanvas Content */}
           <div className="fixed right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl flex flex-col z-50 overflow-y-auto">
-            <div className="p-4 border-b border-zinc-100 flex items-center justify-between sticky top-0 bg-white">
+            <div className="p-4 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white">
               <Link
                 to="/"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center"
               >
-                <img src={logoImg} alt="Silgate" className="h-8 w-auto" />
+                <img
+                  src={logoImg}
+                  alt="Silgate Solutions"
+                  className="h-9 w-auto object-contain"
+                />
               </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-9 h-9 rounded-full bg-zinc-100 flex items-center justify-center text-zinc-600 hover:text-black"
+                className="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 hover:text-[#00529B] hover:bg-[#EBF3FB]"
                 aria-label="Close menu"
               >
                 <X className="w-5 h-5" />
@@ -866,17 +937,17 @@ export default function Navbar() {
 
             <div className="p-5 flex-1 divide-y divide-zinc-100 space-y-4">
               <div className="pt-2">
-                {/* <Link
+                <Link
                   to="/"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block py-2 text-base font-semibold text-zinc-900"
                 >
                   Home
-                </Link> */}
+                </Link>
               </div>
 
               {/* Influencer Accordion */}
-              <div className="pt-3">
+              {/* <div className="pt-3">
                 <button
                   type="button"
                   onClick={() => toggleMobileSubmenu("influencer")}
@@ -905,7 +976,7 @@ export default function Navbar() {
                     </Link>
                   </div>
                 )}
-              </div>
+              </div> */}
 
               {/* About Us Accordion */}
               <div className="pt-3">
@@ -1118,6 +1189,38 @@ export default function Navbar() {
                 )}
               </div>
 
+              {/* product accordion */}
+              <div className="pt-3">
+                <button
+                  type="button"
+                  onClick={() => toggleMobileSubmenu("product")}
+                  className="w-full flex items-center justify-between py-2 text-base font-semibold text-zinc-900"
+                >
+                  <span>Products</span>
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${mobileExpandedSection === "product" ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {mobileExpandedSection === "product" && (
+                  <div className="pl-4 py-2 space-y-2 text-sm text-zinc-700 bg-zinc-50 rounded-xl mt-1">
+                    <Link
+                      to="/about"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-1 font-medium"
+                    >
+                      Product List
+                    </Link>
+                    <Link
+                      to="/about/life-at-Silgate"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-1 font-medium"
+                    >
+                      Pricing
+                    </Link>
+                  </div>
+                )}
+              </div>
+
               {/* Industry Accordion */}
               <div className="pt-3">
                 <button
@@ -1221,7 +1324,7 @@ export default function Navbar() {
               </div>
 
               {/* International Accordion */}
-              <div className="pt-3">
+              {/* <div className="pt-3">
                 <button
                   type="button"
                   onClick={() => toggleMobileSubmenu("international")}
@@ -1292,6 +1395,37 @@ export default function Navbar() {
                     </Link>
                   </div>
                 )}
+              </div> */}
+
+              <div className="pt-3">
+                <button
+                  type="button"
+                  onClick={() => toggleMobileSubmenu("resource")}
+                  className="w-full flex items-center justify-between py-2 text-base font-semibold text-zinc-900"
+                >
+                  <span>Resources</span>
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${mobileExpandedSection === "resource" ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {mobileExpandedSection === "resource" && (
+                  <div className="pl-4 py-2 space-y-2 text-sm text-zinc-700 bg-zinc-50 rounded-xl mt-1">
+                    <Link
+                      to="/about"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-1 font-medium"
+                    >
+                      Blog
+                    </Link>
+                    <Link
+                      to="/about/life-at-Silgate"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block py-1 font-medium"
+                    >
+                      Case Studies
+                    </Link>
+                  </div>
+                )}
               </div>
 
               <div className="pt-3">
@@ -1304,15 +1438,15 @@ export default function Navbar() {
                 </Link>
               </div>
 
-              {/* <div className="pt-3">
+              <div className="pt-3">
                 <Link
                   to="/career"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block py-2 text-base font-semibold text-zinc-900"
                 >
-                  Life at Silgate / Careers
+                  Careers
                 </Link>
-              </div> */}
+              </div>
 
               {/* <div className="pt-3">
                 <Link
@@ -1339,9 +1473,9 @@ export default function Navbar() {
             <div className="p-5 border-t border-zinc-100 bg-zinc-50">
               <a
                 href="tel:+918108810916"
-                className="flex items-center justify-center gap-2 py-3 rounded-full bg-black text-white text-sm font-semibold mb-3"
+                className="flex items-center justify-center gap-2 py-3 rounded-xl bg-[#091E3A] hover:bg-[#00529B] text-white text-sm font-semibold mb-3 transition-colors"
               >
-                <Phone className="w-4 h-4 text-[#FFDF01]" />
+                <Phone className="w-4 h-4 text-[#F36C3D]" />
                 <span>Call +91 81088 10916</span>
               </a>
               <div className="flex items-center justify-center gap-4 text-zinc-500 pt-2">

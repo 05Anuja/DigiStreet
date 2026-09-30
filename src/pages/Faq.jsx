@@ -12,7 +12,7 @@ export default function Faq() {
       a: "Silgate is an end-to-end digital marketing and creative communication agency. Our services encompass Technical SEO, Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), Performance Marketing (Meta, Google, LinkedIn Ads), Social Media Marketing, Influencer Marketing, Brand Video & Commercial Production, Synthetic AI Video, Website & Mobile App Development, Brand Identity Design, and Online Reputation Management.",
     },
     {
-      q: "Where is Silgate Media located?",
+      q: "Where is Silgate Solutions located?",
       a: "Our corporate headquarters is located at Express Trade Tower 2, B-36, Sector 132, Noida, Uttar Pradesh 201301. We also operate executive offices in Dwarka, New Delhi 110045, with international client engagement hubs in Rochester, NY, USA and Canada.",
     },
     {

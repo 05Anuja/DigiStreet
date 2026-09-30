@@ -285,32 +285,32 @@ export default function Services() {
 
       <main className="flex-1">
         {/* ================= HERO SECTION ================= */}
-        <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 bg-gradient-to-b from-[#F7F6F2] to-white border-b border-zinc-200/80">
+        <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 bg-gradient-to-b from-[#F7F6F2] to-white border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             {/* Breadcrumbs */}
-            <div className="flex items-center gap-1.5 text-xs text-zinc-500 mb-6">
+            <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-6">
               <Link to="/" className="hover:text-black">
                 Home
               </Link>
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400" />
-              <span className="text-zinc-800 font-medium">Services</span>
+              <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+              <span className="text-slate-800 font-medium">Services</span>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-[#FFDF01]" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider mb-6">
+              <Sparkles className="w-3.5 h-3.5 text-[#F36C3D]" />
               <span>Full-Stack Digital Agency Ecosystem</span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-zinc-900 leading-[1.08] mb-6 max-w-4xl">
+            <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-slate-900 leading-[1.08] mb-6 max-w-4xl">
               Best Digital Marketing Services Company in India
             </h1>
 
-            <h2 className="text-xl sm:text-2xl font-semibold text-zinc-700 tracking-tight mb-6 max-w-3xl">
+            <h2 className="text-xl sm:text-2xl font-semibold text-slate-700 tracking-tight mb-6 max-w-3xl">
               Full-Service Digital Marketing & SEO Solutions for Brands That
               Want to Win
             </h2>
 
-            <p className="text-zinc-600 text-sm sm:text-base leading-relaxed max-w-3xl mb-8">
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl mb-8">
               Every business has unique growth challenges. We offer an
               integrated, multi-disciplinary digital marketing ecosystem
               engineered to scale search visibility, accelerate customer
@@ -333,8 +333,8 @@ export default function Services() {
         </section>
 
         {/* ================= STICKY IN-PAGE SECTION NAV ================= */}
-        <div className="sticky top-[73px] z-40 bg-white/95 backdrop-blur-md border-b border-zinc-200 py-3 hidden md:block">
-          <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-zinc-600">
+        <div className="sticky top-[73px] z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 hidden md:block">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between text-xs font-semibold uppercase tracking-wider text-slate-600">
             <div className="flex items-center gap-6 overflow-x-auto py-1">
               <a href="#why-us" className="hover:text-black transition-colors">
                 Why Choose Us
@@ -363,7 +363,7 @@ export default function Services() {
             </div>
             <a
               href="#audit-form"
-              className="text-black hover:text-amber-600 flex items-center gap-1 font-bold"
+              className="text-black hover:text-[#F36C3D] flex items-center gap-1 font-bold"
             >
               <span>Free Audit Form →</span>
             </a>
@@ -376,101 +376,101 @@ export default function Services() {
         {/* ================= 6 CORE PILLARS SECTION ================= */}
         <section
           id="why-us"
-          className="py-20 bg-white border-b border-zinc-200/80"
+          className="py-20 bg-white border-b border-slate-200/80"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-3xl mb-14">
-              <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-800 text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-slate-800 text-xs font-semibold uppercase tracking-wider mb-3">
                 Proven Excellence
               </div>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 mb-4">
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mb-4">
                 What makes us India's best digital marketing services company
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 We combine the strategic depth of top management consulting with
                 the boundless agility of modern digital growth hackers.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200/80 space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-black text-[#FFDF01] flex items-center justify-center font-bold text-lg mb-4">
+              <div className="p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center font-bold text-lg mb-4">
                   14+
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900">
+                <h3 className="text-xl font-bold text-slate-900">
                   14+ Years of Proven Expertise
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Steering brands through every major algorithm shift from Panda
                   and Penguin to Core Updates, Search Generative Experience, and
                   AI LLM search.
                 </p>
               </div>
 
-              <div className="p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200/80 space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-black text-[#FFDF01] flex items-center justify-center font-bold text-lg mb-4">
+              <div className="p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center font-bold text-lg mb-4">
                   360°
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900">
+                <h3 className="text-xl font-bold text-slate-900">
                   Full-Funnel, Under One Roof
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   No messy handoffs between disparate creative agencies,
                   performance buyers, and web developers. We control the
                   complete customer journey.
                 </p>
               </div>
 
-              <div className="p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200/80 space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-black text-[#FFDF01] flex items-center justify-center font-bold text-lg mb-4">
+              <div className="p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center font-bold text-lg mb-4">
                   250+
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900">
+                <h3 className="text-xl font-bold text-slate-900">
                   250+ Brands. Every Category.
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Deep contextual benchmarks across B2B manufacturing,
                   high-growth D2C, real estate, healthcare, education, and
                   finance.
                 </p>
               </div>
 
-              <div className="p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200/80 space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-black text-[#FFDF01] flex items-center justify-center font-bold text-lg mb-4">
+              <div className="p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center font-bold text-lg mb-4">
                   ROI
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900">
+                <h3 className="text-xl font-bold text-slate-900">
                   Outcomes, Not Vanity Metrics
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   We measure success in qualified SQLs, inbound RFQs, blended
                   CAC reduction, and net revenue compounding rather than
                   meaningless impressions.
                 </p>
               </div>
 
-              <div className="p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200/80 space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-black text-[#FFDF01] flex items-center justify-center font-bold text-lg mb-4">
+              <div className="p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center font-bold text-lg mb-4">
                   GLO
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900">
+                <h3 className="text-xl font-bold text-slate-900">
                   Cross-Border. Global Scale.
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Trusted by enterprises across North America, the UK, Europe,
                   Australia, and the Middle East to navigate local nuances with
                   Indian cost efficiencies.
                 </p>
               </div>
 
-              <div className="p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200/80 space-y-3">
-                <div className="w-12 h-12 rounded-2xl bg-black text-[#FFDF01] flex items-center justify-center font-bold text-lg mb-4">
+              <div className="p-8 rounded-2xl bg-[#F8FAFC] border border-slate-200/80 space-y-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center font-bold text-lg mb-4">
                   100%
                 </div>
-                <h3 className="text-xl font-bold text-zinc-900">
+                <h3 className="text-xl font-bold text-slate-900">
                   Transparent Live Reporting
                 </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   Direct access to real-time custom dashboards, verified search
                   engine rankings via RankStreet, and bi-weekly strategic review
                   calls.
@@ -483,27 +483,27 @@ export default function Services() {
         {/* ================= 4 CORE PILLARS OVERVIEW ================= */}
         <section
           id="pillars"
-          className="py-20 bg-[#FAF9F6] border-b border-zinc-200/80"
+          className="py-20 bg-[#F8FAFC] border-b border-slate-200/80"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-3xl mb-14">
-              <div className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider mb-3">
                 Core Competencies
               </div>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 mb-4">
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mb-4">
                 India's full-stack SEO, Performance, Social & Web agency
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-zinc-200/90 shadow-sm space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#FFDF01]/20 text-black flex items-center justify-center">
+              <div className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-[#EBF3FB] text-[#00529B] flex items-center justify-center">
                   <Search className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-zinc-900">
+                <h3 className="text-2xl font-bold text-slate-900">
                   India's Best SEO Agency
                 </h3>
-                <p className="text-sm text-zinc-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   Ranking on page 1 of Google is the single highest-margin
                   growth asset any business can build. We execute forensic
                   on-page restructuring, programmatic entity-rich schema, and
@@ -521,14 +521,14 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-zinc-200/90 shadow-sm space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-black text-[#FFDF01] flex items-center justify-center">
+              <div className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center">
                   <TrendingUp className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-zinc-900">
+                <h3 className="text-2xl font-bold text-slate-900">
                   Performance Marketing That Compounds ROI
                 </h3>
-                <p className="text-sm text-zinc-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   We don't burn budgets hoping for luck. Our performance
                   marketers deploy granular audience segmentation, dynamic
                   creative variations, server-side CAPI tracking, and dedicated
@@ -545,14 +545,14 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-zinc-200/90 shadow-sm space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#FFDF01]/20 text-black flex items-center justify-center">
+              <div className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-[#EBF3FB] text-[#00529B] flex items-center justify-center">
                   <Share2 className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-zinc-900">
+                <h3 className="text-2xl font-bold text-slate-900">
                   India's Leading Social Media Agency
                 </h3>
-                <p className="text-sm text-zinc-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   Transform passive scrollers into passionate brand advocates.
                   From culturally resonant social memes and thought leadership
                   on LinkedIn to viral creator campaigns on Instagram, we give
@@ -569,14 +569,14 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className="bg-white p-8 sm:p-10 rounded-3xl border border-zinc-200/90 shadow-sm space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-black text-[#FFDF01] flex items-center justify-center">
+              <div className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
+                <div className="w-12 h-12 rounded-2xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center">
                   <Laptop className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-zinc-900">
+                <h3 className="text-2xl font-bold text-slate-900">
                   Website Design Agency for Brands That Convert
                 </h3>
-                <p className="text-sm text-zinc-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   A beautiful website that doesn't convert is just expensive
                   digital wallpaper. We engineer lightning-fast digital
                   storefronts and corporate sites with intuitive UX, sub-second
@@ -599,17 +599,17 @@ export default function Services() {
         {/* ================= ALL 15 SERVICES COMPLETE DIRECTORY ================= */}
         <section
           id="services-grid"
-          className="py-20 bg-white border-b border-zinc-200/80"
+          className="py-20 bg-white border-b border-slate-200/80"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-3xl mb-10">
-              <div className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider mb-3">
                 Complete Catalog
               </div>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-zinc-900 mb-4">
+              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mb-4">
                 Every digital marketing service, under one roof
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 Click into any service below to explore dedicated case studies,
                 processes, methodologies, and deliverables.
               </p>
@@ -620,42 +620,42 @@ export default function Services() {
               <button
                 type="button"
                 onClick={() => setActiveTab("all")}
-                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "all" ? "bg-black text-white" : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"}`}
+                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "all" ? "bg-black text-white" : "bg-zinc-100 text-slate-700 hover:bg-zinc-200"}`}
               >
                 All 15+ Services
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("search")}
-                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "search" ? "bg-black text-white" : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"}`}
+                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "search" ? "bg-black text-white" : "bg-zinc-100 text-slate-700 hover:bg-zinc-200"}`}
               >
                 Search & SEO (5)
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("performance")}
-                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "performance" ? "bg-black text-white" : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"}`}
+                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "performance" ? "bg-black text-white" : "bg-zinc-100 text-slate-700 hover:bg-zinc-200"}`}
               >
                 Performance (1)
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("social")}
-                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "social" ? "bg-black text-white" : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"}`}
+                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "social" ? "bg-black text-white" : "bg-zinc-100 text-slate-700 hover:bg-zinc-200"}`}
               >
                 Social & Influencer (2)
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("creative")}
-                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "creative" ? "bg-black text-white" : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"}`}
+                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "creative" ? "bg-black text-white" : "bg-zinc-100 text-slate-700 hover:bg-zinc-200"}`}
               >
                 Creative & Video (4)
               </button>
               <button
                 type="button"
                 onClick={() => setActiveTab("web")}
-                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "web" ? "bg-black text-white" : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200"}`}
+                className={`px-4 py-2 rounded-full transition-colors ${activeTab === "web" ? "bg-black text-white" : "bg-zinc-100 text-slate-700 hover:bg-zinc-200"}`}
               >
                 Web & Apps (2)
               </button>
@@ -682,17 +682,17 @@ export default function Services() {
         {/* ================= INDUSTRIES WE SERVE ================= */}
         <section
           id="industries"
-          className="py-20 bg-[#FAF9F6] border-b border-zinc-200/80"
+          className="py-20 bg-[#F8FAFC] border-b border-slate-200/80"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-3xl mb-12">
-              <div className="inline-block px-3 py-1 rounded-full bg-black text-[#FFDF01] text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider mb-3">
                 Domain Mastery
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 mb-3">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-3">
                 Industries We Serve
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 Tailored digital growth playbooks tuned for the distinct
                 compliance, customer lifecycles, and economics of each vertical.
               </p>
@@ -764,15 +764,15 @@ export default function Services() {
                 <Link
                   key={i}
                   to={ind.link}
-                  className="p-5 rounded-2xl bg-white border border-zinc-200/80 hover:border-black hover:shadow-md transition-all flex items-center justify-between group"
+                  className="p-5 rounded-2xl bg-white border border-slate-200/80 hover:border-black hover:shadow-md transition-all flex items-center justify-between group"
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-xl">{ind.icon}</span>
-                    <span className="text-sm font-bold text-zinc-900 group-hover:text-black">
+                    <span className="text-sm font-bold text-slate-900 group-hover:text-black">
                       {ind.name}
                     </span>
                   </div>
-                  <ArrowUpRight className="w-4 h-4 text-zinc-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
               ))}
             </div>
@@ -782,24 +782,24 @@ export default function Services() {
         {/* ================= CASE STUDY RESULTS TABLE ================= */}
         <section
           id="results"
-          className="py-20 bg-white border-b border-zinc-200/80"
+          className="py-20 bg-white border-b border-slate-200/80"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-3xl mb-10">
-              <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-zinc-800 text-xs font-semibold uppercase tracking-wider mb-3">
+              <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 text-slate-800 text-xs font-semibold uppercase tracking-wider mb-3">
                 Measurable Impact
               </div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 mb-3">
+              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-3">
                 Why Silgate Media is the Best Digital Marketing Services Company
                 for Your Brand
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                 Take a look at verified ranking and lead growth milestones
                 achieved across diverse client categories.
               </p>
             </div>
 
-            <div className="bg-[#FAF9F6] rounded-3xl border border-zinc-200/80 overflow-hidden shadow-sm cs-table">
+            <div className="bg-[#F8FAFC] rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm cs-table">
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
@@ -814,10 +814,10 @@ export default function Services() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="font-semibold text-zinc-900">
+                      <td className="font-semibold text-slate-900">
                         National Automotive Brand
                       </td>
-                      <td className="text-zinc-600">
+                      <td className="text-slate-600">
                         Electric Vehicle Dealerships India
                       </td>
                       <td className="text-rose-600 font-medium">
@@ -826,16 +826,16 @@ export default function Services() {
                       <td className="text-emerald-600 font-bold">
                         #1 Google Organic
                       </td>
-                      <td className="font-bold text-zinc-900">+640%</td>
+                      <td className="font-bold text-slate-900">+640%</td>
                       <td className="text-emerald-700 font-semibold">
                         +320% Test Drives
                       </td>
                     </tr>
                     <tr>
-                      <td className="font-semibold text-zinc-900">
+                      <td className="font-semibold text-slate-900">
                         High-Ticket D2C Skincare
                       </td>
-                      <td className="text-zinc-600">
+                      <td className="text-slate-600">
                         Organic Retinol Serum India
                       </td>
                       <td className="text-rose-600 font-medium">
@@ -844,23 +844,23 @@ export default function Services() {
                       <td className="text-emerald-600 font-bold">
                         #2 (Above Fold)
                       </td>
-                      <td className="font-bold text-zinc-900">+490%</td>
+                      <td className="font-bold text-slate-900">+490%</td>
                       <td className="text-emerald-700 font-semibold">
                         4.8x Monthly GMV
                       </td>
                     </tr>
                     <tr>
-                      <td className="font-semibold text-zinc-900">
+                      <td className="font-semibold text-slate-900">
                         Global IT Support & Managed Services
                       </td>
-                      <td className="text-zinc-600">
+                      <td className="text-slate-600">
                         Managed IT Services Provider UK
                       </td>
                       <td className="text-rose-600 font-medium">
                         #38 (Page 4)
                       </td>
                       <td className="text-emerald-600 font-bold">#3</td>
-                      <td className="font-bold text-zinc-900">+310%</td>
+                      <td className="font-bold text-slate-900">+310%</td>
                       <td className="text-emerald-700 font-semibold">
                         +175% SLA Contracts
                       </td>

@@ -94,7 +94,7 @@ export default function SEOServices() {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight">
                 Complete End-to-End SEO Deliverables
               </h2>
-              <p className="text-zinc-600 text-sm sm:text-base mt-2">
+              <p className="text-slate-600 text-sm sm:text-base mt-2">
                 A holistic organic framework covering technical infrastructure,
                 semantic content, and digital authority.
               </p>
@@ -104,15 +104,15 @@ export default function SEOServices() {
               {deliverables.map((item, i) => (
                 <div
                   key={i}
-                  className="p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200/90 shadow-sm space-y-3"
+                  className="p-8 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-3 hover:border-[#00529B]/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-black text-[#FFDF01] flex items-center justify-center font-bold">
+                  <div className="w-10 h-10 rounded-lg bg-[#00529B] text-white flex items-center justify-center font-bold">
                     0{i + 1}
                   </div>
-                  <h3 className="text-xl font-bold text-zinc-900">
+                  <h3 className="text-xl font-bold text-slate-900">
                     {item.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -124,12 +124,12 @@ export default function SEOServices() {
         {/* Results Table Section */}
         <section
           id="results"
-          className="py-20 bg-[#FAF9F6] border-b border-zinc-200/80"
+          className="py-20 bg-[#F8FAFC] border-b border-slate-200/80"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-8">
             <div className="max-w-3xl mb-10">
               <span className="badge-new mb-2">Live Proof</span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900">
                 Verified Search Ranking Compounding
               </h2>
             </div>

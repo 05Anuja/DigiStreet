@@ -76,10 +76,10 @@ export default function Credo() {
               {values.map((v, i) => (
                 <div
                   key={i}
-                  className="p-8 rounded-3xl bg-[#FAF9F6] border border-zinc-200/80 space-y-2"
+                  className="p-8 rounded-2xl bg-white border border-slate-200/90 hover:border-[#00529B] hover:shadow-md transition-all duration-300 space-y-2 group"
                 >
-                  <h3 className="text-xl font-bold text-zinc-900">{v.title}</h3>
-                  <p className="text-sm text-zinc-600 leading-relaxed">
+                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#00529B] transition-colors">{v.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {v.desc}
                   </p>
                 </div>
