@@ -9,6 +9,7 @@ import AuditForm from "../components/AuditForm";
 import FAQAccordion from "../components/FAQAccordion";
 import CTA from "../components/CTA";
 import FloatingHomeVideo from "../components/FloatingHomeVideo";
+import HomeCarousel from "../components/HomeCarousel";
 import {
   ArrowUpRight,
   Sparkles,
@@ -49,7 +50,6 @@ import metsoImg from "../assets/images/metso-industrial-b2b-creative-portfolio.w
 import blogPackaging from "../assets/images/brand-packaging-beauty-brands-us-retail-1024x576.webp";
 import blogDubai from "../assets/images/corporate-films-real-estate-developers-dubai-1024x576.webp";
 import blogSearch from "../assets/images/search-advertising-professional-services-new-york-1024x576.webp";
-import homePageVideo from "../assets/videos/home_page_video.mp4";
 
 export default function Home() {
   const [activeWorkFilter, setActiveWorkFilter] = useState("all");
@@ -263,9 +263,9 @@ export default function Home() {
       <Navbar />
 
       <main className="flex-1">
-        <section>
-          <video src={homePageVideo} autoPlay muted loop></video>
-        </section>
+        {/* ================= 1. FULL-SCREEN HOME HERO CAROUSEL ================= */}
+        <HomeCarousel />
+
         {/* ================= 1. HERO SECTION (Matches Live DigiStreet) ================= */}
         <section className="relative pt-10 pb-16 sm:pt-16 sm:pb-24 overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-white to-white border-b border-slate-200/80">
           {/* Subtle brand swoosh glow */}

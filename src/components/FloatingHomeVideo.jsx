@@ -112,7 +112,7 @@ export default function FloatingHomeVideo({ src = videoHome }) {
       <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-10" />
 
       {/* Close (X) Button in top-right */}
-      {/* <button
+      <button
         type="button"
         onClick={handleClose}
         className="absolute top-2 right-2 z-20 flex items-center justify-center w-7 h-7 rounded-full bg-black/55 hover:bg-black/85 text-white/90 hover:text-white transition-all duration-200 backdrop-blur-md border border-white/20 hover:scale-105 active:scale-95 cursor-pointer shadow-sm"
@@ -120,7 +120,7 @@ export default function FloatingHomeVideo({ src = videoHome }) {
         title="Close"
       >
         <X className="w-3.5 h-3.5" />
-      </button> */}
+      </button>
 
       {/* Media Controls Bar near bottom-left */}
       <div className="absolute bottom-2 left-2 z-20 flex items-center gap-1.5">
