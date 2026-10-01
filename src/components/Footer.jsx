@@ -462,12 +462,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="hover:text-[#F36C3D] transition-colors">
+                <Link
+                  to="/blog"
+                  className="hover:text-[#F36C3D] transition-colors"
+                >
                   Blog & Insights
                 </Link>
               </li>
               <li>
-                <Link to="/faq" className="hover:text-[#F36C3D] transition-colors">
+                <Link
+                  to="/faq"
+                  className="hover:text-[#F36C3D] transition-colors"
+                >
                   FAQs
                 </Link>
               </li>
@@ -521,8 +527,15 @@ export default function Footer() {
         {/* Bottom Copyright & Social */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex items-center gap-3">
-            <Link to="/" className="inline-flex items-center bg-white px-3 py-1.5 rounded-lg shadow-sm hover:opacity-95 transition-opacity">
-              <img src={logoImg} alt="Silgate Solutions" className="h-6 w-auto object-contain" />
+            <Link
+              to="/"
+              className="inline-flex items-center bg-white px-3 py-1.5 rounded-lg shadow-sm hover:opacity-95 transition-opacity"
+            >
+              <img
+                src={logoImg}
+                alt="Silgate Solutions"
+                className="h-6 w-auto object-contain"
+              />
             </Link>
             <span>
               &copy; {new Date().getFullYear()} Silgate Solutions Pvt. Ltd. All
@@ -530,7 +543,7 @@ export default function Footer() {
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-slate-400">
+          {/* <div className="flex items-center gap-4 text-slate-400">
             <a
               href="https://youtube.com/@SilgateMedia"
               target="_blank"
@@ -576,7 +589,7 @@ export default function Footer() {
             >
               <Facebook className="w-4 h-4" />
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

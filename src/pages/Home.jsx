@@ -8,6 +8,7 @@ import ServiceCard from "../components/ServiceCard";
 import AuditForm from "../components/AuditForm";
 import FAQAccordion from "../components/FAQAccordion";
 import CTA from "../components/CTA";
+import FloatingHomeVideo from "../components/FloatingHomeVideo";
 import {
   ArrowUpRight,
   Sparkles,
@@ -1333,6 +1334,9 @@ export default function Home() {
       </main>
 
       <Footer />
+
+      {/* Independent Floating Video Player for Home page only */}
+      <FloatingHomeVideo />
     </div>
   );
 }

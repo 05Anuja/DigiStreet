@@ -22,6 +22,7 @@ import Faq from "./pages/Faq";
 import Sitemap from "./pages/Sitemap";
 import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
+import FloatingContactButtons from "./components/FloatingContactButtons";
 
 // Service Sub-Pages
 import SEOServices from "./pages/services/SEOServices";
@@ -438,6 +439,7 @@ export default function AppContent() {
         {/* 404 Catch-All (Requirement 9: Never fallback * to Home) */}
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <FloatingContactButtons />
     </BrowserRouter>
   );
 }
