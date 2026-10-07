@@ -8,7 +8,7 @@ import { CheckCircle2, Phone, Calendar } from "lucide-react";
 export default function ThankYou() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main className="flex-1 flex items-center justify-center py-20 px-4">
         <div className="max-w-2xl mx-auto text-center space-y-6">

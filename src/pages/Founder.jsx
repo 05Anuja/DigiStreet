@@ -11,7 +11,7 @@ import kavishImg from "../assets/images/kavish-arora-co-founder-coo-Silgate-medi
 export default function Founder() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main className="flex-1">
         <Hero

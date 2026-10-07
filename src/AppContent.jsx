@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 // Core Pages
 import Home from "./pages/Home";
-import About from "./pages/About";
+import About from "./pages/AboutSilgate";
 import LifeAtSilgate from "./pages/LifeAtSilgate";
 import Credo from "./pages/Credo";
 import Founder from "./pages/Founder";
@@ -77,6 +77,9 @@ import InternationalAustralia from "./pages/locations/InternationalAustralia";
 import InternationalGulf from "./pages/locations/InternationalGulf";
 import InternationalSingapore from "./pages/locations/InternationalSingapore";
 import InternationalLanguage from "./pages/locations/InternationalLanguage";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import AboutUs from "./pages/AboutUs";
 
 // Scroll to top helper on route change
 function ScrollToTop() {
@@ -91,11 +94,12 @@ export default function AppContent() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <Navbar />
       <Routes>
         {/* Core Main Routes */}
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/about/" element={<About />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/about/" element={<AboutUs />} />
         <Route path="/about/life-at-Silgate" element={<LifeAtSilgate />} />
         <Route path="/about/life-at-Silgate/" element={<LifeAtSilgate />} />
         <Route path="/life-at-Silgate" element={<LifeAtSilgate />} />
@@ -439,6 +443,7 @@ export default function AppContent() {
         {/* 404 Catch-All (Requirement 9: Never fallback * to Home) */}
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
       <FloatingContactButtons />
     </BrowserRouter>
   );

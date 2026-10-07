@@ -30,7 +30,7 @@ export default function ServicePageTemplate({
 }) {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <main className="flex-1">
         {/* Hero Section */}
