@@ -1,238 +1,172 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  ChevronDown,
-  Menu,
-  X,
-  Phone,
-  ArrowUpRight,
-  Sparkles,
-  ExternalLink,
-} from "lucide-react";
+import { ChevronDown, Menu, X, Phone, ArrowUpRight } from "lucide-react";
+
 import { Youtube, Linkedin, Instagram } from "../assets/icons/SocialIcons";
+
 import logoImg from "../assets/images/logo.png";
 
 export default function Navbar() {
+  const location = useLocation();
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileExpandedSection, setMobileExpandedSection] = useState(null);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
 
+  /* =========================
+     SCROLL EFFECT
+  ========================= */
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  // Close menus on route change
+  /* =========================
+     CLOSE MOBILE MENU ON ROUTE CHANGE
+  ========================= */
   useEffect(() => {
     setMobileMenuOpen(false);
     setActiveDropdown(null);
-    window.scrollTo(0, 0);
+    setMobileExpandedSection(null);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }, [location.pathname]);
 
+  /* =========================
+     MOBILE ACCORDION
+  ========================= */
   const toggleMobileSubmenu = (name) => {
-    setMobileExpandedSection(mobileExpandedSection === name ? null : name);
+    setMobileExpandedSection((current) => (current === name ? null : name));
+  };
+
+  /* =========================
+     CLOSE MOBILE MENU
+  ========================= */
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setMobileExpandedSection(null);
+  };
+
+  /* =========================
+     ACTIVE ROUTE
+  ========================= */
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
+
+  const isParentActive = (path) => {
+    return location.pathname.startsWith(path);
   };
 
   return (
-    <header className="w-full z-50 sticky top-0 transition-all duration-200">
-      {/* Top Utility Bar */}
-      {/* <div className="bg-[#091E3A] text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-[#132C4E] hidden md:block">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <a
-              href="tel:+918108810916"
-              className="flex items-center gap-1.5 hover:text-[#F36C3D] transition-colors"
-            >
-              <Phone className="w-3.5 h-3.5 text-[#F36C3D]" />
-              <span className="font-medium">+91 81088 10916</span>
-            </a>
-            <span className="text-slate-600">|</span>
-            <span className="text-slate-300">
-              Enterprise Digital Marketing, SEO & Technology Solutions
-            </span>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <Link
-              to="/contact"
-              className="hover:text-[#F36C3D] transition-colors"
-            >
-              Contact
-            </Link>
-            <Link
-              to="/career"
-              className="hover:text-[#F36C3D] transition-colors"
-            >
-              Career
-            </Link>
-            <Link to="/blog" className="hover:text-[#F36C3D] transition-colors">
-              Blog
-            </Link>
-            <div className="flex items-center gap-3 pl-3 border-l border-[#1E3E6B] text-slate-400">
-              <a
-                href="https://youtube.com/@SilgateMedia"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-[#F36C3D] transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="https://in.linkedin.com/company/Silgate-media-pvt-ltd"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-[#F36C3D] transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-3.5 h-3.5" />
-              </a>
-              <a
-                href="https://www.instagram.com/Silgate.media/"
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-[#F36C3D] transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-3.5 h-3.5" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* Main Navigation Bar */}
+    <header className="sticky top-0 z-[100] w-full">
+      {/* =====================================================
+          NAVBAR
+      ====================================================== */}
       <nav
-        className={`w-full bg-white/95 backdrop-blur-md transition-all duration-300 ${scrolled ? "shadow-md py-2.5" : "py-3.5"} border-b border-slate-200/90`}
+        className={`
+          w-full
+          bg-white/95
+          backdrop-blur-md
+          border-b border-slate-200
+          transition-all duration-300
+          ${scrolled ? "py-2 shadow-md" : "py-3"}
+        `}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group flex-shrink-0">
+        <div
+          className="
+            max-w-7xl
+            mx-auto
+            px-4
+            sm:px-6
+            lg:px-8
+            flex
+            items-center
+            justify-between
+            gap-4
+          "
+        >
+          {/* =================================================
+              LOGO
+          ================================================== */}
+          <Link
+            to="/"
+            onClick={closeMobileMenu}
+            className="flex items-center flex-shrink-0"
+          >
             <img
               src={logoImg}
               alt="Silgate Solutions"
-              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
-              onError={(e) => {
-                e.target.style.display = "none";
-                e.target.nextSibling.style.display = "block";
-              }}
+              className="
+                h-9
+                sm:h-10
+                lg:h-12
+                w-auto
+                object-contain
+              "
             />
-            <span className="hidden font-bold text-xl sm:text-2xl tracking-tight text-[#00529B]">
-              Silgate <span className="text-[#F36C3D]">Solutions</span>
-            </span>
           </Link>
 
-          {/* Desktop Nav Links */}
+          {/* =================================================
+              DESKTOP NAVIGATION
+          ================================================== */}
           <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+            {/* HOME */}
             <Link
               to="/"
-              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.pathname === "/" ? "text-black font-semibold" : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"}`}
+              className={`
+                px-3
+                py-2
+                text-sm
+                font-medium
+                rounded-lg
+                transition-colors
+                ${
+                  isActive("/")
+                    ? "text-[#00529B] font-semibold"
+                    : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
+                }
+              `}
             >
               Home
             </Link>
 
-            {/* Influencer Dropdown */}
-            {/* <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown("influencer")}
-              onMouseLeave={() => setActiveDropdown(null)}
+            {/* =================================================
+                ABOUT US
+            ================================================== */}
+            <Link
+              to="/about"
+              className={`
+                px-3
+                py-2
+                text-sm
+                font-medium
+                rounded-lg
+                transition-colors
+                ${
+                  isActive("/about")
+                    ? "text-[#00529B] font-semibold"
+                    : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
+                }
+              `}
             >
-              <button
-                type="button"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
-              >
-                <span>Influencer</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-60" />
-              </button>
-              {activeDropdown === "influencer" && (
-                <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-zinc-100 py-2 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <Link
-                    to="/services/influencer-marketing-agency"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    Influencer Marketing Agency
-                  </Link>
-                  <Link
-                    to="/influencer-marketing-portfolio"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    Influencer Portfolio
-                  </Link>
-                </div>
-              )}
-            </div> */}
+              About Us
+            </Link>
 
-            {/* About Us Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown("about")}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <Link
-                to="/about"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
-              >
-                <span>About Us</span>
-                {/* <ChevronDown className="w-3.5 h-3.5 opacity-60" /> */}
-              </Link>
-              {/* {activeDropdown === "about" && (
-                <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-zinc-100 py-2 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <Link
-                    to="/about"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    About Silgate
-                  </Link>
-                  <Link
-                    to="/about/life-at-Silgate"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    Life at Silgate
-                  </Link>
-                  <Link
-                    to="/about/credo-at-Silgate"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    Credo at Silgate
-                  </Link>
-                  <Link
-                    to="/other-companies"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    Other Companies
-                  </Link>
-                  <Link
-                    to="/products"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    Products
-                  </Link>
-                  <Link
-                    to="/news-awards"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    News & Awards
-                  </Link>
-                  <Link
-                    to="/kavish-arora"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    Meet Our Founder
-                  </Link>
-                </div>
-              )} */}
-            </div>
-
-            {/* Services Mega Menu */}
+            {/* =================================================
+                SERVICES
+            ================================================== */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("services")}
@@ -240,290 +174,307 @@ export default function Navbar() {
             >
               <Link
                 to="/services"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
+                className={`
+                  flex
+                  items-center
+                  gap-1
+                  px-3
+                  py-2
+                  text-sm
+                  font-medium
+                  rounded-lg
+                  transition-colors
+                  ${
+                    isParentActive("/services")
+                      ? "text-[#00529B] font-semibold"
+                      : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
+                  }
+                `}
               >
-                <span>Services</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                Services
+                <ChevronDown className="w-3.5 h-3.5" />
               </Link>
+
               {activeDropdown === "services" && (
-                <div className="absolute top-full -left-40 xl:-left-32 w-[920px] bg-white rounded-2xl shadow-2xl border border-zinc-100 p-6 animate-in fade-in slide-in-from-top-1 duration-150">
+                <div
+                  className="
+                    absolute
+                    top-full
+                    -left-40
+                    xl:-left-32
+                    mt-1
+                    w-[900px]
+                    max-w-[90vw]
+                    bg-white
+                    rounded-2xl
+                    shadow-2xl
+                    border
+                    border-zinc-100
+                    p-6
+                  "
+                >
                   <div className="grid grid-cols-4 gap-6 text-sm">
-                    {/* Col 1 */}
+                    {/* COLUMN 1 */}
                     <div>
-                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-3">
+                      <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
                         Creative & Brand
+                      </h3>
+
+                      <div className="space-y-2">
+                        <Link
+                          to="/services/ai-video-production-agency"
+                          className="block hover:text-[#00529B]"
+                        >
+                          AI Generated Videos
+                        </Link>
+
+                        <Link
+                          to="/services/creative-communication"
+                          className="block hover:text-[#00529B]"
+                        >
+                          Creative & Communication
+                        </Link>
+
+                        <Link
+                          to="/services/creative-communication/brand-strategy"
+                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
+                        >
+                          Brand Strategy
+                        </Link>
+
+                        <Link
+                          to="/services/creative-communication/logo-identity-design"
+                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
+                        >
+                          Logo & Identity Design
+                        </Link>
+
+                        <Link
+                          to="/services/creative-communication/product-packaging"
+                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
+                        >
+                          Product Packaging
+                        </Link>
+
+                        <Link
+                          to="/services/brand-video-production-agency"
+                          className="block hover:text-[#00529B]"
+                        >
+                          Brand Video Production
+                        </Link>
+
+                        <Link
+                          to="/services/ugc-video-agency"
+                          className="block hover:text-[#00529B]"
+                        >
+                          UGC Video Agency
+                        </Link>
                       </div>
-                      <ul className="space-y-2">
-                        <li>
-                          <Link
-                            to="/services/ai-video-production-agency"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors flex items-center justify-between group"
-                          >
-                            <span>AI Generated Videos</span>
-                            <span className="badge-new">New</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/creative-communication"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            Creative & Communication
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/creative-communication/brand-strategy"
-                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
-                          >
-                            Brand Strategy
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/creative-communication/logo-identity-design"
-                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
-                          >
-                            Logo & Identity Design
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/creative-communication/product-packaging"
-                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
-                          >
-                            Product Packaging
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/brand-video-production-agency"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            Brand Video Production
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/ugc-video-agency"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            UGC Video Agency
-                          </Link>
-                        </li>
-                      </ul>
                     </div>
 
-                    {/* Col 2 */}
+                    {/* COLUMN 2 */}
                     <div>
-                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-3">
+                      <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
                         Content & Reputation
+                      </h3>
+
+                      <div className="space-y-2">
+                        <Link
+                          to="/services/content-marketing"
+                          className="block hover:text-[#00529B]"
+                        >
+                          Content Marketing
+                        </Link>
+
+                        <Link
+                          to="/services/content-marketing/seo-copywriting"
+                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
+                        >
+                          SEO Copywriting
+                        </Link>
+
+                        <Link
+                          to="/services/content-marketing/video-tvc-scripts"
+                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
+                        >
+                          Video & TVC Scripts
+                        </Link>
+
+                        <Link
+                          to="/services/online-reputation-management"
+                          className="block hover:text-[#00529B]"
+                        >
+                          Online Reputation Mgmt
+                        </Link>
+
+                        <Link
+                          to="/services/online-reputation-management/brand-reputation-management"
+                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
+                        >
+                          Brand Reputation
+                        </Link>
+
+                        <Link
+                          to="/services/online-reputation-management/corporate-reputation-management"
+                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
+                        >
+                          Corporate Reputation
+                        </Link>
+
+                        <Link
+                          to="/services/ad-management"
+                          className="block hover:text-[#00529B]"
+                        >
+                          Ad Management
+                        </Link>
                       </div>
-                      <ul className="space-y-2">
-                        <li>
-                          <Link
-                            to="/services/content-marketing"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            Content Marketing
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/content-marketing/seo-copywriting"
-                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
-                          >
-                            SEO Copywriting
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/content-marketing/video-tvc-scripts"
-                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
-                          >
-                            Video & TVC Scripts
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/online-reputation-management"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            Online Reputation Mgmt
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/online-reputation-management/brand-reputation-management"
-                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
-                          >
-                            Brand Reputation
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/online-reputation-management/corporate-reputation-management"
-                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
-                          >
-                            Corporate Reputation
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/ad-management"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            Ad Management
-                          </Link>
-                        </li>
-                      </ul>
                     </div>
 
-                    {/* Col 3 */}
+                    {/* COLUMN 3 */}
                     <div>
-                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-3">
+                      <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
                         Search & Performance
+                      </h3>
+
+                      <div className="space-y-2">
+                        <Link
+                          to="/services/seo-services"
+                          className="block hover:text-[#00529B]"
+                        >
+                          SEO Services
+                        </Link>
+
+                        <Link
+                          to="/aeo-services-company-in-india"
+                          className="block hover:text-[#00529B]"
+                        >
+                          AEO Services
+                        </Link>
+
+                        <Link
+                          to="/generative-engine-optimization-india"
+                          className="block hover:text-[#00529B]"
+                        >
+                          GEO Services
+                        </Link>
+
+                        <Link
+                          to="/performance-marketing-agency"
+                          className="block hover:text-[#00529B]"
+                        >
+                          Performance Marketing
+                        </Link>
+
+                        <Link
+                          to="/services/b2b-seo-company-in-india"
+                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
+                        >
+                          B2B SEO Company
+                        </Link>
+
+                        <Link
+                          to="/services/local-seo-company-in-india"
+                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
+                        >
+                          Local SEO & GMB
+                        </Link>
+
+                        <Link
+                          to="/services/search-engine-marketing"
+                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
+                        >
+                          Search Engine Marketing
+                        </Link>
                       </div>
-                      <ul className="space-y-2">
-                        <li>
-                          <Link
-                            to="/services/seo-services"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            SEO Services
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/aeo-services-company-in-india"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors flex items-center justify-between"
-                          >
-                            <span>AEO Services</span>
-                            <span className="badge-new">New</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/generative-engine-optimization-india"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors flex items-center justify-between"
-                          >
-                            <span>GEO Services</span>
-                            <span className="badge-new">New</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/performance-marketing-agency"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors flex items-center justify-between"
-                          >
-                            <span>Performance Mktg</span>
-                            <span className="badge-demanded">Hot</span>
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/b2b-seo-company-in-india"
-                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
-                          >
-                            B2B SEO Company
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/local-seo-company-in-india"
-                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
-                          >
-                            Local SEO & GMB
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/search-engine-marketing"
-                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
-                          >
-                            Search Engine Mktg
-                          </Link>
-                        </li>
-                      </ul>
                     </div>
 
-                    {/* Col 4 */}
+                    {/* COLUMN 4 */}
                     <div>
-                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-3">
+                      <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
                         Social & Tech
+                      </h3>
+
+                      <div className="space-y-2">
+                        <Link
+                          to="/services/social-media-marketing"
+                          className="block hover:text-[#00529B]"
+                        >
+                          Social Media Marketing
+                        </Link>
+
+                        <Link
+                          to="/services/influencer-marketing-agency"
+                          className="block hover:text-[#00529B]"
+                        >
+                          Influencer Marketing
+                        </Link>
+
+                        <Link
+                          to="/services/website-development-india"
+                          className="block hover:text-[#00529B]"
+                        >
+                          Website Development
+                        </Link>
+
+                        <Link
+                          to="/services/website-development-india/corporate-website-design"
+                          className="block text-xs text-slate-500 hover:text-[#F36C3D]"
+                        >
+                          Corporate Web Design
+                        </Link>
+
+                        <Link
+                          to="/services/web-application-development"
+                          className="block hover:text-[#00529B]"
+                        >
+                          Web App Development
+                        </Link>
+
+                        <Link
+                          to="/rankstreet"
+                          className="block hover:text-[#00529B]"
+                        >
+                          RankStreet
+                        </Link>
+
+                        <Link
+                          to="/managed-it-services-usa"
+                          className="block hover:text-[#00529B]"
+                        >
+                          Managed IT Services
+                        </Link>
                       </div>
-                      <ul className="space-y-2">
-                        <li>
-                          <Link
-                            to="/services/social-media-marketing"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            Social Media Marketing
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/influencer-marketing-agency"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            Influencer Marketing
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/website-development-india"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            Website Development
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/website-development-india/corporate-website-design"
-                            className="text-slate-500 hover:text-[#F36C3D] hover:translate-x-0.5 transition-all text-xs block pl-2"
-                          >
-                            Corporate Web Design
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/services/web-application-development"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            Web App Development
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/rankstreet"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            RankStreet
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/managed-it-services-usa"
-                            className="text-slate-700 hover:text-[#00529B] font-medium transition-colors"
-                          >
-                            Managed IT Services
-                          </Link>
-                        </li>
-                      </ul>
                     </div>
                   </div>
 
-                  {/* Mega Menu Footer */}
-                  <div className="mt-6 pt-4 border-t border-zinc-100 flex items-center justify-between bg-zinc-50 -mx-6 -mb-6 p-4 rounded-b-2xl">
-                    <div className="text-xs text-zinc-600">
-                      Explore all 15+ comprehensive full-stack digital services
-                      under one roof.
-                    </div>
+                  <div
+                    className="
+                    mt-6
+                    pt-4
+                    border-t
+                    border-zinc-100
+                    flex
+                    items-center
+                    justify-between
+                    gap-4
+                  "
+                  >
+                    <span className="text-xs text-zinc-500">
+                      Explore our complete digital services.
+                    </span>
+
                     <Link
                       to="/services"
-                      className="text-xs font-semibold text-black hover:text-amber-600 flex items-center gap-1"
+                      className="
+                        text-xs
+                        font-semibold
+                        text-[#00529B]
+                        flex
+                        items-center
+                        gap-1
+                      "
                     >
-                      <span>View All Services</span>
+                      View All Services
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -531,46 +482,53 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Products Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown("product")}
-              onMouseLeave={() => setActiveDropdown(null)}
+            {/* =================================================
+                PRODUCTS
+            ================================================== */}
+            <Link
+              to="/products"
+              className={`
+                px-3
+                py-2
+                text-sm
+                font-medium
+                rounded-lg
+                transition-colors
+                ${
+                  isActive("/products")
+                    ? "text-[#00529B] font-semibold"
+                    : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
+                }
+              `}
             >
-              <Link
-                to="/about"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
-              >
-                <span>Products</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-60" />
-              </Link>
-              {activeDropdown === "product" && (
-                <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-zinc-100 py-2 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <Link
-                    to="/about"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    Product List
-                  </Link>
-                  <Link
-                    to="/about/life-at-Silgate"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    Pricing
-                  </Link>
-                </div>
-              )}
-            </div>
+              Products
+            </Link>
 
-            {/* Clients Link */}
+            {/* =================================================
+                CLIENTS
+            ================================================== */}
             <Link
               to="/clients"
-              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.pathname === "/clients" ? "text-black font-semibold" : "text-zinc-700 hover:text-black hover:bg-zinc-50"}`}
+              className={`
+                px-3
+                py-2
+                text-sm
+                font-medium
+                rounded-lg
+                transition-colors
+                ${
+                  isActive("/clients")
+                    ? "text-[#00529B] font-semibold"
+                    : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
+                }
+              `}
             >
               Clients
             </Link>
 
-            {/* Industry Mega Menu */}
+            {/* =================================================
+                INDUSTRY
+            ================================================== */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("industry")}
@@ -578,345 +536,278 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
+                className="
+                  flex
+                  items-center
+                  gap-1
+                  px-3
+                  py-2
+                  text-sm
+                  font-medium
+                  text-zinc-700
+                  hover:text-[#00529B]
+                  hover:bg-zinc-50
+                  rounded-lg
+                  transition-colors
+                "
               >
-                <span>Industry</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                Industry
+                <ChevronDown className="w-3.5 h-3.5" />
               </button>
+
               {activeDropdown === "industry" && (
-                <div className="absolute top-full -left-20 xl:left-0 w-[680px] bg-white rounded-2xl shadow-2xl border border-zinc-100 p-6 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-3">
+                <div
+                  className="
+                    absolute
+                    top-full
+                    left-0
+                    mt-1
+                    w-[680px]
+                    max-w-[90vw]
+                    bg-white
+                    rounded-2xl
+                    shadow-2xl
+                    border
+                    border-zinc-100
+                    p-6
+                  "
+                >
+                  <h3 className="font-bold text-xs text-[#00529B] uppercase tracking-wider mb-3">
                     Industries We Excel In
-                  </div>
+                  </h3>
+
                   <div className="grid grid-cols-3 gap-3 text-sm">
-                    <Link
-                      to="/automotive-digital-marketing-agency"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      🚗 Automotive
-                    </Link>
-                    <Link
-                      to="/beauty-skin-care-digital-marketing-agency"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      ✨ Beauty & Skin Care
-                    </Link>
-                    <Link
-                      to="/digital-marketing-agency-for-business-to-business"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      🏢 B2B Marketing
-                    </Link>
-                    <Link
-                      to="/digital-marketing-agency-for-education-industry"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      🎓 Education
-                    </Link>
-                    <Link
-                      to="/digital-marketing-agency-for-food-beverage"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      🍔 Food & Beverage
-                    </Link>
-                    <Link
-                      to="/digital-marketing-services-for-healthcare"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      🩺 Healthcare
-                    </Link>
-                    <Link
-                      to="/digital-marketing-agency-for-real-estate"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      🏠 Real Estate
-                    </Link>
-                    <Link
-                      to="/digital-marketing-for-financial-services"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      💳 Financial Services
-                    </Link>
-                    <Link
-                      to="/digital-marketing-for-travel-tourism"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      ✈️ Travel & Tourism
-                    </Link>
-                    <Link
-                      to="/digital-marketing-services-for-ev"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      ⚡ Electric Vehicles (EV)
-                    </Link>
-                    <Link
-                      to="/digital-marketing-services-for-home-decor"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      🛋️ Home Decor
-                    </Link>
-                    <Link
-                      to="/digital-marketing-for-ecommerce-2"
-                      className="p-2 hover:bg-zinc-50 rounded-lg text-slate-700 hover:text-[#00529B] font-medium transition-colors block"
-                    >
-                      🛍️ E-Commerce
-                    </Link>
+                    {[
+                      ["/automotive-digital-marketing-agency", "🚗 Automotive"],
+                      [
+                        "/beauty-skin-care-digital-marketing-agency",
+                        "✨ Beauty & Skin Care",
+                      ],
+                      [
+                        "/digital-marketing-agency-for-business-to-business",
+                        "🏢 B2B Marketing",
+                      ],
+                      [
+                        "/digital-marketing-agency-for-education-industry",
+                        "🎓 Education",
+                      ],
+                      [
+                        "/digital-marketing-agency-for-food-beverage",
+                        "🍔 Food & Beverage",
+                      ],
+                      [
+                        "/digital-marketing-services-for-healthcare",
+                        "🩺 Healthcare",
+                      ],
+                      [
+                        "/digital-marketing-agency-for-real-estate",
+                        "🏠 Real Estate",
+                      ],
+                      [
+                        "/digital-marketing-for-financial-services",
+                        "💳 Financial Services",
+                      ],
+                      [
+                        "/digital-marketing-for-travel-tourism",
+                        "✈️ Travel & Tourism",
+                      ],
+                      [
+                        "/digital-marketing-services-for-ev",
+                        "⚡ Electric Vehicles",
+                      ],
+                      [
+                        "/digital-marketing-services-for-home-decor",
+                        "🛋️ Home Decor",
+                      ],
+                      ["/digital-marketing-for-ecommerce-2", "🛍️ E-Commerce"],
+                    ].map(([path, label]) => (
+                      <Link
+                        key={path}
+                        to={path}
+                        className="
+                          p-2
+                          rounded-lg
+                          text-zinc-700
+                          hover:text-[#00529B]
+                          hover:bg-zinc-50
+                          transition-colors
+                        "
+                      >
+                        {label}
+                      </Link>
+                    ))}
                   </div>
                 </div>
               )}
             </div>
 
-            {/* International Mega Menu */}
-            {/* <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown("international")}
-              onMouseLeave={() => setActiveDropdown(null)}
+            {/* =================================================
+                RESOURCES
+            ================================================== */}
+            <Link
+              to="/resources"
+              className={`
+                px-3
+                py-2
+                text-sm
+                font-medium
+                rounded-lg
+                transition-colors
+                ${
+                  isActive("/resources")
+                    ? "text-[#00529B] font-semibold"
+                    : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
+                }
+              `}
             >
-              <button
-                type="button"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
-              >
-                <span>International</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-60" />
-              </button>
-              {activeDropdown === "international" && (
-                <div className="absolute top-full right-0 w-[720px] bg-white rounded-2xl shadow-2xl border border-zinc-100 p-6 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <div className="grid grid-cols-3 gap-6 text-sm">
-                    <div>
-                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-2">
-                        North America
-                      </div>
-                      <ul className="space-y-1.5">
-                        <li>
-                          <Link
-                            to="/san-francisco-digital-marketing-agency"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇺🇸 San Francisco
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/seo-services-in-newyork"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇺🇸 New York · SEO
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/canada-digital-marketing-agency"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇨🇦 Canada Agency
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/toronto-digital-marketing-agency"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇨🇦 Toronto
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
+              Resources
+            </Link>
 
-                    <div>
-                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-2">
-                        Europe & Gulf
-                      </div>
-                      <ul className="space-y-1.5">
-                        <li>
-                          <Link
-                            to="/uk-digital-marketing-agency"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇬🇧 United Kingdom
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/london-digital-marketing-agency"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇬🇧 London Agency
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/dubai-digital-marketing-agency"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇦🇪 Dubai Agency
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/saudi-arabia-digital-marketing-agency"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇸🇦 Saudi Arabia
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/bahrain-digital-marketing-agency"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇧🇭 Bahrain
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <div className="font-bold text-xs text-[#00529B] tracking-wider uppercase mb-2">
-                        Global & Multilingual
-                      </div>
-                      <ul className="space-y-1.5">
-                        <li>
-                          <Link
-                            to="/digital-marketing-agency-in-australia"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇦🇺 Australia
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/singapore-digital-marketing-agency"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇸🇬 Singapore
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/es"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇪🇸 Spanish Market Entry
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/de"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇩🇪 German Market Entry
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            to="/ja"
-                            className="text-slate-600 hover:text-[#00529B] hover:translate-x-0.5 transition-all block py-1"
-                          >
-                            🇯🇵 Japan Market Entry
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div> */}
-
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown("resources")}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <Link
-                to="/about"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-[#00529B] rounded-lg hover:bg-[#EBF3FB]/60 transition-colors font-medium"
-              >
-                <span>Resources</span>
-                <ChevronDown className="w-3.5 h-3.5 opacity-60" />
-              </Link>
-              {activeDropdown === "resources" && (
-                <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-zinc-100 py-2 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <Link
-                    to="/about"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    Blog
-                  </Link>
-                  <Link
-                    to="/about/life-at-Silgate"
-                    className="block px-4 py-2.5 text-sm text-slate-700 hover:bg-[#EBF3FB]/60 hover:text-[#00529B] font-medium rounded-md transition-colors"
-                  >
-                    Case Studies
-                  </Link>
-                </div>
-              )}
-            </div>
-
+            {/* =================================================
+                CAREERS
+            ================================================== */}
             <Link
               to="/career"
-              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.pathname === "/career" ? "text-black font-semibold" : "text-zinc-700 hover:text-black hover:bg-zinc-50"}`}
+              className={`
+                px-3
+                py-2
+                text-sm
+                font-medium
+                rounded-lg
+                transition-colors
+                ${
+                  isActive("/career")
+                    ? "text-[#00529B] font-semibold"
+                    : "text-zinc-700 hover:text-[#00529B] hover:bg-zinc-50"
+                }
+              `}
             >
               Careers
             </Link>
-
-            {/* <Link
-              to="/blog"
-              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${location.pathname.startsWith("/blog") ? "text-black font-semibold" : "text-zinc-700 hover:text-black hover:bg-zinc-50"}`}
-            >
-              Blog
-            </Link> */}
           </div>
 
-          {/* Right Header CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* =================================================
+              DESKTOP CTA
+          ================================================== */}
+          <div className="hidden lg:flex items-center">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-1.5 text-xs font-semibold px-5 py-2.5 rounded-lg bg-[#00529B] text-white hover:bg-[#F36C3D] hover:shadow-md hover:shadow-orange-500/20 transition-all tracking-tight group shadow-sm"
+              className="
+                inline-flex
+                items-center
+                justify-center
+                gap-1.5
+                text-xs
+                font-semibold
+                px-5
+                py-2.5
+                rounded-lg
+                bg-[#00529B]
+                text-white
+                hover:bg-[#F36C3D]
+                transition-all
+                shadow-sm
+              "
             >
-              <span>Get in Touch</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              Get in Touch
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* =================================================
+              MOBILE HEADER
+          ================================================== */}
+          <div className="flex lg:hidden items-center gap-2">
             <Link
               to="/contact"
-              className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-[#00529B] text-white hover:bg-[#F36C3D] transition-colors"
+              className="
+                text-xs
+                font-semibold
+                px-3
+                py-2
+                rounded-lg
+                bg-[#00529B]
+                text-white
+                hover:bg-[#F36C3D]
+                transition-colors
+              "
             >
               Contact
             </Link>
+
             <button
               type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-700 hover:text-[#00529B] focus:outline-none"
-              aria-label="Toggle Navigation Menu"
+              onClick={() => setMobileMenuOpen(true)}
+              className="
+                p-2
+                rounded-lg
+                text-zinc-700
+                hover:text-[#00529B]
+                hover:bg-zinc-100
+                transition-colors
+              "
+              aria-label="Open navigation menu"
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              <Menu className="w-6 h-6" />
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Offcanvas Drawer */}
+      {/* =====================================================
+          MOBILE MENU
+      ====================================================== */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 bg-[#07172C]/70 backdrop-blur-sm transition-opacity"
-            onClick={() => setMobileMenuOpen(false)}
+        <div className="fixed inset-0 z-[200] lg:hidden">
+          {/* BACKDROP */}
+          <button
+            type="button"
+            aria-label="Close navigation menu"
+            className="
+              absolute
+              inset-0
+              w-full
+              h-full
+              bg-[#07172C]/70
+              backdrop-blur-sm
+            "
+            onClick={closeMobileMenu}
           />
 
-          {/* Offcanvas Content */}
-          <div className="fixed right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl flex flex-col z-50 overflow-y-auto">
-            <div className="p-4 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white">
+          {/* DRAWER */}
+          <aside
+            className="
+              absolute
+              right-0
+              top-0
+              bottom-0
+              w-full
+              sm:max-w-md
+              bg-white
+              shadow-2xl
+              flex
+              flex-col
+              overflow-hidden
+            "
+          >
+            {/* ===============================================
+                DRAWER HEADER
+            ================================================ */}
+            <div
+              className="
+                flex
+                items-center
+                justify-between
+                p-4
+                border-b
+                border-zinc-100
+                flex-shrink-0
+              "
+            >
               <Link
                 to="/"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
                 className="flex items-center"
               >
                 <img
@@ -925,502 +816,462 @@ export default function Navbar() {
                   className="h-9 w-auto object-contain"
                 />
               </Link>
+
               <button
                 type="button"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600 hover:text-[#00529B] hover:bg-[#EBF3FB]"
-                aria-label="Close menu"
+                onClick={closeMobileMenu}
+                className="
+                  w-10
+                  h-10
+                  rounded-lg
+                  bg-zinc-100
+                  flex
+                  items-center
+                  justify-center
+                  text-zinc-600
+                  hover:text-[#00529B]
+                  hover:bg-[#EBF3FB]
+                  transition-colors
+                "
+                aria-label="Close navigation menu"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="p-5 flex-1 divide-y divide-zinc-100 space-y-4">
-              <div className="pt-2">
-                <Link
-                  to="/"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-2 text-base font-semibold text-zinc-900"
-                >
-                  Home
-                </Link>
-              </div>
+            {/* ===============================================
+                MOBILE LINKS
+            ================================================ */}
+            <div
+              className="
+                flex-1
+                overflow-y-auto
+                p-5
+                pb-8
+              "
+            >
+              {/* HOME */}
+              <Link
+                to="/"
+                onClick={closeMobileMenu}
+                className={`
+                  block
+                  py-3
+                  text-base
+                  font-semibold
+                  border-b
+                  border-zinc-100
+                  ${isActive("/") ? "text-[#00529B]" : "text-zinc-900"}
+                `}
+              >
+                Home
+              </Link>
 
-              {/* Influencer Accordion */}
-              {/* <div className="pt-3">
-                <button
-                  type="button"
-                  onClick={() => toggleMobileSubmenu("influencer")}
-                  className="w-full flex items-center justify-between py-2 text-base font-semibold text-zinc-900"
-                >
-                  <span>Influencer</span>
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${mobileExpandedSection === "influencer" ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {mobileExpandedSection === "influencer" && (
-                  <div className="pl-4 py-2 space-y-2 text-sm text-zinc-700 bg-zinc-50 rounded-xl mt-1">
-                    <Link
-                      to="/services/influencer-marketing-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Influencer Marketing Agency
-                    </Link>
-                    <Link
-                      to="/influencer-marketing-portfolio"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Influencer Portfolio
-                    </Link>
-                  </div>
-                )}
-              </div> */}
+              {/* =================================================
+                  FIXED ABOUT US LINK
+                  IMPORTANT: THIS IS A LINK, NOT A BUTTON
+              ================================================== */}
+              <Link
+                to="/about"
+                onClick={closeMobileMenu}
+                className={`
+                  block
+                  py-3
+                  text-base
+                  font-semibold
+                  border-b
+                  border-zinc-100
+                  ${isActive("/about") ? "text-[#00529B]" : "text-zinc-900"}
+                `}
+              >
+                About Us
+              </Link>
 
-              {/* About Us Accordion */}
-              <div className="pt-3">
-                <button
-                  type="button"
-                  onClick={() => toggleMobileSubmenu("about")}
-                  className="w-full flex items-center justify-between py-2 text-base font-semibold text-zinc-900"
-                >
-                  <span>About Us</span>
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${mobileExpandedSection === "about" ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {mobileExpandedSection === "about" && (
-                  <div className="pl-4 py-2 space-y-2 text-sm text-zinc-700 bg-zinc-50 rounded-xl mt-1">
-                    <Link
-                      to="/about"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-medium"
-                    >
-                      About Silgate
-                    </Link>
-                    <Link
-                      to="/about/life-at-Silgate"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-medium"
-                    >
-                      Life at Silgate
-                    </Link>
-                    <Link
-                      to="/about/credo-at-Silgate"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-medium"
-                    >
-                      Credo at Silgate
-                    </Link>
-                    <Link
-                      to="/other-companies"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-medium"
-                    >
-                      Other Companies
-                    </Link>
-                    <Link
-                      to="/products"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-medium"
-                    >
-                      Products
-                    </Link>
-                    <Link
-                      to="/news-awards"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-medium"
-                    >
-                      News & Awards
-                    </Link>
-                    <Link
-                      to="/kavish-arora"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-medium"
-                    >
-                      Meet Our Founder
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {/* Services Accordion */}
-              <div className="pt-3">
+              {/* =================================================
+                  SERVICES
+              ================================================== */}
+              <div className="border-b border-zinc-100">
                 <button
                   type="button"
                   onClick={() => toggleMobileSubmenu("services")}
-                  className="w-full flex items-center justify-between py-2 text-base font-semibold text-zinc-900"
+                  className="
+                    w-full
+                    flex
+                    items-center
+                    justify-between
+                    py-3
+                    text-base
+                    font-semibold
+                    text-zinc-900
+                  "
+                  aria-expanded={mobileExpandedSection === "services"}
                 >
                   <span>Services</span>
+
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform ${mobileExpandedSection === "services" ? "rotate-180" : ""}`}
+                    className={`
+                      w-5
+                      h-5
+                      transition-transform
+                      ${
+                        mobileExpandedSection === "services" ? "rotate-180" : ""
+                      }
+                    `}
                   />
                 </button>
+
                 {mobileExpandedSection === "services" && (
-                  <div className="pl-4 py-2 space-y-2 text-sm text-zinc-700 bg-zinc-50 rounded-xl mt-1 max-h-72 overflow-y-auto">
+                  <div
+                    className="
+                      mb-3
+                      ml-2
+                      rounded-xl
+                      bg-zinc-50
+                      p-3
+                      space-y-1
+                    "
+                  >
                     <Link
                       to="/services"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-bold text-black border-b border-zinc-200"
+                      onClick={closeMobileMenu}
+                      className="
+                        block
+                        py-2
+                        font-bold
+                        text-[#00529B]
+                        border-b
+                        border-zinc-200
+                      "
                     >
-                      All Services Overview →
+                      All Services
                     </Link>
-                    <Link
-                      to="/services/ai-video-production-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      AI Video Production (New)
-                    </Link>
-                    <Link
-                      to="/services/seo-services"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      SEO Services
-                    </Link>
-                    <Link
-                      to="/aeo-services-company-in-india"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      AEO Services (New)
-                    </Link>
-                    <Link
-                      to="/generative-engine-optimization-india"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      GEO Services (New)
-                    </Link>
-                    <Link
-                      to="/performance-marketing-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Performance Marketing
-                    </Link>
-                    <Link
-                      to="/services/b2b-seo-company-in-india"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      B2B SEO
-                    </Link>
-                    <Link
-                      to="/services/local-seo-company-in-india"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Local SEO & GMB
-                    </Link>
-                    <Link
-                      to="/services/social-media-marketing"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Social Media Marketing
-                    </Link>
-                    <Link
-                      to="/services/influencer-marketing-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Influencer Marketing
-                    </Link>
-                    <Link
-                      to="/services/brand-video-production-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Brand Video Production
-                    </Link>
-                    <Link
-                      to="/services/ugc-video-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      UGC Video Agency
-                    </Link>
-                    <Link
-                      to="/services/website-development-india"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Website Development
-                    </Link>
-                    <Link
-                      to="/services/web-application-development"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Web App Development
-                    </Link>
-                    <Link
-                      to="/services/creative-communication"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Creative & Communication
-                    </Link>
-                    <Link
-                      to="/services/content-marketing"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Content Marketing
-                    </Link>
-                    <Link
-                      to="/services/online-reputation-management"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Online Reputation Mgmt
-                    </Link>
-                    <Link
-                      to="/services/ad-management"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Ad Management
-                    </Link>
+
+                    {[
+                      [
+                        "/services/ai-video-production-agency",
+                        "AI Video Production",
+                      ],
+                      ["/services/seo-services", "SEO Services"],
+                      ["/aeo-services-company-in-india", "AEO Services"],
+                      ["/generative-engine-optimization-india", "GEO Services"],
+                      [
+                        "/performance-marketing-agency",
+                        "Performance Marketing",
+                      ],
+                      ["/services/b2b-seo-company-in-india", "B2B SEO"],
+                      [
+                        "/services/local-seo-company-in-india",
+                        "Local SEO & GMB",
+                      ],
+                      [
+                        "/services/social-media-marketing",
+                        "Social Media Marketing",
+                      ],
+                      [
+                        "/services/influencer-marketing-agency",
+                        "Influencer Marketing",
+                      ],
+                      [
+                        "/services/brand-video-production-agency",
+                        "Brand Video Production",
+                      ],
+                      ["/services/ugc-video-agency", "UGC Video Agency"],
+                      [
+                        "/services/website-development-india",
+                        "Website Development",
+                      ],
+                      [
+                        "/services/web-application-development",
+                        "Web App Development",
+                      ],
+                      [
+                        "/services/creative-communication",
+                        "Creative & Communication",
+                      ],
+                      ["/services/content-marketing", "Content Marketing"],
+                      [
+                        "/services/online-reputation-management",
+                        "Online Reputation Management",
+                      ],
+                      ["/services/ad-management", "Ad Management"],
+                    ].map(([path, label]) => (
+                      <Link
+                        key={path}
+                        to={path}
+                        onClick={closeMobileMenu}
+                        className="
+                          block
+                          py-2
+                          text-sm
+                          text-zinc-700
+                          hover:text-[#00529B]
+                        "
+                      >
+                        {label}
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
 
-              {/* product accordion */}
-              <div className="pt-3">
+              {/* =================================================
+                  PRODUCTS
+              ================================================== */}
+              <div className="border-b border-zinc-100">
                 <button
                   type="button"
-                  onClick={() => toggleMobileSubmenu("product")}
-                  className="w-full flex items-center justify-between py-2 text-base font-semibold text-zinc-900"
+                  onClick={() => toggleMobileSubmenu("products")}
+                  className="
+                    w-full
+                    flex
+                    items-center
+                    justify-between
+                    py-3
+                    text-base
+                    font-semibold
+                    text-zinc-900
+                  "
+                  aria-expanded={mobileExpandedSection === "products"}
                 >
                   <span>Products</span>
+
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform ${mobileExpandedSection === "product" ? "rotate-180" : ""}`}
+                    className={`
+                      w-5
+                      h-5
+                      transition-transform
+                      ${
+                        mobileExpandedSection === "products" ? "rotate-180" : ""
+                      }
+                    `}
                   />
                 </button>
-                {mobileExpandedSection === "product" && (
-                  <div className="pl-4 py-2 space-y-2 text-sm text-zinc-700 bg-zinc-50 rounded-xl mt-1">
+
+                {mobileExpandedSection === "products" && (
+                  <div
+                    className="
+                      mb-3
+                      ml-2
+                      rounded-xl
+                      bg-zinc-50
+                      p-3
+                    "
+                  >
                     <Link
-                      to="/about"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-medium"
+                      to="/products"
+                      onClick={closeMobileMenu}
+                      className="
+                        block
+                        py-2
+                        text-sm
+                        font-medium
+                        text-zinc-700
+                        hover:text-[#00529B]
+                      "
                     >
                       Product List
                     </Link>
-                    <Link
-                      to="/about/life-at-Silgate"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-medium"
-                    >
-                      Pricing
-                    </Link>
                   </div>
                 )}
               </div>
 
-              {/* Industry Accordion */}
-              <div className="pt-3">
+              {/* =================================================
+                  CLIENTS
+              ================================================== */}
+              <Link
+                to="/clients"
+                onClick={closeMobileMenu}
+                className={`
+                  block
+                  py-3
+                  text-base
+                  font-semibold
+                  border-b
+                  border-zinc-100
+                  ${isActive("/clients") ? "text-[#00529B]" : "text-zinc-900"}
+                `}
+              >
+                Clients
+              </Link>
+
+              {/* =================================================
+                  INDUSTRY
+              ================================================== */}
+              <div className="border-b border-zinc-100">
                 <button
                   type="button"
                   onClick={() => toggleMobileSubmenu("industry")}
-                  className="w-full flex items-center justify-between py-2 text-base font-semibold text-zinc-900"
+                  className="
+                    w-full
+                    flex
+                    items-center
+                    justify-between
+                    py-3
+                    text-base
+                    font-semibold
+                    text-zinc-900
+                  "
+                  aria-expanded={mobileExpandedSection === "industry"}
                 >
                   <span>Industry</span>
+
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform ${mobileExpandedSection === "industry" ? "rotate-180" : ""}`}
+                    className={`
+                      w-5
+                      h-5
+                      transition-transform
+                      ${
+                        mobileExpandedSection === "industry" ? "rotate-180" : ""
+                      }
+                    `}
                   />
                 </button>
+
                 {mobileExpandedSection === "industry" && (
-                  <div className="pl-4 py-2 space-y-1.5 text-sm text-zinc-700 bg-zinc-50 rounded-xl mt-1 max-h-56 overflow-y-auto">
-                    <Link
-                      to="/automotive-digital-marketing-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Automotive
-                    </Link>
-                    <Link
-                      to="/beauty-skin-care-digital-marketing-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Beauty & Skin Care
-                    </Link>
-                    <Link
-                      to="/digital-marketing-agency-for-business-to-business"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      B2B Marketing
-                    </Link>
-                    <Link
-                      to="/digital-marketing-agency-for-education-industry"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Education
-                    </Link>
-                    <Link
-                      to="/digital-marketing-agency-for-food-beverage"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Food & Beverage
-                    </Link>
-                    <Link
-                      to="/digital-marketing-services-for-healthcare"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Healthcare
-                    </Link>
-                    <Link
-                      to="/digital-marketing-agency-for-real-estate"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Real Estate
-                    </Link>
-                    <Link
-                      to="/digital-marketing-for-financial-services"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Financial Services
-                    </Link>
-                    <Link
-                      to="/digital-marketing-for-travel-tourism"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Travel & Tourism
-                    </Link>
-                    <Link
-                      to="/digital-marketing-services-for-ev"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Electric Vehicles
-                    </Link>
-                    <Link
-                      to="/digital-marketing-services-for-home-decor"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      Home Decor
-                    </Link>
-                    <Link
-                      to="/digital-marketing-for-ecommerce-2"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      E-Commerce
-                    </Link>
+                  <div
+                    className="
+                      mb-3
+                      ml-2
+                      rounded-xl
+                      bg-zinc-50
+                      p-3
+                      max-h-64
+                      overflow-y-auto
+                      space-y-1
+                    "
+                  >
+                    {[
+                      ["/automotive-digital-marketing-agency", "Automotive"],
+                      [
+                        "/beauty-skin-care-digital-marketing-agency",
+                        "Beauty & Skin Care",
+                      ],
+                      [
+                        "/digital-marketing-agency-for-business-to-business",
+                        "B2B Marketing",
+                      ],
+                      [
+                        "/digital-marketing-agency-for-education-industry",
+                        "Education",
+                      ],
+                      [
+                        "/digital-marketing-agency-for-food-beverage",
+                        "Food & Beverage",
+                      ],
+                      [
+                        "/digital-marketing-services-for-healthcare",
+                        "Healthcare",
+                      ],
+                      [
+                        "/digital-marketing-agency-for-real-estate",
+                        "Real Estate",
+                      ],
+                      [
+                        "/digital-marketing-for-financial-services",
+                        "Financial Services",
+                      ],
+                      [
+                        "/digital-marketing-for-travel-tourism",
+                        "Travel & Tourism",
+                      ],
+                      [
+                        "/digital-marketing-services-for-ev",
+                        "Electric Vehicles",
+                      ],
+                      [
+                        "/digital-marketing-services-for-home-decor",
+                        "Home Decor",
+                      ],
+                      ["/digital-marketing-for-ecommerce-2", "E-Commerce"],
+                    ].map(([path, label]) => (
+                      <Link
+                        key={path}
+                        to={path}
+                        onClick={closeMobileMenu}
+                        className="
+                          block
+                          py-2
+                          text-sm
+                          text-zinc-700
+                          hover:text-[#00529B]
+                        "
+                      >
+                        {label}
+                      </Link>
+                    ))}
                   </div>
                 )}
               </div>
 
-              {/* International Accordion */}
-              {/* <div className="pt-3">
+              {/* =================================================
+                  RESOURCES
+              ================================================== */}
+              <div className="border-b border-zinc-100">
                 <button
                   type="button"
-                  onClick={() => toggleMobileSubmenu("international")}
-                  className="w-full flex items-center justify-between py-2 text-base font-semibold text-zinc-900"
-                >
-                  <span>International</span>
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${mobileExpandedSection === "international" ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {mobileExpandedSection === "international" && (
-                  <div className="pl-4 py-2 space-y-1.5 text-sm text-zinc-700 bg-zinc-50 rounded-xl mt-1 max-h-56 overflow-y-auto">
-                    <Link
-                      to="/san-francisco-digital-marketing-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      🇺🇸 San Francisco
-                    </Link>
-                    <Link
-                      to="/seo-services-in-newyork"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      🇺🇸 New York · SEO
-                    </Link>
-                    <Link
-                      to="/uk-digital-marketing-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      🇬🇧 United Kingdom
-                    </Link>
-                    <Link
-                      to="/london-digital-marketing-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      🇬🇧 London Agency
-                    </Link>
-                    <Link
-                      to="/dubai-digital-marketing-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      🇦🇪 Dubai Agency
-                    </Link>
-                    <Link
-                      to="/canada-digital-marketing-agency"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      🇨🇦 Canada
-                    </Link>
-                    <Link
-                      to="/digital-marketing-agency-in-australia"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      🇦🇺 Australia
-                    </Link>
-                    <Link
-                      to="/es"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1"
-                    >
-                      🇪🇸 Spanish Entry
-                    </Link>
-                  </div>
-                )}
-              </div> */}
-
-              <div className="pt-3">
-                <button
-                  type="button"
-                  onClick={() => toggleMobileSubmenu("resource")}
-                  className="w-full flex items-center justify-between py-2 text-base font-semibold text-zinc-900"
+                  onClick={() => toggleMobileSubmenu("resources")}
+                  className="
+                    w-full
+                    flex
+                    items-center
+                    justify-between
+                    py-3
+                    text-base
+                    font-semibold
+                    text-zinc-900
+                  "
+                  aria-expanded={mobileExpandedSection === "resources"}
                 >
                   <span>Resources</span>
+
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform ${mobileExpandedSection === "resource" ? "rotate-180" : ""}`}
+                    className={`
+                      w-5
+                      h-5
+                      transition-transform
+                      ${
+                        mobileExpandedSection === "resources"
+                          ? "rotate-180"
+                          : ""
+                      }
+                    `}
                   />
                 </button>
-                {mobileExpandedSection === "resource" && (
-                  <div className="pl-4 py-2 space-y-2 text-sm text-zinc-700 bg-zinc-50 rounded-xl mt-1">
+
+                {mobileExpandedSection === "resources" && (
+                  <div
+                    className="
+                      mb-3
+                      ml-2
+                      rounded-xl
+                      bg-zinc-50
+                      p-3
+                    "
+                  >
                     <Link
-                      to="/about"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-medium"
+                      to="/blog"
+                      onClick={closeMobileMenu}
+                      className="
+                        block
+                        py-2
+                        text-sm
+                        text-zinc-700
+                        hover:text-[#00529B]
+                      "
                     >
                       Blog
                     </Link>
+
                     <Link
-                      to="/about/life-at-Silgate"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-1 font-medium"
+                      to="/case-studies"
+                      onClick={closeMobileMenu}
+                      className="
+                        block
+                        py-2
+                        text-sm
+                        text-zinc-700
+                        hover:text-[#00529B]
+                      "
                     >
                       Case Studies
                     </Link>
@@ -1428,84 +1279,123 @@ export default function Navbar() {
                 )}
               </div>
 
-              <div className="pt-3">
-                <Link
-                  to="/clients"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-2 text-base font-semibold text-zinc-900"
-                >
-                  Clients
-                </Link>
-              </div>
+              {/* =================================================
+                  CAREERS
+              ================================================== */}
+              <Link
+                to="/career"
+                onClick={closeMobileMenu}
+                className={`
+                  block
+                  py-3
+                  text-base
+                  font-semibold
+                  border-b
+                  border-zinc-100
+                  ${isActive("/career") ? "text-[#00529B]" : "text-zinc-900"}
+                `}
+              >
+                Careers
+              </Link>
 
-              <div className="pt-3">
-                <Link
-                  to="/career"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-2 text-base font-semibold text-zinc-900"
-                >
-                  Careers
-                </Link>
-              </div>
-
-              {/* <div className="pt-3">
-                <Link
-                  to="/blog"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-2 text-base font-semibold text-zinc-900"
-                >
-                  Blogs & Insights
-                </Link>
-              </div> */}
-
-              <div className="pt-3">
-                <Link
-                  to="/contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-2 text-base font-semibold text-zinc-900"
-                >
-                  Contact Us
-                </Link>
-              </div>
+              {/* =================================================
+                  CONTACT
+              ================================================== */}
+              <Link
+                to="/contact"
+                onClick={closeMobileMenu}
+                className="
+                  block
+                  mt-4
+                  py-3
+                  text-center
+                  rounded-xl
+                  bg-[#00529B]
+                  text-white
+                  font-semibold
+                  hover:bg-[#F36C3D]
+                  transition-colors
+                "
+              >
+                Contact Us
+              </Link>
             </div>
 
-            {/* Mobile Drawer Footer */}
-            <div className="p-5 border-t border-zinc-100 bg-zinc-50">
+            {/* ===============================================
+                MOBILE FOOTER
+            ================================================ */}
+            <div
+              className="
+                flex-shrink-0
+                p-5
+                border-t
+                border-zinc-100
+                bg-zinc-50
+              "
+            >
               <a
                 href="tel:+918108810916"
-                className="flex items-center justify-center gap-2 py-3 rounded-xl bg-[#091E3A] hover:bg-[#00529B] text-white text-sm font-semibold mb-3 transition-colors"
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  gap-2
+                  py-3
+                  rounded-xl
+                  bg-[#091E3A]
+                  text-white
+                  text-sm
+                  font-semibold
+                  hover:bg-[#00529B]
+                  transition-colors
+                "
               >
                 <Phone className="w-4 h-4 text-[#F36C3D]" />
-                <span>Call +91 81088 10916</span>
+                Call +91 81088 10916
               </a>
-              <div className="flex items-center justify-center gap-4 text-zinc-500 pt-2">
+
+              <div
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  gap-5
+                  text-zinc-500
+                  pt-4
+                "
+              >
                 <a
                   href="https://youtube.com/@SilgateMedia"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="YouTube"
+                  className="hover:text-[#00529B]"
                 >
-                  <Youtube className="w-4 h-4" />
+                  <Youtube className="w-5 h-5" />
                 </a>
+
                 <a
                   href="https://in.linkedin.com/company/Silgate-media-pvt-ltd"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="LinkedIn"
+                  className="hover:text-[#00529B]"
                 >
-                  <Linkedin className="w-4 h-4" />
+                  <Linkedin className="w-5 h-5" />
                 </a>
+
                 <a
                   href="https://www.instagram.com/Silgate.media/"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
+                  className="hover:text-[#00529B]"
                 >
-                  <Instagram className="w-4 h-4" />
+                  <Instagram className="w-5 h-5" />
                 </a>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       )}
     </header>

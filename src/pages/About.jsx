@@ -1,298 +1,168 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Button from "../components/Button";
-import Hero from "../components/Hero";
-import ClientMarquee from "../components/ClientMarquee";
-import CTA from "../components/CTA";
-import {
-  Sparkles,
-  Target,
-  Lightbulb,
-  TrendingUp,
-  Heart,
-  Award,
-  CheckCircle2,
-  ArrowUpRight,
-} from "lucide-react";
+import { Target, Lightbulb, Cpu, TrendingUp } from "lucide-react";
+import logoImg from "../assets/images/logo.png";
 
-import kavishImg from "../assets/images/kavish-arora-co-founder-coo-Silgate-media-v2.webp";
-import darpanImg from "../assets/images/darpan-sharma.webp";
-import malikaImg from "../assets/images/malika.webp";
-import divyaniImg from "../assets/images/Divyani.webp";
-import amitImg from "../assets/images/amitsingh.webp";
-import rajkamalImg from "../assets/images/Rajkaml.webp";
-import neetuImg from "../assets/images/Neetu.webp";
-import gauravImg from "../assets/images/Gaurav.webp";
-import tusharikaImg from "../assets/images/Tusharika.webp";
-import harshitImg from "../assets/images/Harshit.webp";
+const capabilities = [
+  {
+    title: "Strategy-Led",
+    description: "Solutions built around business requirements",
+    icon: Target,
+  },
+  {
+    title: "Creative Thinking",
+    description: "Ideas designed to communicate and engage",
+    icon: Lightbulb,
+  },
+  {
+    title: "Technology-Driven",
+    description: "Modern, scalable digital execution",
+    icon: Cpu,
+  },
+  {
+    title: "Growth-Focused",
+    description: "Digital initiatives aligned with business outcomes",
+    icon: TrendingUp,
+  },
+];
 
 export default function About() {
-  const leaders = [
-    {
-      name: "Darpan Sharma",
-      role: "CEO & Co-Founder",
-      image: darpanImg,
-      bio: "Visionary brand strategist steering Silgate's 14-year evolution into a premier global marketing powerhouse.",
-    },
-    {
-      name: "Kavish Arora",
-      role: "Co-Founder & COO",
-      image: kavishImg,
-      bio: "Operations architect and creative strategist ensuring flawless campaign orchestration and client compounding.",
-    },
-    {
-      name: "Malika",
-      role: "Creative Director",
-      image: malikaImg,
-      bio: "Leading creative visualizers, brand aesthetics, packaging, and commercial film direction.",
-    },
-    {
-      name: "Divyani",
-      role: "Head of Client Relations",
-      image: divyaniImg,
-      bio: "Driving account partnerships, client satisfaction, and multi-market communications.",
-    },
-    {
-      name: "Amit Singh",
-      role: "Technical Lead",
-      image: amitImg,
-      bio: "Full-stack web architecture, custom web app development, and headless CMS systems.",
-    },
-    {
-      name: "Rajkamal",
-      role: "Senior Art Director",
-      image: rajkamalImg,
-      bio: "Transforming brand narratives into distinctive typography, layout, and visual identity systems.",
-    },
-    {
-      name: "Neetu",
-      role: "Head of SEO & Analytics",
-      image: neetuImg,
-      bio: "Architecting high-intent organic search strategies, AEO/GEO entity graphs, and technical audits.",
-    },
-    {
-      name: "Gaurav",
-      role: "Performance Marketing Lead",
-      image: gauravImg,
-      bio: "Managing multi-crore ad budgets across Meta, Google, and LinkedIn with relentless ROAS discipline.",
-    },
-  ];
+  const handleScrollToCapabilities = () => {
+    const el = document.getElementById("capabilities");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const BrandedVisual = () => (
+    <div className="relative group w-full max-w-lg mx-auto lg:max-w-none">
+      {/* Subtle Ambient Brand Glow */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-[#00529B]/20 via-[#F36C3D]/20 to-[#00529B]/20 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500 pointer-events-none" />
+
+      {/* Main Graphic Container */}
+      <div className="relative bg-gradient-to-br from-[#091E3A] via-[#0B2548] to-[#041122] rounded-2xl p-6 sm:p-8 border border-[#1E3E6B] shadow-xl overflow-hidden aspect-[16/10] sm:aspect-[16/11] flex flex-col items-center justify-center text-center">
+        {/* Subtle Background Circuit/Grid SVG */}
+        <div className="absolute inset-0 opacity-15 pointer-events-none">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern
+                id="tech-grid"
+                width="32"
+                height="32"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 32 0 L 0 0 0 32"
+                  fill="none"
+                  stroke="rgba(255,255,255,0.4)"
+                  strokeWidth="0.75"
+                />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#tech-grid)" />
+          </svg>
+        </div>
+
+        {/* Ambient Radial Lights */}
+        <div className="absolute top-1/4 -left-10 w-44 h-44 bg-[#00529B]/50 rounded-full blur-2xl pointer-events-none" />
+        <div className="absolute bottom-1/4 -right-10 w-44 h-44 bg-[#F36C3D]/40 rounded-full blur-2xl pointer-events-none" />
+
+        {/* Central Logo Container */}
+        <div className="relative z-10 bg-white/95 backdrop-blur-md px-6 py-4 sm:px-8 sm:py-5 rounded-2xl shadow-2xl border border-white/60 transform group-hover:scale-105 transition-transform duration-300">
+          <img
+            src={logoImg}
+            alt="Silgate Digital"
+            className="h-9 sm:h-11 md:h-12 w-auto object-contain mx-auto"
+          />
+        </div>
+
+        {/* Tech Indicator Nodes */}
+        <div className="relative z-10 mt-5 sm:mt-6 flex items-center justify-center gap-3 flex-wrap">
+          <span className="w-2 h-2 rounded-full bg-[#F36C3D] animate-ping" />
+          <span className="w-2 h-2 rounded-full bg-[#00529B]" />
+          <span className="w-2 h-2 rounded-full bg-[#F36C3D]" />
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
 
-      <main className="flex-1">
-        {/* Hero Section */}
-        <Hero
-          badge="About Silgate Media"
-          title="We Are a Digital Marketing Agency with a Creative Edge"
-          subtitle="Understanding your vision and delivering it, creatively and measurably."
-          description="When the creativity and productivity of other agencies end, it is from where we start. Based in India with a global footprint, our bucket is ever filled with fresh marketing ideas that elevate brands to their highest potential."
-          breadcrumbs={[{ label: "About Us" }]}
-          primaryCtaText="Meet Our Team"
-          primaryCtaLink="#team"
-          secondaryCtaText="Life at Silgate"
-          secondaryCtaLink="/about/life-at-Silgate"
-          stats={[
-            { value: "14+", label: "Years of Excellence" },
-            { value: "250+", label: "Brands Elevated" },
-            { value: "98%", label: "Client Retention Rate" },
-            { value: "50+", label: "Passionate Digians" },
-          ]}
-        />
+      <main className="flex-1 py-10 sm:py-14 lg:py-20 bg-gradient-to-b from-[#F8FAFC] via-white to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Single Unified Responsive Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Visual (Desktop: Left col-span-5, Mobile/Tablet: Order 2) */}
+            <div className="order-2 lg:order-1 lg:col-span-5 w-full">
+              <BrandedVisual />
+            </div>
 
-        <ClientMarquee />
+            {/* Content & Heading (Desktop: Right col-span-7, Mobile/Tablet: Order 1) */}
+            <div className="order-1 lg:order-2 lg:col-span-7 space-y-5 sm:space-y-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                About <span className="text-[#00529B]">Silgate Digital</span>
+              </h1>
 
-        {/* Philosophy & Plant Metaphor Section */}
-        <section className="py-20 bg-white border-b border-slate-200/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-6 space-y-6">
-                <div className="inline-block px-3 py-1 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider">
-                  Our Philosophy
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                  "If you have a seed and soil in a pot, will it grow? No, it
-                  needs nurturing in the form of water."
-                </h2>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                  The digital age of social media has revolutionized the way of
-                  doing business. To remain relevant in this volatile market,
-                  one needs the right care and help. Good marketing not just
-                  helps in building the name of the brand, but it paves the way
-                  for new customers to come in. After all, a plant always needs
-                  water, even after it has bloomed.
+              <div className="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+                <p className="text-slate-800 font-medium">
+                  Silgate Digital helps businesses build, strengthen and grow
+                  their digital presence through a combination of technology,
+                  creativity and strategy.
                 </p>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                  We at Silgate don’t call ourselves knight in shining armour of
-                  our clients, but we do take immense pride in our approach. It
-                  involves deep creative ideation and digital audits along with
-                  extensive background research in tailoring strategies.
+                <p>
+                  We are a digital solutions company helping businesses create
+                  strong online presence, engage the right audience and
+                  achieve measurable growth through a combination of strategy,
+                  technology, and creativity.
                 </p>
-                <div className="pt-2">
-                  <Link
-                    to="/about/credo-at-Silgate"
-                    className="text-sm font-semibold text-black hover:text-[#F36C3D] inline-flex items-center gap-1.5"
-                  >
-                    <span>Read Our Core Credo</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </Link>
-                </div>
               </div>
 
-              <div className="lg:col-span-6 grid grid-cols-2 gap-4">
-                <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center font-bold">
-                    01
-                  </div>
-                  <h4 className="font-bold text-slate-900 text-base">
-                    In-Depth Research
-                  </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Granular audience intelligence, competitor audit, and market
-                    gap discovery before running any creative.
-                  </p>
-                </div>
-
-                <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center font-bold">
-                    02
-                  </div>
-                  <h4 className="font-bold text-slate-900 text-base">
-                    Customisation
-                  </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    No cookie-cutter templates. Every campaign, website, and SEO
-                    architecture is handcrafted for your distinct goals.
-                  </p>
-                </div>
-
-                <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center font-bold">
-                    03
-                  </div>
-                  <h4 className="font-bold text-slate-900 text-base">
-                    Creative Communication
-                  </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Visualizing ideas that captivate users within 3 seconds,
-                    building lasting recall and brand prestige.
-                  </p>
-                </div>
-
-                <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-slate-200 space-y-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#EBF3FB] text-[#00529B] border border-blue-200 flex items-center justify-center font-bold">
-                    04
-                  </div>
-                  <h4 className="font-bold text-slate-900 text-base">
-                    Real-Time Analytics
-                  </h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    Data-driven feedback loops continually optimizing conversion
-                    rates and compound return on ad spend.
-                  </p>
-                </div>
+              <div className="pt-1 sm:pt-2">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  icon="right"
+                  onClick={handleScrollToCapabilities}
+                  className="w-full sm:w-auto shadow-md hover:shadow-orange-500/20"
+                >
+                  Know More About Us
+                </Button>
               </div>
             </div>
           </div>
-        </section>
 
-        {/* Leadership Team Section */}
-        <section
-          id="team"
-          className="py-20 bg-[#F8FAFC] border-b border-slate-200/80"
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-8">
-            <div className="max-w-2xl mb-14">
-              <div className="inline-block px-3 py-1 rounded-full bg-[#EBF3FB] text-[#00529B] border border-blue-200 text-xs font-semibold uppercase tracking-wider mb-3">
-                The Minds Behind Silgate
-              </div>
-              <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 mb-3">
-                Leadership & Creative Visionaries
-              </h2>
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                Meet the seasoned strategists, designers, engineers, and growth
-                hackers dedicated to your brand's market supremacy.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {leaders.map((person, idx) => (
+          {/* Unified Capability Points Section */}
+          <div
+            id="capabilities"
+            className="mt-12 sm:mt-16 lg:mt-20 pt-10 sm:pt-12 border-t border-slate-200/80"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+              {capabilities.map((cap) => (
                 <div
-                  key={idx}
-                  className="group bg-white rounded-2xl overflow-hidden border border-slate-200/80 hover:shadow-xl hover:border-black/30 transition-all duration-300"
+                  key={cap.title}
+                  className="group bg-white rounded-xl sm:rounded-2xl p-5 sm:p-6 border border-slate-200/90 hover:border-[#00529B]/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
                 >
-                  <div className="aspect-[4/5] overflow-hidden bg-zinc-100 relative">
-                    <img
-                      src={person.image}
-                      alt={person.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      onError={(e) => {
-                        e.target.style.display = "none";
-                        e.target.nextSibling.style.display = "flex";
-                      }}
-                    />
-                    <div className="hidden w-full h-full bg-zinc-800 text-white font-bold items-center justify-center text-lg">
-                      {person.name}
+                  <div>
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#EBF3FB] text-[#00529B] border border-blue-200/60 flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-[#FFF1EC] group-hover:text-[#F36C3D] group-hover:border-orange-200 transition-colors duration-300">
+                      <cap.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-lg font-bold text-slate-900">
-                      {person.name}
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#00529B] transition-colors mb-2">
+                      {cap.title}
                     </h3>
-                    <div className="text-xs font-semibold text-[#F36C3D] uppercase tracking-wider mb-2">
-                      {person.role}
-                    </div>
-                    <p className="text-xs text-slate-600 leading-relaxed">
-                      {person.bio}
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      {cap.description}
                     </p>
                   </div>
+                  <div className="w-7 sm:w-8 h-0.5 bg-[#00529B]/20 group-hover:bg-[#F36C3D] group-hover:w-12 sm:group-hover:w-14 transition-all duration-300 mt-5 rounded-full" />
                 </div>
               ))}
             </div>
           </div>
-        </section>
-
-        {/* Culture & Life at Silgate Teaser */}
-        <section className="py-20 bg-white border-b border-slate-200/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-8">
-            <div className="bg-gradient-to-br from-[#091E3A] to-[#07172C] text-white rounded-2xl p-8 sm:p-14 relative overflow-hidden border border-[#1E3E6B] shadow-2xl">
-              <div className="max-w-2xl space-y-6 relative z-10">
-                <span className="badge-new">Culture & Life as a Digian</span>
-                <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-                  We work hard — and we celebrate harder.
-                </h3>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                  At Silgate, life isn't measured in pitches and decks; it's
-                  measured in the people we work with and the memories we make
-                  along the way. We sweat the craft, ship work we're proud of,
-                  and make sure every Digian has the room to lead and have fun
-                  doing it.
-                </p>
-                <div className="flex flex-wrap gap-4 pt-2">
-                  <Button
-                    to="/about/life-at-Silgate"
-                    variant="yellow"
-                    size="md"
-                  >
-                    Explore Life at Silgate
-                  </Button>
-                  <Button to="/career" variant="darkOutline" size="md">
-                    View Career Openings
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <CTA
-          title="Looking for a partner that treats your brand like their own?"
-          description="Schedule a consultation with our directors to discuss customized solutions for your business."
-        />
+        </div>
       </main>
 
       <Footer />
