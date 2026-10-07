@@ -1,36 +1,20 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 // Carousel Slides
 import carousel1 from "../assets/images/carousel-1.jpeg";
 import carousel2 from "../assets/images/carousel-2.jpeg";
-import carousel3 from "../assets/images/carousel-3.jpeg";
+import carousel3 from "../assets/images/carousel-3.png";
 import carousel4 from "../assets/images/carousel-4.jpeg";
 
 /**
- * Default configurable overlay content for Carousel 4 ONLY.
- * Reuses existing brand copy from Silgate Solutions.
- * Update these fields when custom text is provided.
- */
-const DEFAULT_CAROUSEL_4_CONTENT = {
-  eyebrow: "Enterprise Digital & Technology Solutions",
-  title: "Transforming Global Brands with Strategic Innovation",
-  description:
-    "Scalable digital architectures, strategic brand marketing, and high-recall communication designed to accelerate compounding enterprise growth.",
-  buttonText: "Discuss Your Project",
-  buttonLink: "/contact",
-};
-
-/**
  * HomeCarousel Component
- * Full-screen responsive hero image carousel for the Home page.
+ * Responsive hero image carousel for the Home page.
  * Rotates through 4 slides every 5 seconds (5000ms) with smooth transitions.
- * Only slide 4 displays the configured text overlay.
+ * Includes interactive call-to-action button overlays on each slide.
  */
-export default function HomeCarousel({
-  carousel4Content = DEFAULT_CAROUSEL_4_CONTENT,
-}) {
+export default function HomeCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(0);
   const [direction, setDirection] = useState("next"); // "next" | "prev"
@@ -45,26 +29,61 @@ export default function HomeCarousel({
       id: 1,
       image: carousel1,
       alt: "Professional SEO Service in Delhi - Silgate Solutions",
-      overlay: false,
+      top: "63%",
+      left: "7.2%",
+      primaryButton: {
+        text: "Explore Our Services",
+        link: "/about",
+      },
+      secondaryButton: {
+        text: "Contact Us",
+        link: "/contact",
+      },
     },
     {
       id: 2,
       image: carousel2,
       alt: "Web Designing & Development Service - Silgate Solutions",
-      overlay: false,
+      top: "76.5%",
+      left: "6.2%",
+      primaryButton: {
+        text: "Get a Custom Solution",
+        link: "/about",
+      },
+      secondaryButton: {
+        text: "Contact Us",
+        link: "/contact",
+      },
     },
     {
       id: 3,
       image: carousel3,
       alt: "Marketing Solutions for Your Business - Silgate Solutions",
-      overlay: false,
+      top: "73.5%",
+      left: "5.4%",
+      primaryButton: {
+        text: "Improve Your Rankings",
+        link: "/about",
+      },
+      secondaryButton: {
+        text: "Contact Us",
+        link: "/contact",
+      },
     },
     {
       id: 4,
       image: carousel4,
       alt: "Enterprise Digital & Technology Solutions - Silgate Solutions",
-      overlay: true,
-      ...carousel4Content,
+      top: "76%",
+      left: "6.0%",
+      primaryButton: {
+        text: "Grow Your Social Presence",
+        link: "/about",
+      },
+      secondaryButton: {
+        text: "Contact Us",
+        link: "/contact",
+      },
     },
   ];
 
@@ -155,8 +174,7 @@ export default function HomeCarousel({
 
   return (
     <section
-      className="relative w-full aspect-[1600/595] max-h-[calc(100vh-5rem)] overflow-hidden bg-slate-950 select-none"
-      style={{ aspectRatio: "1600 / 595" }}
+      className="relative w-full overflow-hidden bg-slate-950 select-none"
       aria-roledescription="carousel"
       aria-label="Silgate Solutions Hero Carousel"
       onTouchStart={handleTouchStart}
@@ -164,11 +182,11 @@ export default function HomeCarousel({
       onTouchEnd={handleTouchEnd}
     >
       {/* Slides Container */}
-      <div className="relative w-full h-full overflow-hidden">
+      <div className="relative w-full overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 w-full h-full will-change-transform ${getSlidePositionClass(
+            className={`${index === currentIndex ? "relative w-full" : "absolute inset-0 w-full h-full"} will-change-transform ${getSlidePositionClass(
               index,
             )}`}
             aria-hidden={currentIndex !== index}
@@ -180,48 +198,32 @@ export default function HomeCarousel({
             <img
               src={slide.image}
               alt={slide.alt}
-              className="w-full h-full object-cover object-center block"
+              className="w-full h-auto object-contain block"
               loading={index === 0 ? "eager" : "lazy"}
             />
 
-            {/* Carousel 4 ONLY: Overlay Content */}
-            {slide.overlay && (
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00386c]/90 via-[#00529B]/65 to-transparent flex items-center">
-                <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 w-full">
-                  <div className="max-w-xl text-white">
-                    {slide.eyebrow && (
-                      <span className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-md bg-[#FFF1EC] text-[#F36C3D] font-bold text-xs sm:text-sm uppercase tracking-wider mb-3 sm:mb-4 shadow-sm border border-[#FED7AA]">
-                        {slide.eyebrow}
-                      </span>
-                    )}
+            {/* Slide Action Buttons Overlay */}
+            <div className="absolute left-[4%] sm:left-[5%] md:left-[6%] lg:left-[7%] bottom-[5%] sm:bottom-[7%] md:bottom-[9%] lg:bottom-[11%] z-20 flex items-center gap-1.5 sm:gap-2.5 md:gap-3.5 max-w-[92%] sm:max-w-none">
+              {/* Button 1: Contact Us */}
+              <Link
+                to={slide.primaryButton?.link || "/contact"}
+                className="inline-flex items-center justify-center font-semibold rounded-md sm:rounded-lg md:rounded-xl text-[11px] sm:text-xs md:text-sm lg:text-base px-2.5 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 gap-1 sm:gap-1.5 md:gap-2 bg-[#00529B] text-white hover:bg-[#F36C3D] border border-[#00529B]/40 hover:border-[#F36C3D] shadow-md hover:shadow-lg hover:shadow-orange-500/20 active:scale-95 transition-all duration-200 tracking-tight whitespace-nowrap group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00529B]"
+                aria-label={`${slide.primaryButton?.text || "Contact Us"} - Silgate Solutions`}
+              >
+                <span>{slide.primaryButton?.text || "Contact Us"}</span>
+                <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
 
-                    {slide.title && (
-                      <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-tight mb-3 sm:mb-4">
-                        {slide.title}
-                      </h2>
-                    )}
-
-                    {slide.description && (
-                      <p className="text-slate-100 text-xs sm:text-sm md:text-base leading-relaxed mb-5 sm:mb-6 max-w-lg">
-                        {slide.description}
-                      </p>
-                    )}
-
-                    {slide.buttonText && (
-                      <div>
-                        <Link
-                          to={slide.buttonLink || "/contact"}
-                          className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3.5 rounded-lg bg-[#F36C3D] hover:bg-[#dd582b] text-white font-bold text-xs sm:text-sm md:text-base shadow-xl hover:shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95 group cursor-pointer"
-                        >
-                          <span>{slide.buttonText}</span>
-                          <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            )}
+              {/* Button 2: Dynamic Second Button */}
+              <Link
+                to={slide.secondaryButton?.link || "/services"}
+                className="inline-flex items-center justify-center font-semibold rounded-md sm:rounded-lg md:rounded-xl text-[11px] sm:text-xs md:text-sm lg:text-base px-2.5 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3 gap-1 sm:gap-1.5 md:gap-2 bg-[#F36C3D] text-white hover:bg-[#00529B] border border-[#F36C3D]/40 hover:border-[#00529B] shadow-md hover:shadow-lg hover:shadow-blue-500/20 active:scale-95 transition-all duration-200 tracking-tight whitespace-nowrap group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#F36C3D]"
+                aria-label={`${slide.secondaryButton?.text} - Silgate Solutions`}
+              >
+                <span>{slide.secondaryButton?.text}</span>
+                <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </div>
           </div>
         ))}
       </div>
