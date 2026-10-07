@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowUpRight, Phone, Mail, MapPin, Heart } from "lucide-react";
 import {
   Youtube,
@@ -11,10 +11,14 @@ import {
 import logoImg from "../assets/images/logo.png";
 
 export default function Footer() {
+  const location = useLocation();
+  const isAboutPage = location.pathname.startsWith("/about");
+
   return (
     <footer className="bg-[#07172C] text-slate-300 pt-16 pb-8 border-t border-[#132C4E]">
       {/* Pre-Footer Call to Action Banner */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-16">
+      {!isAboutPage && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 mb-16">
         <div className="bg-gradient-to-r from-[#091E3A] to-[#0D2A50] border border-[#1E3E6B] rounded-2xl p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-2xl">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#00529B]/40 text-[#F6C84A] border border-[#00529B]/60 text-xs font-semibold uppercase tracking-wider mb-3">
@@ -46,6 +50,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      )}
 
       {/* Main Footer Links Columns */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
