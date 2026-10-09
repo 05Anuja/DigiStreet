@@ -485,7 +485,7 @@ export default function Navbar() {
             {/* =================================================
                 PRODUCTS
             ================================================== */}
-            <Link
+            {/* <Link
               to="/products"
               className={`
                 px-3
@@ -502,12 +502,12 @@ export default function Navbar() {
               `}
             >
               Products
-            </Link>
+            </Link> */}
 
             {/* =================================================
                 CLIENTS
             ================================================== */}
-            <Link
+            {/* <Link
               to="/clients"
               className={`
                 px-3
@@ -524,7 +524,7 @@ export default function Navbar() {
               `}
             >
               Clients
-            </Link>
+            </Link> */}
 
             {/* =================================================
                 INDUSTRY
@@ -551,7 +551,7 @@ export default function Navbar() {
                   transition-colors
                 "
               >
-                Industry
+                Industries
                 <ChevronDown className="w-3.5 h-3.5" />
               </button>
 
@@ -644,7 +644,7 @@ export default function Navbar() {
             {/* =================================================
                 RESOURCES
             ================================================== */}
-            <Link
+            {/* <Link
               to="/resources"
               className={`
                 px-3
@@ -661,7 +661,204 @@ export default function Navbar() {
               `}
             >
               Resources
-            </Link>
+            </Link> */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("resources")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              {/* Resources Button */}
+              <button
+                type="button"
+                className="
+      group
+      flex
+      items-center
+      gap-1.5
+      px-4
+      py-2.5
+      text-sm
+      font-semibold
+      text-zinc-700
+      hover:text-[#00529B]
+      hover:bg-[#00529B]/5
+      rounded-lg
+      transition-all
+      duration-200
+    "
+              >
+                Resources
+                <ChevronDown
+                  className={`
+        w-4
+        h-4
+        transition-transform
+        duration-200
+        ${
+          activeDropdown === "resources"
+            ? "rotate-180 text-[#00529B]"
+            : "text-zinc-500"
+        }
+      `}
+                />
+              </button>
+
+              {/* Resources Dropdown */}
+              {activeDropdown === "resources" && (
+                <div
+                  className="
+        absolute
+        top-full
+        left-1/2
+        -translate-x-1/2
+        mt-3
+        w-[420px]
+        max-w-[90vw]
+        bg-white
+        rounded-2xl
+        border
+        border-zinc-100
+        shadow-[0_20px_50px_rgba(0,0,0,0.12)]
+        overflow-hidden
+        z-50
+        animate-[dropdown_0.2s_ease-out]
+      "
+                >
+                  {/* Links */}
+                  <div className="p-3">
+                    {[
+                      {
+                        path: "/automotive-digital-marketing-agency",
+                        label: "Case Studies",
+                        icon: (
+                          <svg
+                            className="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="1.8"
+                              d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2ZM8 7V5h8v2"
+                            />
+                          </svg>
+                        ),
+                      },
+                      {
+                        path: "/beauty-skin-care-digital-marketing-agency",
+                        label: "Blog",
+                        icon: (
+                          <svg
+                            className="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="1.8"
+                              d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"
+                            />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="1.8"
+                              d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"
+                            />
+                          </svg>
+                        ),
+                      },
+                    ].map(({ path, label, description, icon }) => (
+                      <Link
+                        key={path}
+                        to={path}
+                        className="
+              group
+              flex
+              items-center
+              gap-4
+              p-3.5
+              rounded-xl
+              hover:bg-[#00529B]/5
+              transition-all
+              duration-200
+            "
+                      >
+                        {/* Icon */}
+                        <div
+                          className="
+                flex
+                items-center
+                justify-center
+                w-11
+                h-11
+                rounded-xl
+                bg-[#00529B]/10
+                text-[#00529B]
+                group-hover:bg-[#00529B]
+                group-hover:text-white
+                transition-all
+                duration-200
+                shrink-0
+              "
+                        >
+                          {icon}
+                        </div>
+
+                        {/* Content */}
+                        <div className="flex-1 min-w-0">
+                          <p
+                            className="
+                  text-sm
+                  font-semibold
+                  text-zinc-800
+                  group-hover:text-[#00529B]
+                  transition-colors
+                "
+                          >
+                            {label}
+                          </p>
+
+                          <p className="mt-0.5 text-xs text-zinc-500">
+                            {description}
+                          </p>
+                        </div>
+
+                        {/* Arrow */}
+                        <svg
+                          className="
+                w-4
+                h-4
+                text-zinc-400
+                group-hover:text-[#00529B]
+                group-hover:translate-x-1
+                transition-all
+                duration-200
+                shrink-0
+              "
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="m9 18 6-6-6-6"
+                          />
+                        </svg>
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* Bottom Accent */}
+                  <div className="h-1 bg-gradient-to-r from-[#00529B] via-[#0074C8] to-[#00529B]" />
+                </div>
+              )}
+            </div>
 
             {/* =================================================
                 CAREERS
@@ -702,14 +899,14 @@ export default function Navbar() {
                 px-5
                 py-2.5
                 rounded-lg
-                bg-[#00529B]
+                bg-[#F36C3D]
                 text-white
-                hover:bg-[#F36C3D]
+                hover:bg-[#00529B]
                 transition-all
                 shadow-sm
               "
             >
-              Get in Touch
+              Contact Us
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -1017,7 +1214,7 @@ export default function Navbar() {
               {/* =================================================
                   PRODUCTS
               ================================================== */}
-              <div className="border-b border-zinc-100">
+              {/* <div className="border-b border-zinc-100">
                 <button
                   type="button"
                   onClick={() => toggleMobileSubmenu("products")}
@@ -1073,12 +1270,12 @@ export default function Navbar() {
                     </Link>
                   </div>
                 )}
-              </div>
+              </div> */}
 
               {/* =================================================
                   CLIENTS
               ================================================== */}
-              <Link
+              {/* <Link
                 to="/clients"
                 onClick={closeMobileMenu}
                 className={`
@@ -1092,7 +1289,7 @@ export default function Navbar() {
                 `}
               >
                 Clients
-              </Link>
+              </Link> */}
 
               {/* =================================================
                   INDUSTRY
@@ -1113,7 +1310,7 @@ export default function Navbar() {
                   "
                   aria-expanded={mobileExpandedSection === "industry"}
                 >
-                  <span>Industry</span>
+                  <span>Industries</span>
 
                   <ChevronDown
                     className={`
